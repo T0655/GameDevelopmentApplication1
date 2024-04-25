@@ -55,8 +55,7 @@
               "RelativeToolTip": "Development\\Scene\\Scene.h",
               "ViewState": "AQIAAAkAAAAAAAAAAAAAABYAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-04-23T05:43:59.117Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-23T05:43:59.117Z"
             },
             {
               "$type": "Document",
@@ -68,8 +67,7 @@
               "RelativeToolTip": "Development\\Objects\\Enemy\\Enemy.h",
               "ViewState": "AQIAABIAAAAAAAAAAAAIwCYAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-04-23T05:40:36.362Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-23T05:40:36.362Z"
             },
             {
               "$type": "Document",
@@ -81,8 +79,7 @@
               "RelativeToolTip": "Development\\Objects\\Player\\Player.h",
               "ViewState": "AQIAABIAAAAAAAAAAAAAACMAAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-04-23T05:43:20.333Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-23T05:43:20.333Z"
             },
             {
               "$type": "Document",
@@ -94,8 +91,7 @@
               "RelativeToolTip": "Development\\Utility\\InputControl.h",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-04-23T05:53:48.557Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-23T05:53:48.557Z"
             }
           ]
         }
