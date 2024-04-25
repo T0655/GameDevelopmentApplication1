@@ -15,16 +15,10 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="AppMain.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="Objects\GameObject.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="Objects\Enemy\Enemy.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
     <ClCompile Include="Objects\Player\Player.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Objects\GameObjects.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
     <ClCompile Include="Scene\Scene.cpp">
@@ -36,15 +30,15 @@
     <ClCompile Include="Utility\Vector2D.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
+    <ClCompile Include="AppMain.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Objects\GameObject.h">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="Objects\Enemy\Enemy.h">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
     <ClInclude Include="Objects\Player\Player.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Objects\GameObjects.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
     <ClInclude Include="Scene\Scene.h">
@@ -56,8 +50,148 @@
     <ClInclude Include="Utility\Vector2D.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="Utility\UserTemplate.h">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Resource\images\BAD.png">
+      <Filter>リソース ファイル</Filter>
+    </Image>
+    <Image Include="Resource\images\GOOD.png">
+      <Filter>リソース ファイル</Filter>
+    </Image>
+    <Image Include="Resource\images\OK.png">
+      <Filter>リソース ファイル</Filter>
+    </Image>
+    <Image Include="Resource\images\Perfect.png">
+      <Filter>リソース ファイル</Filter>
+    </Image>
+    <Image Include="Resource\images\タイマー.png">
+      <Filter>リソース ファイル</Filter>
+    </Image>
+    <Image Include="Resource\images\ハーピー1.png">
+      <Filter>リソース ファイル</Filter>
+    </Image>
+    <Image Include="Resource\images\ハーピー2.png">
+      <Filter>リソース ファイル</Filter>
+    </Image>
+    <Image Include="Resource\images\ハコテキ1.png">
+      <Filter>リソース ファイル</Filter>
+    </Image>
+    <Image Include="Resource\images\ハコテキ2.png">
+      <Filter>リソース ファイル</Filter>
+    </Image>
+    <Image Include="Resource\images\金の敵1.png">
+      <Filter>リソース ファイル</Filter>
+    </Image>
+    <Image Include="Resource\images\金の敵2.png">
+      <Filter>リソース ファイル</Filter>
+    </Image>
+    <Image Include="Resource\images\金の敵3.png">
+      <Filter>リソース ファイル</Filter>
+    </Image>
+    <Image Include="Resource\images\金の敵4.png">
+      <Filter>リソース ファイル</Filter>
+    </Image>
+    <Image Include="Resource\images\金の敵5.png">
+      <Filter>リソース ファイル</Filter>
+    </Image>
+    <Image Include="Resource\images\敵とぶ2.png">
+      <Filter>リソース ファイル</Filter>
+    </Image>
+    <Image Include="Resource\images\敵弾1.png">
+      <Filter>リソース ファイル</Filter>
+    </Image>
+    <Image Include="Resource\images\敵弾エフェクト1.png">
+      <Filter>リソース ファイル</Filter>
+    </Image>
+    <Image Include="Resource\images\敵弾エフェクト2.png">
+      <Filter>リソース ファイル</Filter>
+    </Image>
+    <Image Include="Resource\images\敵弾エフェクト3.png">
+      <Filter>リソース ファイル</Filter>
+    </Image>
+    <Image Include="Resource\images\敵飛ぶ1.png">
+      <Filter>リソース ファイル</Filter>
+    </Image>
+    <Image Include="Resource\images\爆弾.png">
+      <Filter>リソース ファイル</Filter>
+    </Image>
+    <Image Include="Resource\images\爆風1.png">
+      <Filter>リソース ファイル</Filter>
+    </Image>
+    <Image Include="Resource\images\爆風2.png">
+      <Filter>リソース ファイル</Filter>
+    </Image>
+    <Image Include="Resource\images\爆風3.png">
+      <Filter>リソース ファイル</Filter>
+    </Image>
+    <Image Include="Resource\images\飛ぶ1.png">
+      <Filter>リソース ファイル</Filter>
+    </Image>
+    <Image Include="Resource\images\飛ぶ2.png">
+      <Filter>リソース ファイル</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resource\images\Finish.svg" />
+    <None Include="Resource\images\スコア.svg" />
+    <None Include="Resource\images\スコア0.svg" />
+    <None Include="Resource\images\スコア1.svg" />
+    <None Include="Resource\images\スコア2.svg" />
+    <None Include="Resource\images\スコア3.svg" />
+    <None Include="Resource\images\スコア4.svg" />
+    <None Include="Resource\images\スコア5.svg" />
+    <None Include="Resource\images\スコア6.svg" />
+    <None Include="Resource\images\スコア7.svg" />
+    <None Include="Resource\images\スコア8.svg" />
+    <None Include="Resource\images\スコア9.svg" />
+    <None Include="Resource\images\ハイスコア.svg" />
+    <None Include="Resource\images\マイナス.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Media Include="Resource\sounds\arrows_perfect03_short.wav">
+      <Filter>リソース ファイル</Filter>
+    </Media>
+    <Media Include="Resource\sounds\BGM_arrows.wav">
+      <Filter>リソース ファイル</Filter>
+    </Media>
+    <Media Include="Resource\sounds\BGM_timeup.wav">
+      <Filter>リソース ファイル</Filter>
+    </Media>
+    <Media Include="Resource\sounds\bishi.wav">
+      <Filter>リソース ファイル</Filter>
+    </Media>
+    <Media Include="Resource\sounds\Boss_gahee.wav">
+      <Filter>リソース ファイル</Filter>
+    </Media>
+    <Media Include="Resource\sounds\explosion.wav">
+      <Filter>リソース ファイル</Filter>
+    </Media>
+    <Media Include="Resource\sounds\pan.wav">
+      <Filter>リソース ファイル</Filter>
+    </Media>
+    <Media Include="Resource\sounds\pokan.wav">
+      <Filter>リソース ファイル</Filter>
+    </Media>
+    <Media Include="Resource\sounds\SE_bad.wav">
+      <Filter>リソース ファイル</Filter>
+    </Media>
+    <Media Include="Resource\sounds\SE_good.wav">
+      <Filter>リソース ファイル</Filter>
+    </Media>
+    <Media Include="Resource\sounds\SE_ok.wav">
+      <Filter>リソース ファイル</Filter>
+    </Media>
+    <Media Include="Resource\sounds\SE_perfect.wav">
+      <Filter>リソース ファイル</Filter>
+    </Media>
+    <Media Include="Resource\sounds\teki_gahee.wav">
+      <Filter>リソース ファイル</Filter>
+    </Media>
+    <Media Include="Resource\sounds\ニャー.wav">
+      <Filter>リソース ファイル</Filter>
+    </Media>
+    <Media Include="Resource\sounds\ポップ.wav">
+      <Filter>リソース ファイル</Filter>
+    </Media>
   </ItemGroup>
 </Project>
