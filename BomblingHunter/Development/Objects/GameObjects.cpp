@@ -1,7 +1,7 @@
 #include "GameObjects.h"
 
 //コンストラクタ
-GameObject::GameObject():location(0.0f),scale(0.0f),radian(0.0f),image(0),sound(0)
+GameObject::GameObject():location(0.0f),scale(0.0f),radian(0.0f),image(0),sound(0),objects()
 {
 }
 
@@ -13,16 +13,19 @@ GameObject::~GameObject()
 //初期化処理
 void GameObject::Initialize()
 {
+	GameObject* obj = new GameObject;
 }
 
 //更新処理
 void GameObject::Update()
 {
+
 }
 
 //描画処理
 void GameObject::Draw()const
 {
+
 }
 
 //終了処理

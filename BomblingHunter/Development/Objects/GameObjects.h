@@ -1,12 +1,14 @@
 #pragma once
 
 #include "../Utility/Vector2D.h"
+#include<vector>
 
 //ゲームオブジェクト基底クラス
 class GameObject
 {
 protected:
 	Vector2D location;           //位置情報
+	std::vector<int>objects;
 	double scale;                //大きさ
 	double radian;               //向き
 	int image;                   //描画する画像
