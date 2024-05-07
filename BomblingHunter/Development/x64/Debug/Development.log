@@ -1,3 +1,7 @@
 ﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(531,5): warning MSB8028: 中間ディレクトリ (x64\Debug\) に別のプロジェクト (Sample.vcxproj) と共有されているファイルが含まれています。これにより、クリーンしてリビルド動作が適切に行われない可能性があります。
+  AppMain.cpp
+  GameObjects.cpp
   Player.cpp
+  Scene.cpp
+  コードを生成中...
   Development.vcxproj -> C:\PG\GameDevelopmentApplication1\BomblingHunter\x64\Debug\Development.exe

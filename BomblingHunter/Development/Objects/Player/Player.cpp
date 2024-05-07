@@ -97,8 +97,21 @@ void Player::Movement()
 	{
 		velocity.x += 0.0f;
 	}
-
-	//現在の位置座標に速さを加算する
+	//追加要素
+	//左端で止める
+	if (location.x < (filp_flag / 2.0f))
+	{
+		velocity.x = 0.0f;
+		location.x = filp_flag / 2.0f;
+	}
+	//右端で止める
+	else if (location.x > (640.0f - filp_flag / 2.0f))
+	{
+		velocity.x = 0.0f;
+		location.x = 640.0f - filp_flag / 2.0f;
+	}
+	//
+		//現在の位置座標に速さを加算する
 	location += velocity;
 }
 
