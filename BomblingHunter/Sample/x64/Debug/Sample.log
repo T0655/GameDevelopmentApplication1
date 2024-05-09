@@ -1,0 +1,12 @@
+﻿  AppMain.cpp
+  Enemy.cpp
+  GameObjects.cpp
+  Player.cpp
+C:\PG\GameDevelopmentApplication1\BomblingHunter\Sample\Objects\GameObjects.cpp(4,41): error C2614: 'GameObject': イニシャライズ リスト内のクラス 'scale' が基底クラスでもメンバーでもありません。
+C:\PG\GameDevelopmentApplication1\BomblingHunter\Sample\Objects\Player\Player.cpp(34,2): error C2065: 'scale': 定義されていない識別子です。
+C:\PG\GameDevelopmentApplication1\BomblingHunter\Sample\Objects\Player\Player.cpp(58,74): error C2065: 'scale': 定義されていない識別子です。
+C:\PG\GameDevelopmentApplication1\BomblingHunter\Sample\Objects\Player\Player.cpp(59,75): error C2065: 'scale': 定義されていない識別子です。
+  Scene.cpp
+  InputControl.cpp
+  Vector2D.cpp
+  コードを生成中...
