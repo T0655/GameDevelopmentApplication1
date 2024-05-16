@@ -18,7 +18,7 @@ public:
 	virtual void Draw()const override;        //•`‰æˆ—
 	virtual void Finalize() override;         //I—¹ˆ—
 
-	//“–‚½‚è”»’è’Ê’mˆ—
+	//“–‚½‚è”»’è’Êjˆ—
 	virtual void OnHitCollision(GameObject* hit_object) override;
 
 private:

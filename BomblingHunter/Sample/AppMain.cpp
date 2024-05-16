@@ -17,13 +17,12 @@ int WINAPI WinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance, _
 		//異常を通知
 		return -1;
 	}
+	//描画先を裏画面から始めるように指定する
+	SetDrawScreen(DX_SCREEN_BACK);
 
 	//ローカル変数定義
 	Scene* scene = new Scene();               //シーン情報
 	int result = 0;                           //終了状態情報
-
-	//描画先を裏画面から始めるように指定する
-	SetDrawScreen(DX_SCREEN_BACK);
 
 	try
 	{

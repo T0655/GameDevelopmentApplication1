@@ -1,13 +1,12 @@
 #pragma once
 
-#include<vector>
-#include<string>
 #include"../Objects/GameObjects.h"
+#include<vector>
 
 class Scene
 {
 private:
-	std::vector<GameObject*>objects;
+	std::vector<GameObject*>objects;    //オブジェクトリスト
 
 public:
 	Scene();
@@ -19,6 +18,8 @@ public:
 	void Finalize();
 
 private:
+	//当たり判定チェックt処理
+	void HitCheckObject(GameObject* a, GameObject* b);
 	//オブジェクト生成処理
 	template<class T>
 	T* CreateObject(const Vector2D& location)
@@ -32,7 +33,7 @@ private:
 		if (new_object == nullptr)
 		{
 			delete new_instance;
-			throw std::string("ゲームオブジェクトが生成できませんでした");
+			throw("GameObjectが生成できませんでした\n");
 		}
 
 		//初期化処理

@@ -30,8 +30,8 @@ void Player::Initialize()
 	//向きの設定
 	radian = 0.0f;
 
-	//大きさの設定
-	scale = 64.0f;
+	//当たり判定の大きさを設定
+	box_size = 64.0;
 
 	//初期画像の設定
 	image = animation[0];
@@ -55,8 +55,8 @@ void Player::Draw()const
 	//デバッグ用
     #if _DEBUG
 	//当たり判定の可視化
-	Vector2D box_collision_upper_left = location - (Vector2D(1.0f) * (float)scale / 2.0f);
-	Vector2D box_collision_lower_right = location + (Vector2D(1.0f) * (float)scale / 2.0f);
+	Vector2D box_collision_upper_left = location - (box_size / 2.0f);
+	Vector2D box_collision_lower_right = location + (box_size / 2.0f);
 
 	DrawBoxAA(box_collision_upper_left.x, box_collision_upper_left.y, box_collision_lower_right.x, box_collision_lower_right.y, GetColor(255, 0, 0), FALSE);
 #endif
@@ -97,21 +97,21 @@ void Player::Movement()
 	{
 		velocity.x += 0.0f;
 	}
-	//追加要素
-	//左端で止める
-	if (location.x < (filp_flag / 2.0f))
+
+	//左端で止める(赤い四角基準)
+	if (location.x < (box_size.x / 2.0f))
 	{
 		velocity.x = 0.0f;
-		location.x = filp_flag / 2.0f;
+		location.x = box_size.x / 2.0f;
 	}
-	//右端で止める
-	else if (location.x > (640.0f - filp_flag / 2.0f))
+	//右端で止める(赤い四角基準)
+	else if ((640.0f - (box_size.x / 2.0f)) < location.x)
 	{
 		velocity.x = 0.0f;
-		location.x = 640.0f - filp_flag / 2.0f;
+		location.x = 640.0f - (box_size.x / 2.0f);
 	}
-	//
-		//現在の位置座標に速さを加算する
+
+	//現在の位置座標に速さを加算する
 	location += velocity;
 }
 
