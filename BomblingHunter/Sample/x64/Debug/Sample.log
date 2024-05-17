@@ -1,5 +1,2 @@
-﻿  AppMain.cpp
-  Scene.cpp
-  Vector2D.cpp
-  コードを生成中...
+﻿  Enemy.cpp
   Sample.vcxproj -> C:\PG\GameDevelopmentApplication1\BomblingHunter\x64\Debug\Sample.exe

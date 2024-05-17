@@ -2,6 +2,7 @@
 #include "../Objects/Player/Player.h"
 #include "../Objects/Enemy/Enemy.h"
 #include "../Utility/InputControl.h"
+#include "../Objects/Bomb/Bomb.h"
 #include "DxLib.h"
 
 //コンストラクタ
@@ -46,6 +47,11 @@ void Scene::Update()
 	if (InputControl::GetKeyDown(KEY_INPUT_Z))
 	{
 		CreateObject<Enemy>(Vector2D(100.0f, 400.0f));
+	}
+
+	if (InputControl::GetKeyDown(KEY_INPUT_SPACE))
+	{
+		CreateObject<Bomb>(Vector2D(320.0f, 240.0f));
 	}
 }
 

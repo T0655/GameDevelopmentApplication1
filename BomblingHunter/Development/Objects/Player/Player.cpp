@@ -1,12 +1,13 @@
 #include "Player.h"
 #include "../../Utility/InputControl.h"
+#include "../Bomb/Bomb.h"
 #include "DxLib.h"
 
 //コンストラクタ
 Player::Player() : animation_count(0), filp_flag(FALSE)
 {
 	animation[0] = NULL;
-	animation[1] = NULL;
+	animation[1] = NULL;	
 }
 
 //デストラクタ

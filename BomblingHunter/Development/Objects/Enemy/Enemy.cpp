@@ -16,8 +16,8 @@ Enemy::~Enemy()
 void Enemy::Initialize()
 {
 	//画像の読込み
-	animation[0] = LoadGraph("Resource/images/ハコテキ1.png");
-	animation[1] = LoadGraph("Resource/images/ハコテキ2.png");
+	animation[0] = LoadGraph("Resource/Images/ハコテキ1.png");
+	animation[1] = LoadGraph("Resource/Images/ハコテキ2.png");
 
 	//エラーチェック
 	if (animation[0] == -1 || animation[1] == -1)
