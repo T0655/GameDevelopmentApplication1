@@ -22,11 +22,16 @@ void Scene::Initialize()
 {
 	//プレイヤーを生成する
 	CreateObject<Player>(Vector2D(320.0f, 240.0f));
+
+	CreateObject<Enemy>(Vector2D(100.0f, 400.0f));
 }
 
 //更新処理
 void Scene::Update()
 {
+	Player* player = new Player;
+	Bomb* bomb = new Bomb;
+
 	//オブジェクトリスト内のオブジェクトを更新する
 	for (GameObject* obj : objects)
 	{
@@ -51,7 +56,7 @@ void Scene::Update()
 
 	if (InputControl::GetKeyDown(KEY_INPUT_SPACE))
 	{
-		CreateObject<Bomb>(Vector2D(320.0f, 240.0f));
+		CreateObject<Bomb>(Vector2D(320.0f, 300.0f));
 	}
 }
 
@@ -64,6 +69,7 @@ void Scene::Draw()const
 	{
 		obj->Draw();
 	}
+
 }
 
 //終了時処理

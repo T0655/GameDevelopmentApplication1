@@ -1,6 +1,7 @@
 #pragma once
 
 #include "../GameObjects.h"
+#include "../Enemy/Enemy.h"
 
 class Bomb : public GameObject
 {
@@ -15,8 +16,13 @@ public:
 	void Update();
 	void Draw() const;
 
+	//“–‚½‚è”»’è’Ê’mˆ—
+	virtual void OnHitCollision(GameObject* hit_object) override;
+
 private:
 	void Speed();
 	void Movement();
+
+	
 };
 
