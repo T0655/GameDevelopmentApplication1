@@ -85,6 +85,12 @@ void Enemy::OnHitCollision(GameObject* hit_object)
 	//当たった時の処理
 	direction = 0.0f;
 
+	//ハコテキ画像削除
+	DeleteGraph(animation[0]);
+	DeleteGraph(animation[1]);
+
+	//当たり判定を無くす
+	box_size = 0.0f;
 }
 
 //移動処理

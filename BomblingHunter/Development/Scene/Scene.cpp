@@ -3,10 +3,11 @@
 #include "../Objects/Enemy/Enemy.h"
 #include "../Utility/InputControl.h"
 #include "../Objects/Bomb/Bomb.h"
+#include "../Objects/Harpy/Harpy.h"
 #include "DxLib.h"
 
 //コンストラクタ
-Scene::Scene() :objects()
+Scene::Scene() :objects(),scene_images()
 {
 }
 
@@ -20,9 +21,10 @@ Scene::~Scene()
 //初期化処理
 void Scene::Initialize()
 {
+	scene_images = LoadGraph("Resource/images/背景.png");
 	//プレイヤーを生成する
-	CreateObject<Player>(Vector2D(320.0f, 240.0f));
-
+	CreateObject<Player>(Vector2D(320.0f, 80.0f));
+	//ハコテキを生成する
 	CreateObject<Enemy>(Vector2D(100.0f, 400.0f));
 }
 
@@ -47,13 +49,18 @@ void Scene::Update()
 			HitCheckObject(objects[i], objects[j]);
 		}
 	}
-
-	//Zキーを押したら、敵を生成する
+	//Qキーを押したら、ハーピーを生成する
+	if (InputControl::GetKeyDown(KEY_INPUT_Q))
+	{
+		CreateObject<Harpy>(Vector2D(300.0f, 100.0f));
+	}
+	//Zキーを押したら、ハコテキを生成する
 	if (InputControl::GetKeyDown(KEY_INPUT_Z))
 	{
 		CreateObject<Enemy>(Vector2D(100.0f, 400.0f));
 	}
 
+	//スペースキーを押したら、爆弾を生成する
 	if (InputControl::GetKeyDown(KEY_INPUT_SPACE))
 	{
 		CreateObject<Bomb>(Vector2D(320.0f, 300.0f));
@@ -64,12 +71,14 @@ void Scene::Update()
 //描画処理
 void Scene::Draw()const
 {
+	/*背景の描画
+	DrawGraph(-150, -150, scene_images, FALSE);*/
+
 	//オブジェクトリスト内のオブジェクトを描画処理
 	for (GameObject* obj : objects)
 	{
 		obj->Draw();
 	}
-
 }
 
 //終了時処理
