@@ -82,6 +82,10 @@ void Harpy::Finalize()
 //“–‚½‚è”»’è’Ê’mˆ—
 void Harpy::OnHitCollision(GameObject* hit_object)
 {
+	direction = 0.0f;
+
+	DeleteGraph(animation[0]);
+	DeleteGraph(animation[1]);
 }
 
 //ˆÚ“®ˆ—

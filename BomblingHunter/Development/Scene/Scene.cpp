@@ -4,6 +4,8 @@
 #include "../Utility/InputControl.h"
 #include "../Objects/Bomb/Bomb.h"
 #include "../Objects/Harpy/Harpy.h"
+#include "../Objects/Enemy/GoldEnemy/GoldEnemy.h"
+#include "../Objects/Enemy/FlyEnemy/FlyEnemy.h"
 #include "DxLib.h"
 
 //コンストラクタ
@@ -23,7 +25,7 @@ void Scene::Initialize()
 {
 	scene_images = LoadGraph("Resource/images/背景.png");
 	//プレイヤーを生成する
-	CreateObject<Player>(Vector2D(320.0f, 80.0f));
+	CreateObject<Player>(Vector2D(320.0f, 60.0f));
 	//ハコテキを生成する
 	CreateObject<Enemy>(Vector2D(100.0f, 400.0f));
 }
@@ -31,39 +33,44 @@ void Scene::Initialize()
 //更新処理
 void Scene::Update()
 {
-	Player* player = new Player;
-	Bomb* bomb = new Bomb;
-
 	//オブジェクトリスト内のオブジェクトを更新する
 	for (GameObject* obj : objects)
 	{
 		obj->Update();
 	}
-
 	//オブジェクト同士の当たり判定チェック
 	for (int i = 0; i < objects.size(); i++)
 	{
 		for (int j = i + 1; j < objects.size(); j++)
 		{
 			//当たり判定チェック処理
-			HitCheckObject(objects[i], objects[j]);
+			HitCheckObject(objects[i],objects[j]);
 		}
 	}
 	//Qキーを押したら、ハーピーを生成する
 	if (InputControl::GetKeyDown(KEY_INPUT_Q))
 	{
-		CreateObject<Harpy>(Vector2D(300.0f, 100.0f));
+		CreateObject<Harpy>(Vector2D(100.0f, 200.0f));
 	}
 	//Zキーを押したら、ハコテキを生成する
 	if (InputControl::GetKeyDown(KEY_INPUT_Z))
 	{
 		CreateObject<Enemy>(Vector2D(100.0f, 400.0f));
 	}
-
+	//Eキーを押したら、ハネテキを生成する
+	if (InputControl::GetKeyDown(KEY_INPUT_E))
+	{
+		CreateObject<FlyEnemy>(Vector2D(100.0f, 200.0f));
+	}
+	//Cキーを押したら、金のテキを生成する
+	if (InputControl::GetKeyDown(KEY_INPUT_C))
+	{
+		CreateObject<GoldEnemy>(Vector2D(100.0f, 400.0f));
+	}
 	//スペースキーを押したら、爆弾を生成する
 	if (InputControl::GetKeyDown(KEY_INPUT_SPACE))
 	{
-		CreateObject<Bomb>(Vector2D(320.0f, 300.0f));
+		CreateObject<Bomb>(Vector2D(320.0f, 150.0f));
 	}
 }
 
@@ -118,9 +125,10 @@ void Scene::HitCheckObject(GameObject* a, GameObject* b)
 		//当たったことをオブジェクトに通知する
 		a->OnHitCollision(b);
 		b->OnHitCollision(a);
+
+		objects.clear();
 	}
 }
-
 #else
 
 //当たり判定チェック処理(左上頂点の座標から当たり判定計算を行う)
@@ -130,7 +138,7 @@ void Scene::HitCheckObject(GameObject* a, GameObject* b)
 	Vector2D a_lower_right = a->GetLocation() + a->GetBoxSize();
 	Vector2D b_lower_right = b->GetLocation() + b->GetBoxSize();
 
-	//矩形Aｔｐ矩形Bの位置関係を調べる
+	//矩形Aと矩形Bの位置関係を調べる
 	if ((a->GetLocation().x < b_lower_right.x) && (a->GetLocation().y < b_lower_right.y) && (a_lower_right.x > b->GetLocation().x) && (a_lower_right.y > b->GetLocation().y))
 	{
 		//オブジェクトに対してHit判定を通知する
@@ -139,4 +147,4 @@ void Scene::HitCheckObject(GameObject* a, GameObject* b)
 	}
 }
 
-#endif // D_PIVOT_CENTER
+#endif //D_PIVOT_CENTER

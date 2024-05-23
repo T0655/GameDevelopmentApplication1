@@ -47,6 +47,7 @@ void GameObject::Finalize()
 void GameObject::OnHitCollision(GameObject* hit_object)
 {
 	//“–‚½‚Á‚½‚És‚¤ˆ—
+	
 }
 
 //ˆÊ’uî•ñæ“¾ˆ—

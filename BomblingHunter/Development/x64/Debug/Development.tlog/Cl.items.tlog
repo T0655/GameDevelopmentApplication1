@@ -1,9 +1,11 @@
 C:\PG\GameDevelopmentApplication1\BomblingHunter\Development\AppMain.cpp;C:\PG\GameDevelopmentApplication1\BomblingHunter\Development\x64\Debug\AppMain.obj
+C:\PG\GameDevelopmentApplication1\BomblingHunter\Development\Objects\Enemy\GoldEnemy\GoldEnemy.cpp;C:\PG\GameDevelopmentApplication1\BomblingHunter\Development\x64\Debug\GoldEnemy.obj
 C:\PG\GameDevelopmentApplication1\BomblingHunter\Development\Objects\Harpy\Harpy.cpp;C:\PG\GameDevelopmentApplication1\BomblingHunter\Development\x64\Debug\Harpy.obj
 C:\PG\GameDevelopmentApplication1\BomblingHunter\Development\Objects\Bomb\Bomb.cpp;C:\PG\GameDevelopmentApplication1\BomblingHunter\Development\x64\Debug\Bomb.obj
 C:\PG\GameDevelopmentApplication1\BomblingHunter\Development\Objects\Enemy\Enemy.cpp;C:\PG\GameDevelopmentApplication1\BomblingHunter\Development\x64\Debug\Enemy.obj
 C:\PG\GameDevelopmentApplication1\BomblingHunter\Development\Objects\GameObjects.cpp;C:\PG\GameDevelopmentApplication1\BomblingHunter\Development\x64\Debug\GameObjects.obj
 C:\PG\GameDevelopmentApplication1\BomblingHunter\Development\Objects\Player\Player.cpp;C:\PG\GameDevelopmentApplication1\BomblingHunter\Development\x64\Debug\Player.obj
 C:\PG\GameDevelopmentApplication1\BomblingHunter\Development\Scene\Scene.cpp;C:\PG\GameDevelopmentApplication1\BomblingHunter\Development\x64\Debug\Scene.obj
+C:\PG\GameDevelopmentApplication1\BomblingHunter\Development\Objects\Enemy\FlyEnemy\FlyEnemy.cpp;C:\PG\GameDevelopmentApplication1\BomblingHunter\Development\x64\Debug\FlyEnemy.obj
 C:\PG\GameDevelopmentApplication1\BomblingHunter\Development\Utility\InputControl.cpp;C:\PG\GameDevelopmentApplication1\BomblingHunter\Development\x64\Debug\InputControl.obj
 C:\PG\GameDevelopmentApplication1\BomblingHunter\Development\Utility\Vector2D.cpp;C:\PG\GameDevelopmentApplication1\BomblingHunter\Development\x64\Debug\Vector2D.obj

@@ -89,8 +89,7 @@ void Enemy::OnHitCollision(GameObject* hit_object)
 	DeleteGraph(animation[0]);
 	DeleteGraph(animation[1]);
 
-	//“–‚½‚è”»’è‚ğ–³‚­‚·
-	box_size = 0.0f;
+	
 }
 
 //ˆÚ“®ˆ—
