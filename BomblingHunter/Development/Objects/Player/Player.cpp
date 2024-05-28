@@ -4,7 +4,7 @@
 #include "DxLib.h"
 
 //コンストラクタ
-Player::Player() : animation_count(0), filp_flag(FALSE)
+Player::Player() : animation_count(0), filp_flag(FALSE) ,location(0.0f)
 {
 	animation[0] = NULL;
 	animation[1] = NULL;	
@@ -51,7 +51,7 @@ void Player::Update()
 void Player::Draw()const
 {
 	//プレイヤー画像の描画
-	DrawRotaGraphF(location.x, location.y, 1.0, radian, image, TRUE, filp_flag);
+	DrawRotaGraphF(location.x ,location.y, 1.0, radian, image, TRUE, filp_flag);
 
 	//デバッグ用
     #if _DEBUG
@@ -86,12 +86,12 @@ void Player::Movement()
 	//左右移動
 	if (InputControl::GetKey(KEY_INPUT_LEFT))
 	{
-		velocity.x += -1.0f;
+		velocity.x += -2.0f;
 		filp_flag = TRUE;
 	}
 	else if (InputControl::GetKey(KEY_INPUT_RIGHT))
 	{
-		velocity.x += 1.0f;
+		velocity.x += 2.0f;
 		filp_flag = FALSE;
 	}
 	else

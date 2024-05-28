@@ -1,7 +1,7 @@
 #include"Bomb.h"
 #include"DxLib.h"
 
-Bomb::Bomb(): Bomb_image(0),direction(0.0f)
+Bomb::Bomb(): Bomb_image(0),direction(0.0f),ex_image(0)
 {
 
 }

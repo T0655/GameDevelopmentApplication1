@@ -1,12 +1,12 @@
 #pragma once
 
 #include "../GameObjects.h"
-#include "../Enemy/Enemy.h"
 
 class Bomb : public GameObject
 {
 public:
 	int Bomb_image;
+	int ex_image;
 	Vector2D direction;
 
 public:

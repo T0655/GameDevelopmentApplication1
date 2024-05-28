@@ -28,15 +28,26 @@ void Scene::Initialize()
 	CreateObject<Player>(Vector2D(220.0f, 60.0f));
 	//ハコテキを生成する
 	CreateObject<Enemy>(Vector2D(100.0f, 400.0f));
+
+	
 }
 
 //更新処理
 void Scene::Update()
 {
+	Player* player = new Player();
+	Bomb* bomb = new Bomb();
 	//オブジェクトリスト内のオブジェクトを更新する
 	for (GameObject* obj : objects)
 	{
 		obj->Update();
+		if (CheckHitKey(KEY_INPUT_SPACE))
+		{
+			if (bomb == NULL) {
+				bomb = new Bomb;
+			}
+
+		}
 	}
 	//オブジェクト同士の当たり判定チェック
 	for (int i = 0; i < objects.size(); i++)
@@ -71,11 +82,6 @@ void Scene::Update()
 	if (InputControl::GetKeyDown(KEY_INPUT_SPACE))
 	{
 		CreateObject<Bomb>(Vector2D(320.0f, 150.0f));
-	}
-
-	if (Enemy::OnHitCollision)
-	{
-		objects.size();
 	}
 }
 

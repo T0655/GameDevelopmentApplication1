@@ -5,11 +5,10 @@
 class Player: public GameObject
 {
 private:
+	Vector2D location;
 	int animation[2];             //アニメーション画像
 	int animation_count;          //アニメーション時間
 	int filp_flag;                //反転フラグ
-	int player_x;
-	int player_y;
 
 public:
 	Player();
