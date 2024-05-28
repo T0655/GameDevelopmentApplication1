@@ -88,8 +88,8 @@ void Enemy::OnHitCollision(GameObject* hit_object)
 	//ハコテキ画像削除
 	DeleteGraph(animation[0]);
 	DeleteGraph(animation[1]);
-
 	
+
 }
 
 //移動処理

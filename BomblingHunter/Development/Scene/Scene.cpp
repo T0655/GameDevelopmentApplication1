@@ -25,7 +25,7 @@ void Scene::Initialize()
 {
 	scene_images = LoadGraph("Resource/images/背景.png");
 	//プレイヤーを生成する
-	CreateObject<Player>(Vector2D(320.0f, 60.0f));
+	CreateObject<Player>(Vector2D(220.0f, 60.0f));
 	//ハコテキを生成する
 	CreateObject<Enemy>(Vector2D(100.0f, 400.0f));
 }
@@ -71,6 +71,11 @@ void Scene::Update()
 	if (InputControl::GetKeyDown(KEY_INPUT_SPACE))
 	{
 		CreateObject<Bomb>(Vector2D(320.0f, 150.0f));
+	}
+
+	if (Enemy::OnHitCollision)
+	{
+		objects.size();
 	}
 }
 
@@ -126,7 +131,6 @@ void Scene::HitCheckObject(GameObject* a, GameObject* b)
 		a->OnHitCollision(b);
 		b->OnHitCollision(a);
 
-		objects.clear();
 	}
 }
 #else

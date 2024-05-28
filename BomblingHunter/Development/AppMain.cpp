@@ -1,6 +1,7 @@
 #include "DxLib.h"
 #include "Utility/InputControl.h"
 #include "Scene/Scene.h"
+#include "Objects/Player/Player.h"
 
 //メイン関数(プログラムはここから始まります。)
 int WINAPI WinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance, _In_ LPSTR lpCmdLine, _In_ int nshowCmd)
@@ -8,8 +9,8 @@ int WINAPI WinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance, _
 	//Windowモードで起動
 	ChangeWindowMode(TRUE);
 
-	//ウィンドウサイズ(横：640px,縦：480px)を設定
-	SetGraphMode(640, 480, 32);
+	//ウィンドウサイズ(横：1000px,縦：600px)を設定
+	SetGraphMode(1000, 600, 32);
 
 	//DXライブラリの初期化
 	if (DxLib_Init() == -1)
