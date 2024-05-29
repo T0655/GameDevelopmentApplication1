@@ -4,7 +4,7 @@
 #include "DxLib.h"
 
 //コンストラクタ
-Player::Player() : animation_count(0), filp_flag(FALSE) ,location(0.0f)
+Player::Player() : animation_count(0), filp_flag(FALSE)
 {
 	animation[0] = NULL;
 	animation[1] = NULL;	

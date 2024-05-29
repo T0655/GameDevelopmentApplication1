@@ -47,7 +47,6 @@ void GameObject::Finalize()
 void GameObject::OnHitCollision(GameObject* hit_object)
 {
 	//当たった時に行う処理
-	delete hit_object;
 }
 
 //位置情報取得処理
@@ -62,6 +61,7 @@ void GameObject::SetLocation(const Vector2D& location)
 	this->location = location;
 }
 
+//ボックスサイズ
 Vector2D GameObject::GetBoxSize()const
 {
 	return box_size;
