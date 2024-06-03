@@ -4,7 +4,7 @@
 #include "DxLib.h"
 
 //コンストラクタ
-Player::Player() : animation_count(0), filp_flag(FALSE)
+Player::Player() : animation_count(0), filp_flag(FALSE),hit_se()
 {
 	animation[0] = NULL;
 	animation[1] = NULL;	
@@ -21,6 +21,9 @@ void Player::Initialize()
 	//画像の読み込み
 	animation[0] = LoadGraph("Resource/Images/飛ぶ1.png");
 	animation[1] = LoadGraph("Resource/Images/飛ぶ2.png");
+
+	//BGM・SE読み込み
+	hit_se = LoadSoundMem("Resource/sounds/bishi.wav");
 
 	//エラーチェック
 	if (animation[0] == -1 || animation[1] == -1)
@@ -75,6 +78,10 @@ void Player::Finalize()
 void Player::OnHitCollision(GameObject* hit_object)
 {
 	//当たった時の処理
+
+	/*
+	PlaySoundMem(hit_se,0);*/
+	
 }
 
 //移動処理

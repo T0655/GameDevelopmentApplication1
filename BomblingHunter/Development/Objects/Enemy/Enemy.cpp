@@ -82,7 +82,7 @@ void Enemy::Finalize()
 //“–‚½‚è”»’è’Ê’mˆ—
 void Enemy::OnHitCollision(GameObject* hit_object)
 {
-	direction = 0.0f;
+	Finalize();
 }
 
 //ˆÚ“®ˆ—

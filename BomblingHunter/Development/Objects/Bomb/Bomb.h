@@ -20,9 +20,6 @@ public:
 	virtual void OnHitCollision(GameObject* hit_object) override;
 
 private:
-	void Speed();
 	void Movement();
-
-	
 };
 

@@ -40,11 +40,6 @@ void Bomb::OnHitCollision(GameObject* hit_object)
 	DeleteGraph(Bomb_image);
 }
 
-void Bomb::Speed()
-{
-
-}
-
 //ˆÚ“®ˆ—
 void Bomb::Movement()
 {
