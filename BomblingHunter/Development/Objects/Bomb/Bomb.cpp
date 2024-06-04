@@ -35,9 +35,6 @@ void Bomb::Draw() const
 void Bomb::OnHitCollision(GameObject* hit_object)
 {
 	//“–‚½‚Á‚½‚Ìˆ—
-	direction = 0.0f;
-
-	DeleteGraph(Bomb_image);
 }
 
 //ˆÚ“®ˆ—

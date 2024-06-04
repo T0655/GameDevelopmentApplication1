@@ -67,13 +67,18 @@ void Scene::Update()
 	{
 		CreateObject<GoldEnemy>(Vector2D(100.0f, 400.0f));
 	}
-	//スペースキーを押したら、爆弾を生成する
+	//スペースキーを押したら、プレイヤーの位置から爆弾を生成する
 	if (InputControl::GetKeyDown(KEY_INPUT_SPACE))
 	{
-		CreateObject<Bomb>(Vector2D(320.0f, 150.0f));
+		for (int i =0; i < objects.size(); i++)
+		{
+			if (!(dynamic_cast<Player*>(objects[i]) == nullptr))
+			{
+				CreateObject<Bomb>(objects[i]->GetLocation());
+			}
+		}
 	}
 }
-
 
 //描画処理
 void Scene::Draw()const
