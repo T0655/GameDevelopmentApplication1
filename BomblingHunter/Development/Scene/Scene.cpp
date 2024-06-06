@@ -83,8 +83,8 @@ void Scene::Update()
 //描画処理
 void Scene::Draw()const
 {
-	/*/背景の描画
-	DrawGraph(-150, -150, scene_images, FALSE);*/
+	//背景の描画
+	DrawGraph(-150, -150, scene_images, FALSE);
 
 	//オブジェクトリスト内のオブジェクトを描画処理
 	for (GameObject* obj : objects)

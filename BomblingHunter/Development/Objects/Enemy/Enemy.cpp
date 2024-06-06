@@ -82,7 +82,11 @@ void Enemy::Finalize()
 //“–‚½‚è”»’è’Ê’mˆ—
 void Enemy::OnHitCollision(GameObject* hit_object)
 {
-	Finalize();
+	if (location.x < box_size.x)
+	{
+		dynamic_cast<Enemy*>();
+	}
+
 }
 
 //ˆÚ“®ˆ—
