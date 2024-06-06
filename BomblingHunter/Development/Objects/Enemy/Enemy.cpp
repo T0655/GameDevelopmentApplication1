@@ -1,7 +1,8 @@
 #include "Enemy.h"
+#include "../Bomb/Bomb.h"
 #include "DxLib.h"
 
-Enemy::Enemy() : animation_count(0), direction(0.0f)
+Enemy::Enemy() : animation_count(0), direction(0.0f),hit_se()
 {
 	animation[0] = NULL;
 	animation[1] = NULL;
@@ -18,6 +19,9 @@ void Enemy::Initialize()
 	//画像の読込み
 	animation[0] = LoadGraph("Resource/Images/ハコテキ1.png");
 	animation[1] = LoadGraph("Resource/Images/ハコテキ2.png");
+
+	//BGM・SE読み込み
+	hit_se = LoadSoundMem("Resource/sounds/Boss_gahee.wav");
 
 	//エラーチェック
 	if (animation[0] == -1 || animation[1] == -1)
@@ -82,9 +86,12 @@ void Enemy::Finalize()
 //当たり判定通知処理
 void Enemy::OnHitCollision(GameObject* hit_object)
 {
-	if (location.x < box_size.x)
+	if (dynamic_cast<Bomb*>(hit_object))
 	{
-		dynamic_cast<Enemy*>();
+		direction = 0.0f;
+		Finalize();
+		box_size = 0.0f;
+		PlaySoundMem(hit_se, 0);
 	}
 
 }

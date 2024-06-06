@@ -1,7 +1,8 @@
 #include "Harpy.h"
+#include "../Bomb/Bomb.h"
 #include "DxLib.h"
 
-Harpy::Harpy() : animation_count(0), direction(0.0f)
+Harpy::Harpy() : animation_count(0), direction(0.0f),hit_se()
 {
 	animation[0] = NULL;
 	animation[1] = NULL;
@@ -18,6 +19,9 @@ void Harpy::Initialize()
 	//画像の読込み
 	animation[0] = LoadGraph("Resource/Images/ハーピー1.png");
 	animation[1] = LoadGraph("Resource/Images/ハーピー2.png");
+
+	//BGM・SE読み込み
+	hit_se = LoadSoundMem("Resource/sounds/pokan.wav");
 
 	//エラーチェック
 	if (animation[0] == -1 || animation[1] == -1)
@@ -82,10 +86,13 @@ void Harpy::Finalize()
 //当たり判定通知処理
 void Harpy::OnHitCollision(GameObject* hit_object)
 {
-	direction = 0.0f;
-
-	DeleteGraph(animation[0]);
-	DeleteGraph(animation[1]);
+	if (dynamic_cast<Bomb*>(hit_object))
+	{
+		direction = 0.0f;
+		Finalize();
+		box_size = 0.0f;
+		PlaySoundMem(hit_se, 0);
+	}
 }
 
 //移動処理

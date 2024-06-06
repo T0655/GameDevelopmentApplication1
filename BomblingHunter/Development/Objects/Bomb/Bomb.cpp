@@ -1,9 +1,9 @@
 #include"Bomb.h"
+#include"../Player/Player.h"
 #include"DxLib.h"
 
-Bomb::Bomb(): Bomb_image(0),direction(0.0f),ex_image(0)
+Bomb::Bomb(): bomb_image(0),direction(0.0f),ex_image(0),bomb_hit_se()
 {
-
 }
 
 Bomb::~Bomb() 
@@ -14,7 +14,9 @@ Bomb::~Bomb()
 //初期化処理
 void Bomb::Initialize()
 {
-    Bomb_image = LoadGraph("Resource/images/爆弾.png");
+    bomb_image = LoadGraph("Resource/images/爆弾.png");
+
+	bomb_hit_se = LoadSoundMem("Resource/sounds/explosion.wav");
 	//初期進行方向の設定
 	direction = Vector2D(0.0f, 2.0f);
 }
@@ -28,7 +30,13 @@ void Bomb::Update()
 //描画処理
 void Bomb::Draw() const
 {
-    DrawRotaGraphF(location.x, location.y, 1.0, radian, Bomb_image, TRUE);
+    DrawRotaGraphF(location.x, location.y, 1.0, radian, bomb_image, TRUE);
+}
+
+void Bomb::Finalize()
+{
+	//使用した画像を開放する
+	DeleteGraph(bomb_image);
 }
 
 //当たり判定通知処理

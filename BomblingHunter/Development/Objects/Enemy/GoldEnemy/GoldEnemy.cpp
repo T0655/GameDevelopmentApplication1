@@ -1,7 +1,8 @@
 #include "GoldEnemy.h"
+#include "../../Bomb/Bomb.h"
 #include "DxLib.h"
 
-GoldEnemy::GoldEnemy() : animation_count(0), direction(0.0f)
+GoldEnemy::GoldEnemy() : animation_count(0), direction(0.0f),hit_se()
 {
 	animation[0] = NULL;
 	animation[1] = NULL;
@@ -24,6 +25,9 @@ void GoldEnemy::Initialize()
 	animation[2] = LoadGraph("Resource/Images/金のテキ3.png");
 	animation[3] = LoadGraph("Resource/Images/金のテキ4.png");
 	animation[4] = LoadGraph("Resource/Images/金のテキ5.png");
+
+	//BGM・SE読み込み
+	hit_se = LoadSoundMem("Resource/sounds/arrows_perfect03_short.wav");
 
 	//エラーチェック
 	if (animation[0] == -1 || animation[1] == -1)
@@ -91,13 +95,13 @@ void GoldEnemy::Finalize()
 //当たり判定通知処理
 void GoldEnemy::OnHitCollision(GameObject* hit_object)
 {
-	direction = 0.0f;
-
-	DeleteGraph(animation[0]);
-	DeleteGraph(animation[1]);
-	DeleteGraph(animation[2]);
-	DeleteGraph(animation[3]);
-	DeleteGraph(animation[4]);
+	if (dynamic_cast<Bomb*>(hit_object))
+	{
+		direction = 0.0f;
+		Finalize();
+		box_size = 0.0f;
+		PlaySoundMem(hit_se, 0);
+	}
 }
 
 //移動処理

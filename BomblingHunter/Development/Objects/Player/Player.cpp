@@ -78,7 +78,6 @@ void Player::Finalize()
 void Player::OnHitCollision(GameObject* hit_object)
 {
 	//“–‚½‚Á‚½‚Ìˆ—
-
 	/*
 	PlaySoundMem(hit_se,0);*/
 	
@@ -93,12 +92,12 @@ void Player::Movement()
 	//¶‰EˆÚ“®
 	if (InputControl::GetKey(KEY_INPUT_LEFT))
 	{
-		velocity.x += -2.0f;
+		velocity.x += -3.0f;
 		filp_flag = TRUE;
 	}
 	else if (InputControl::GetKey(KEY_INPUT_RIGHT))
 	{
-		velocity.x += 2.0f;
+		velocity.x += 3.0f;
 		filp_flag = FALSE;
 	}
 	else

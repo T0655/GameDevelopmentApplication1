@@ -6,10 +6,11 @@
 #include "../Objects/Harpy/Harpy.h"
 #include "../Objects/Enemy/GoldEnemy/GoldEnemy.h"
 #include "../Objects/Enemy/FlyEnemy/FlyEnemy.h"
+#include "../Objects/EnemyBullet/EnemyBullet.h"
 #include "DxLib.h"
 
 //コンストラクタ
-Scene::Scene() :objects(),scene_images()
+Scene::Scene() :objects(),scene_images(),scene_bgm()
 {
 }
 
@@ -24,6 +25,8 @@ Scene::~Scene()
 void Scene::Initialize()
 {
 	scene_images = LoadGraph("Resource/images/背景.png");
+
+	scene_bgm = LoadSoundMem("Resource/sounds/BGM_arrows.wav");
 	//プレイヤーを生成する
 	CreateObject<Player>(Vector2D(320.0f, 60.0f));
 	//ハコテキを生成する
@@ -38,6 +41,8 @@ void Scene::Update()
 	{
 		obj->Update();
 	}
+	
+
 	//オブジェクト同士の当たり判定チェック
 	for (int i = 0; i < objects.size(); i++)
 	{
@@ -78,6 +83,17 @@ void Scene::Update()
 			}
 		}
 	}
+	//Gキーを押したら、エネミーの位置から敵弾を生成する
+	if (InputControl::GetKeyDown(KEY_INPUT_G))
+	{
+		for (int i = 0; i < objects.size(); i++)
+		{
+			if (!(dynamic_cast<Enemy*>(objects[i]) == nullptr))
+			{
+				CreateObject<EnemyBullet>(objects[i]->GetLocation());
+			}
+		}
+	}
 }
 
 //描画処理
@@ -85,6 +101,8 @@ void Scene::Draw()const
 {
 	//背景の描画
 	DrawGraph(-150, -150, scene_images, FALSE);
+
+	
 
 	//オブジェクトリスト内のオブジェクトを描画処理
 	for (GameObject* obj : objects)
@@ -108,6 +126,8 @@ void Scene::Finalize()
 		obj->Finalize();
 		delete obj;
 	}
+
+	StopSoundMem(scene_bgm);
 
 	//動的配列の開放
 	objects.clear();

@@ -9,6 +9,7 @@ class Scene
 private:
 	std::vector<GameObject*>objects;    //オブジェクトリスト
 	int scene_images;
+	int scene_bgm;
 
 public:
 	Scene();
