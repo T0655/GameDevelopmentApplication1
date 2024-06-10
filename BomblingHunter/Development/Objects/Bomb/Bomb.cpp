@@ -43,6 +43,10 @@ void Bomb::Finalize()
 void Bomb::OnHitCollision(GameObject* hit_object)
 {
 	//“–‚½‚Á‚½‚Ìˆ—
+	if (!(dynamic_cast<Player*>(hit_object)))
+	{
+		Finalize();
+	}
 }
 
 //ˆÚ“®ˆ—

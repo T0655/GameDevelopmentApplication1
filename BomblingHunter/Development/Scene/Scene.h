@@ -10,6 +10,7 @@ private:
 	std::vector<GameObject*>objects;    //オブジェクトリスト
 	int scene_images;
 	int scene_bgm;
+	int tm_images;
 
 public:
 	Scene();
