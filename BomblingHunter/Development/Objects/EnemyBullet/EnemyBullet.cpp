@@ -19,8 +19,8 @@ EnemyBullet::~EnemyBullet()
 void EnemyBullet::Initialize()
 {
 	em_effect[0] = LoadGraph("Resource/images/敵弾1.png");
-	em_effect[1] = LoadGraph("Resource/images/敵弾エフェクト2.png");
-	em_effect[2] = LoadGraph("Resource/images/敵弾エフェクト3.png");
+	em_effect[1] = LoadGraph("Resource/images/敵弾エフェクト1.png");
+	em_effect[2] = LoadGraph("Resource/images/敵弾エフェクト2.png");
 	em_effect[3] = LoadGraph("Resource/images/敵弾エフェクト3.png");
 
 	em_se = LoadSoundMem("Resource/sounds/bishi.wav");
@@ -58,18 +58,15 @@ void EnemyBullet::OnHitCollision(GameObject* hit_object)
 	//当たった時の処理
 	if (dynamic_cast<Player*>(hit_object))
 	{
-		
-		box_size = 0.0f;
-		//PlaySoundMem(em_se, 0);
+		Finalize();
+		PlaySoundMem(em_se, DX_PLAYTYPE_BACK,0);
 		EffectControl();
-		
 	}
 }
 
 //移動処理
 void EnemyBullet::Movement()
 {
-
 	if (((location.y + direction.y) < box_size.y))
 	{
 		direction.y *= 1.0f;
@@ -79,7 +76,7 @@ void EnemyBullet::Movement()
 	location += direction;
 }
 
-//アニメーション制御
+//エフェクト変化
 void EnemyBullet::EffectControl()
 {
 	//フレームカウントを加算する
@@ -100,5 +97,6 @@ void EnemyBullet::EffectControl()
 		{
 			image = em_effect[0];
 		}
+		
 	}
 }

@@ -2,6 +2,7 @@
 #include "../../Utility/InputControl.h"
 #include "../Bomb/Bomb.h"
 #include "../EnemyBullet/EnemyBullet.h"
+#include "../../Timer/Timer.h"
 #include "DxLib.h"
 
 //コンストラクタ
@@ -79,12 +80,6 @@ void Player::Finalize()
 void Player::OnHitCollision(GameObject* hit_object)
 {
 	//当たった時の処理
-	if (dynamic_cast<EnemyBullet*>(hit_object))
-	{
-		/*PlaySoundMem(hit_se, 0);
-		WaitTimer(2000);
-		StopSoundMem;*/
-	}
 	
 }
 

@@ -6,7 +6,7 @@ class EnemyBullet : public GameObject
 {
 public:
 	int em_se;
-	int em_effect[3];
+	int em_effect[4];
 	int effect_count;
 	Vector2D direction;
 

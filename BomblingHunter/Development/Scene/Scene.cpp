@@ -32,7 +32,7 @@ void Scene::Initialize()
 	//プレイヤーを生成する
 	CreateObject<Player>(Vector2D(320.0f, 60.0f));
 	//ハコテキを生成する
-	CreateObject<Enemy>(Vector2D(100.0f, 500.0f));
+	CreateObject<Enemy>(Vector2D(100.0f, 485.0f));
 }
 
 //更新処理
@@ -62,7 +62,7 @@ void Scene::Update()
 	//Zキーを押したら、ハコテキを生成する
 	if (InputControl::GetKeyDown(KEY_INPUT_Z))
 	{
-		CreateObject<Enemy>(Vector2D(100.0f, 500.0f));
+		CreateObject<Enemy>(Vector2D(100.0f, 485.0f));
 	}
 	//Eキーを押したら、ハネテキを生成する
 	if (InputControl::GetKeyDown(KEY_INPUT_E))
@@ -72,7 +72,7 @@ void Scene::Update()
 	//Cキーを押したら、金のテキを生成する
 	if (InputControl::GetKeyDown(KEY_INPUT_C))
 	{
-		CreateObject<GoldEnemy>(Vector2D(100.0f, 510.0f));
+		CreateObject<GoldEnemy>(Vector2D(100.0f, 500.0f));
 	}
 	//スペースキーを押したら、プレイヤーの位置から爆弾を生成する
 	if (InputControl::GetKeyDown(KEY_INPUT_SPACE))
@@ -103,7 +103,12 @@ void Scene::Draw()const
 {
 	//背景の描画
 	DrawGraph(0,-120, scene_images, FALSE);
+	//タイマーの描画
 	DrawGraph(15, 542, tm_images, TRUE);
+	//音量調整
+	ChangeVolumeSoundMem(255 * 30 / 100, scene_bgm);
+	//BGM
+	PlaySoundMem(scene_bgm, DX_PLAYTYPE_BACK,0);
 
 	
 	

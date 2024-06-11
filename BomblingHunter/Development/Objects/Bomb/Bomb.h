@@ -8,6 +8,8 @@ public:
 	int bomb_hit_se;
 	int bomb_image;
 	int ex_image;
+	int effect_count;
+	int bomb_effect[3];
 	Vector2D direction;
 
 public:
@@ -23,5 +25,6 @@ public:
 
 private:
 	void Movement();
+	void EffectControl();
 };
 

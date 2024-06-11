@@ -91,7 +91,7 @@ void FlyEnemy::OnHitCollision(GameObject* hit_object)
 		direction = 0.0f;
 		Finalize();
 		box_size = 0.0f; 
-		PlaySoundMem(hit_se, 0);
+		PlaySoundMem(hit_se, DX_PLAYTYPE_BACK);
 	}
 }
 
