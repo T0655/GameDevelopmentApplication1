@@ -2,7 +2,6 @@
 #include "../../Utility/InputControl.h"
 #include "../Bomb/Bomb.h"
 #include "../EnemyBullet/EnemyBullet.h"
-#include "../../Timer/Timer.h"
 #include "DxLib.h"
 
 //コンストラクタ

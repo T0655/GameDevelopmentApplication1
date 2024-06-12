@@ -11,6 +11,8 @@ private:
 	int scene_images;
 	int scene_bgm;
 	int tm_images;
+	int score;
+	int time;
 
 public:
 	Scene();
@@ -19,6 +21,8 @@ public:
 	void Initialize();
 	void Update();
 	void Draw() const;
+	void Score();
+	void Time();
 	void Finalize();
 
 private:

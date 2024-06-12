@@ -7,11 +7,11 @@
 #include "../Objects/Enemy/GoldEnemy/GoldEnemy.h"
 #include "../Objects/Enemy/FlyEnemy/FlyEnemy.h"
 #include "../Objects/EnemyBullet/EnemyBullet.h"
-#include "../Timer/Timer.h"
 #include "DxLib.h"
 
+
 //コンストラクタ
-Scene::Scene() :objects(),scene_images(),scene_bgm(),tm_images()
+Scene::Scene() :objects(),scene_images(),scene_bgm(),tm_images(),score()
 {
 }
 
@@ -25,6 +25,8 @@ Scene::~Scene()
 //初期化処理
 void Scene::Initialize()
 {
+	score = 0;
+	time = 60;
 	scene_images = LoadGraph("Resource/images/背景.png");
 	tm_images= LoadGraph("Resource/images/タイマー.png");
 
@@ -96,6 +98,7 @@ void Scene::Update()
 			}
 		}
 	}
+
 }
 
 //描画処理
@@ -110,14 +113,28 @@ void Scene::Draw()const
 	//BGM
 	PlaySoundMem(scene_bgm, DX_PLAYTYPE_BACK,0);
 
-	
-	
-
 	//オブジェクトリスト内のオブジェクトを描画処理
 	for (GameObject* obj : objects)
 	{
 		obj->Draw();
 	}
+}
+
+void Scene::Score()
+{
+	
+}
+
+void Scene::Time()
+{
+	time--;
+	if (time < 0)
+	{
+		Finalize();
+	}
+
+	//制限時間の描画
+	DrawBox(491, 469, 509, 469 - time / 60 * 2, 0x0033ff, TRUE);
 }
 
 //終了時処理
