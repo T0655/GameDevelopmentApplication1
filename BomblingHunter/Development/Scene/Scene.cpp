@@ -8,6 +8,8 @@
 #include "../Objects/Enemy/FlyEnemy/FlyEnemy.h"
 #include "../Objects/EnemyBullet/EnemyBullet.h"
 #include "DxLib.h"
+#include <time.h>
+#include <math.h>
 
 
 //コンストラクタ
@@ -33,13 +35,13 @@ void Scene::Initialize()
 	scene_bgm = LoadSoundMem("Resource/sounds/BGM_arrows.wav");
 	//プレイヤーを生成する
 	CreateObject<Player>(Vector2D(320.0f, 60.0f));
-	//ハコテキを生成する
-	CreateObject<Enemy>(Vector2D(100.0f, 485.0f));
+	
 }
 
 //更新処理
 void Scene::Update()
 {
+
 	//オブジェクトリスト内のオブジェクトを更新する
 	for (GameObject* obj : objects)
 	{
@@ -97,6 +99,23 @@ void Scene::Update()
 				CreateObject<EnemyBullet>(objects[i]->GetLocation());
 			}
 		}
+	}
+
+	int num1 = rand() % 150;
+	int num2 = rand() % 150;
+
+	if (num1 == num2) {
+		if (num1 < 50) {
+			//ハコテキを生成する
+			CreateObject<Enemy>(Vector2D(100.0f, 485.0f));
+		}
+	}
+	else if (num1 == 100) {
+		//ハコテキを生成する
+		CreateObject<Enemy>(Vector2D(300.0f, 485.0f));
+	}
+	else {
+		;
 	}
 
 }
