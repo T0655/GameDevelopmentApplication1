@@ -89,6 +89,13 @@ void Scene::Update()
 			}
 		}
 	}
+	/*for (int i = 0; i < objects.size(); i++)
+	{
+		if (objects[i]->DeleteObjFn() == TRUE)
+		{
+			this->objects.erase(objects.begin() + i);
+		}
+	}*/
 	//Gキーを押したら、エネミーの位置から敵弾を生成する
 	if (InputControl::GetKeyDown(KEY_INPUT_G))
 	{
@@ -101,23 +108,21 @@ void Scene::Update()
 		}
 	}
 
-	int num1 = rand() % 150;
-	int num2 = rand() % 150;
+	int num1 = rand() % 100+1;
+	int num2 = rand() % 100+1;
 
 	if (num1 == num2) {
-		if (num1 < 50) {
+		if (num1 == 10) {
 			//ハコテキを生成する
 			CreateObject<Enemy>(Vector2D(100.0f, 485.0f));
 		}
 	}
-	else if (num1 == 100) {
-		//ハコテキを生成する
-		CreateObject<Enemy>(Vector2D(300.0f, 485.0f));
+	else if (num1 == 20) {
+		CreateObject<FlyEnemy>(Vector2D(100.0f, 200.0f));
 	}
 	else {
 		;
 	}
-
 }
 
 //描画処理

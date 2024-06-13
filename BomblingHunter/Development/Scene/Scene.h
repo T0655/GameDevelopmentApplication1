@@ -13,6 +13,7 @@ private:
 	int tm_images;
 	int score;
 	int time;
+	int get_random;
 
 public:
 	Scene();

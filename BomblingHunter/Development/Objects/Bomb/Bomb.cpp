@@ -60,8 +60,10 @@ void Bomb::OnHitCollision(GameObject* hit_object)
 		ChangeVolumeSoundMem(255 * 70 / 100, bomb_hit_se);
 		PlaySoundMem(bomb_hit_se, DX_PLAYTYPE_BACK, 0);
 	}
-	//”ÍˆÍ§ŒÀ
-	//if 
+	/*/if (dynamic_cast<Player*>(hit_object) != nullptr)
+	{
+		delete_flag = TRUE;
+	}*/
 }
 
 //ˆÚ“®ˆ—

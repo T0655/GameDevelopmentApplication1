@@ -100,17 +100,9 @@ void Enemy::OnHitCollision(GameObject* hit_object)
 //ˆÚ“®ˆ—
 void Enemy::Movement()
 {	
-	if (100.0f, 485.0f) {
-		if (((location.x + direction.x) < box_size.x) || (640.0f - box_size.x) < (location.x + direction.x))
-		{
-			direction.x *= -1.0f;
-		}
-	}
-	if (300.0f, 485.0f) {
-		if (((location.x + direction.x) < box_size.x) || (640.0f - box_size.x) < (location.x + direction.x))
-		{
-			direction.x *= 1.0f;
-		}
+	if (((location.x + direction.x) < box_size.x) || (640.0f - box_size.x) < (location.x + direction.x))
+	{
+		direction.x *= -1.0f;
 	}
 
 	if (((location.y + direction.y) < box_size.y) || (480.0f - box_size.y) < (location.y + direction.y))
