@@ -41,6 +41,7 @@ void Scene::Initialize()
 //更新処理
 void Scene::Update()
 {
+	int enemy = 5;
 
 	//オブジェクトリスト内のオブジェクトを更新する
 	for (GameObject* obj : objects)
@@ -89,13 +90,13 @@ void Scene::Update()
 			}
 		}
 	}
-	/*for (int i = 0; i < objects.size(); i++)
+	for (int i = 0; i < objects.size(); i++)
 	{
-		if (objects[i]->DeleteObjFn() == TRUE)
+		if (objects[i]->DeleteObjectFinalize() == TRUE)
 		{
 			this->objects.erase(objects.begin() + i);
 		}
-	}*/
+	}
 	//Gキーを押したら、エネミーの位置から敵弾を生成する
 	if (InputControl::GetKeyDown(KEY_INPUT_G))
 	{
@@ -108,21 +109,32 @@ void Scene::Update()
 		}
 	}
 
-	int num1 = rand() % 100+1;
-	int num2 = rand() % 100+1;
+	int num1 = rand() % 10;
+	int num2 = rand() % 10;
+	int num3 = rand() % 100 + 1;
+	int num4 = rand() % 100 + 1;
 
 	if (num1 == num2) {
-		if (num1 == 10) {
-			//ハコテキを生成する
-			CreateObject<Enemy>(Vector2D(100.0f, 485.0f));
+	
+		if (num1 == 1)
+		{
+			CreateObject<Harpy>(Vector2D(100.0f, 150.0f));
 		}
 	}
-	else if (num1 == 20) {
-		CreateObject<FlyEnemy>(Vector2D(100.0f, 200.0f));
+	else if (num3 == num4)
+	{
+		if (num2 == 1) {
+			CreateObject<FlyEnemy>(Vector2D(100.0f, 200.0f));
+		}
+		else
+		{
+			CreateObject<Enemy>(Vector2D(100.0f, 485.0f));
+			if (enemy == 5)
+			{
+			}
+		}
 	}
-	else {
-		;
-	}
+	Time();
 }
 
 //描画処理
@@ -154,7 +166,7 @@ void Scene::Time()
 	time--;
 	if (time < 0)
 	{
-		Finalize();
+	
 	}
 
 	//制限時間の描画

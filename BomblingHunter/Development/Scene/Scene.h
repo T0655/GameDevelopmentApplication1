@@ -14,6 +14,7 @@ private:
 	int score;
 	int time;
 	int get_random;
+	int DeleteObjFn;
 
 public:
 	Scene();

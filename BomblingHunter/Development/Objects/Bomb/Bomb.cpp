@@ -1,5 +1,6 @@
 #include"Bomb.h"
 #include"../Player/Player.h"
+#include "../Enemy/Enemy.h"
 #include"DxLib.h"
 
 Bomb::Bomb(): bomb_image(0),direction(0.0f),ex_image(0),bomb_hit_se()
@@ -53,17 +54,10 @@ void Bomb::Finalize()
 void Bomb::OnHitCollision(GameObject* hit_object)
 {
 	//“–‚½‚Á‚½‚Ìˆ—
-	if (!(dynamic_cast<Player*>(hit_object)))
-	{
-		//EffectControl();
-		Finalize();
-		ChangeVolumeSoundMem(255 * 70 / 100, bomb_hit_se);
-		PlaySoundMem(bomb_hit_se, DX_PLAYTYPE_BACK, 0);
-	}
-	/*/if (dynamic_cast<Player*>(hit_object) != nullptr)
+	if (!(dynamic_cast<Player*>(hit_object) != nullptr))
 	{
 		delete_flag = TRUE;
-	}*/
+	}
 }
 
 //ˆÚ“®ˆ—
