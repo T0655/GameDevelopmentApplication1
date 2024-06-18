@@ -1,8 +1,8 @@
 #pragma once
 
-#include "../../GameObjects.h"
+#include "../Enemy.h"
 
-class FlyEnemy : public GameObject
+class FlyEnemy : public Enemy
 {
 private:
 	int hit_se;

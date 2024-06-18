@@ -69,6 +69,11 @@ void Bomb::Movement()
 		direction.y *= -1.0f;
 	}
 
+	if (location.y == 480.0f)
+	{
+		Finalize();
+	}
+
 	//進行方向に向かって、位置座標を変更する
 	location += direction;
 }

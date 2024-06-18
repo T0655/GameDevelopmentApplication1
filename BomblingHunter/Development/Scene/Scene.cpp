@@ -11,7 +11,6 @@
 #include <time.h>
 #include <math.h>
 
-
 //コンストラクタ
 Scene::Scene() :objects(),scene_images(),scene_bgm(),tm_images(),score()
 {
@@ -41,8 +40,6 @@ void Scene::Initialize()
 //更新処理
 void Scene::Update()
 {
-	int enemy = 5;
-
 	//オブジェクトリスト内のオブジェクトを更新する
 	for (GameObject* obj : objects)
 	{
@@ -108,6 +105,7 @@ void Scene::Update()
 			}
 		}
 	}
+	
 
 	int num1 = rand() % 10;
 	int num2 = rand() % 10;
@@ -126,12 +124,10 @@ void Scene::Update()
 		if (num2 == 1) {
 			CreateObject<FlyEnemy>(Vector2D(100.0f, 200.0f));
 		}
-		else
+		else 
 		{
 			CreateObject<Enemy>(Vector2D(100.0f, 485.0f));
-			if (enemy == 5)
-			{
-			}
+
 		}
 	}
 	Time();

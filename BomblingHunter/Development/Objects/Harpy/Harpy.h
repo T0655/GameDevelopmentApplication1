@@ -1,8 +1,8 @@
 #pragma once
 
-#include "../GameObjects.h"
+#include "../Enemy/Enemy.h"
 
-class Harpy : public GameObject
+class Harpy : public Enemy
 {
 private:
 	int hit_se;

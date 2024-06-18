@@ -6,11 +6,12 @@ Harpy::Harpy() : animation_count(0), direction(0.0f),hit_se()
 {
 	animation[0] = NULL;
 	animation[1] = NULL;
+	count++;
 }
 
 Harpy::~Harpy()
 {
-
+	count--;
 }
 
 //初期化処理
@@ -73,6 +74,7 @@ void Harpy::Draw() const
 
 	//親クラスの描画処理を呼び出す
 	__super::Draw();
+
 }
 
 //終了時処理
