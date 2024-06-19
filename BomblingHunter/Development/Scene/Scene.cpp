@@ -26,8 +26,6 @@ Scene::~Scene()
 //初期化処理
 void Scene::Initialize()
 {
-	score = 0;
-	time = 60;
 	scene_images = LoadGraph("Resource/images/背景.png");
 	tm_images= LoadGraph("Resource/images/タイマー.png");
 
@@ -107,22 +105,44 @@ void Scene::Update()
 	}
 	
 	Enemy::count;
-
-	int num1 = rand() % 10;
-	int num2 = rand() % 10;
+	int num1 = rand() % 100 + 1;
+	int num2 = rand() % 100 + 1;
 	int num3 = rand() % 100 + 1;
-	int num4 = rand() % 100 + 1;
-
-	flame_count ++;
-	if (flame_count > 120) {
+	
+	flame_count++;
+	//ハネテキ
+	if (flame_count > 300)
+	{
+		if (Enemy::count < 5)
+		{
+			if (num1 == 50) {
+				CreateObject<FlyEnemy>(Vector2D(100.0f, 200.0f));
+				flame_count = 0;
+			}
+		}
+	}
+	if (flame_count > 120)
+	{
 		if (Enemy::count < 2)
 		{
-			if (num3 == 20) {
+			if (num1 == 20) {
 				CreateObject<Enemy>(Vector2D(100.0f, 485.0f));
 				flame_count = 0;
 			}
 		}
 	}
+	if (flame_count > 120)
+	{
+		if (Enemy::count < 2)
+		{
+			if (num1 == 40) {
+				CreateObject<Harpy>(Vector2D(100.0f, 200.0f));
+				flame_count = 0;
+			}
+		}
+	}
+	//金テキ
+	
 	Time();
 }
 
@@ -152,10 +172,11 @@ void Scene::Score()
 
 void Scene::Time()
 {
+	time = 1800;
 	time--;
 	if (time < 0)
 	{
-	
+		Finalize();
 	}
 
 	//制限時間の描画

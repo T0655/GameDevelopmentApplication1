@@ -6,12 +6,11 @@ Harpy::Harpy() : animation_count(0), direction(0.0f),hit_se()
 {
 	animation[0] = NULL;
 	animation[1] = NULL;
-	count++;
 }
 
 Harpy::~Harpy()
 {
-	count--;
+
 }
 
 //‰Šú‰»ˆ—
