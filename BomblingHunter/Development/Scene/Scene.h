@@ -15,6 +15,7 @@ private:
 	int time;
 	int get_random;
 	int DeleteObjFn;
+	int flame_count;
 
 public:
 	Scene();

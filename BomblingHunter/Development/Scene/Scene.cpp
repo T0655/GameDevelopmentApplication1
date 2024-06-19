@@ -106,28 +106,21 @@ void Scene::Update()
 		}
 	}
 	
+	Enemy::count;
 
 	int num1 = rand() % 10;
 	int num2 = rand() % 10;
 	int num3 = rand() % 100 + 1;
 	int num4 = rand() % 100 + 1;
 
-	if (num1 == num2) {
-	
-		if (num1 == 1)
+	flame_count ++;
+	if (flame_count > 120) {
+		if (Enemy::count < 2)
 		{
-			CreateObject<Harpy>(Vector2D(100.0f, 150.0f));
-		}
-	}
-	else if (num3 == num4)
-	{
-		if (num2 == 1) {
-			CreateObject<FlyEnemy>(Vector2D(100.0f, 200.0f));
-		}
-		else 
-		{
-			CreateObject<Enemy>(Vector2D(100.0f, 485.0f));
-
+			if (num3 == 20) {
+				CreateObject<Enemy>(Vector2D(100.0f, 485.0f));
+				flame_count = 0;
+			}
 		}
 	}
 	Time();
