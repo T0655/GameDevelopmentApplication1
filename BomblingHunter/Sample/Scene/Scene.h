@@ -7,6 +7,7 @@ class Scene
 {
 private:
 	std::vector<GameObject*>objects;    //オブジェクトリスト
+	static int time;
 
 public:
 	Scene();
@@ -29,6 +30,7 @@ private:
 		//GameObjectクラスを継承しているか確認
 		GameObject* new_object = dynamic_cast<GameObject*>(new_instance);
 
+
 		//エラーチェック
 		if (new_object == nullptr)
 		{
@@ -46,6 +48,35 @@ private:
 
 		//インスタンスのポインタを返却
 		return new_instance;
+	}
+
+	//オブジェクト生成処理
+	template<class T>
+	T* DeleteObject(const Vector2D& location)
+	{
+		//指定したクラスをする
+		T* delete_instance = delete T();
+		//GameObjectクラスを継承しているか確認
+		GameObject* delete_object = dynamic_cast<GameObject*>(delete_instance);
+
+
+		//エラーチェック
+		if (delete_object == nullptr)
+		{
+			delete delete_instance;
+			throw("GameObjectが生成できませんでした\n");
+		}
+
+		//初期化処理
+		delete_object->Initialize();
+		//位置情報の設定
+		delete_object->SetLocation(location);
+
+		//オブジェクトリストに追加
+		objects.push_back(delete_object);
+
+		//インスタンスのポインタを返却
+		return delete_instance;
 	}
 };
 

@@ -2,6 +2,7 @@
 #include "../../Bomb/Bomb.h"
 #include "DxLib.h"
 
+
 GoldEnemy::GoldEnemy() : animation_count(0), direction(0.0f),hit_se()
 {
 	animation[0] = NULL;
@@ -9,11 +10,12 @@ GoldEnemy::GoldEnemy() : animation_count(0), direction(0.0f),hit_se()
 	animation[2] = NULL;
 	animation[3] = NULL;
 	animation[4] = NULL;
+
 }
 
 GoldEnemy::~GoldEnemy()
 {
-
+	
 }
 
 //‰Šú‰»ˆ—

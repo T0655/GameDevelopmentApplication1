@@ -2,15 +2,18 @@
 #include "../Bomb/Bomb.h"
 #include "DxLib.h"
 
+int Harpy::count = 0;
+
 Harpy::Harpy() : animation_count(0), direction(0.0f),hit_se()
 {
 	animation[0] = NULL;
 	animation[1] = NULL;
+	count++;
 }
 
 Harpy::~Harpy()
 {
-
+	count--;
 }
 
 //‰Šú‰»ˆ—

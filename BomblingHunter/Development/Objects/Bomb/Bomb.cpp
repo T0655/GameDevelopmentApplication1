@@ -1,6 +1,8 @@
 #include"Bomb.h"
 #include"../Player/Player.h"
 #include "../Enemy/Enemy.h"
+#include "../Enemy/FlyEnemy/FlyEnemy.h"
+#include "../Harpy/Harpy.h"
 #include"DxLib.h"
 
 Bomb::Bomb(): bomb_image(0),direction(0.0f),ex_image(0),bomb_hit_se()
@@ -57,6 +59,21 @@ void Bomb::OnHitCollision(GameObject* hit_object)
 	if (!(dynamic_cast<Player*>(hit_object) != nullptr))
 	{
 		delete_flag = TRUE;
+	}
+	//ハコテキに当たった時
+	if (dynamic_cast<Enemy*>(hit_object) != nullptr)
+	{
+		Enemy::count--;
+	}
+	//ハーピーに当たった時
+	if (dynamic_cast<Harpy*>(hit_object) != nullptr)
+	{
+		Harpy::count--;
+	}
+	//ハネテキに当たった時
+	if (dynamic_cast<FlyEnemy*>(hit_object) != nullptr)
+	{
+		FlyEnemy::count--;
 	}
 }
 

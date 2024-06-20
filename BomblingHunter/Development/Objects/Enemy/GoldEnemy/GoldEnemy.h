@@ -1,14 +1,15 @@
 #pragma once
 
-#include "../Enemy.h"
+#include "../../GameObjects.h"
 
-class GoldEnemy : public Enemy
+class GoldEnemy : public GameObject
 {
 private:
 	int hit_se;
 	int animation[5];             //アニメーション画像
 	int animation_count;          //アニメーション時間
 	Vector2D direction;           //進行方向
+
 
 public:
 	GoldEnemy();

@@ -105,50 +105,56 @@ void Scene::Update()
 	}
 	
 	Enemy::count;
+	FlyEnemy::count;
+	Harpy::count;
 	int num1 = rand() % 100 + 1;
-	int num2 = rand() % 100 + 1;
-	int num3 = rand() % 100 + 1;
+	int num2 = rand() % 5 + 1;
 	
 	flame_count++;
-	//ハネテキ
-	if (flame_count > 300)
-	{
-		if (Enemy::count < 5)
-		{
-			if (num1 == 50) {
-				CreateObject<FlyEnemy>(Vector2D(100.0f, 200.0f));
-				flame_count = 0;
-			}
-		}
-	}
+	//ハコテキ
 	if (flame_count > 120)
 	{
 		if (Enemy::count < 2)
 		{
-			if (num1 == 20) {
+			if (num1 < 20) {
 				CreateObject<Enemy>(Vector2D(100.0f, 485.0f));
 				flame_count = 0;
 			}
 		}
 	}
+	//ハーピー
 	if (flame_count > 120)
 	{
-		if (Enemy::count < 2)
+		if (Harpy::count < 2)
 		{
-			if (num1 == 40) {
+			if (num1 < 50)
+			{
 				CreateObject<Harpy>(Vector2D(100.0f, 200.0f));
+				flame_count = 0;
+			}
+		}
+	}
+	//ハネテキ
+	if (flame_count > 300)
+	{
+		if (FlyEnemy::count < 5)
+		{
+			if (num1 < 50)
+			{
+				CreateObject<FlyEnemy>(Vector2D(100.0f, 300.0f));
 				flame_count = 0;
 			}
 		}
 	}
 	//金テキ
 	
-	Time();
+	
 }
 
 //描画処理
 void Scene::Draw()const
 {
+	
 	//背景の描画
 	DrawGraph(0,-120, scene_images, FALSE);
 	//タイマーの描画
@@ -172,7 +178,7 @@ void Scene::Score()
 
 void Scene::Time()
 {
-	time = 1800;
+	/**time == 6000;
 	time--;
 	if (time < 0)
 	{
@@ -180,7 +186,7 @@ void Scene::Time()
 	}
 
 	//制限時間の描画
-	DrawBox(491, 469, 509, 469 - time / 60 * 2, 0x0033ff, TRUE);
+	DrawBox(491, 469, 509, 469 - time / 60 * 2, 0x0033ff, TRUE);*/
 }
 
 //終了時処理

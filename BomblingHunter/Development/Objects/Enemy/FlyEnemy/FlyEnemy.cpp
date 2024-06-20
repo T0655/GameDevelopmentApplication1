@@ -2,15 +2,18 @@
 #include "../../Bomb/Bomb.h"
 #include "DxLib.h"
 
+int FlyEnemy::count = 0;
+
 FlyEnemy::FlyEnemy() : animation_count(0), direction(0.0f) ,hit_se()
 {
 	animation[0] = NULL;
 	animation[1] = NULL;
+	count++;
 }
 
 FlyEnemy::~FlyEnemy()
 {
-
+	count--;
 }
 
 //èâä˙âªèàóù
@@ -90,8 +93,9 @@ void FlyEnemy::OnHitCollision(GameObject* hit_object)
 	{
 		direction = 0.0f;
 		Finalize();
-		box_size = 0.0f; 
+		box_size = 0.0f;
 		PlaySoundMem(hit_se, DX_PLAYTYPE_BACK);
+	
 	}
 }
 
