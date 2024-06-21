@@ -8,5 +8,7 @@ C:\PG\GameDevelopmentApplication1\BomblingHunter\Development\Objects\GameObjects
 C:\PG\GameDevelopmentApplication1\BomblingHunter\Development\Objects\Player\Player.cpp;C:\PG\GameDevelopmentApplication1\BomblingHunter\Development\x64\Debug\Player.obj
 C:\PG\GameDevelopmentApplication1\BomblingHunter\Development\Scene\Scene.cpp;C:\PG\GameDevelopmentApplication1\BomblingHunter\Development\x64\Debug\Scene.obj
 C:\PG\GameDevelopmentApplication1\BomblingHunter\Development\Objects\Enemy\FlyEnemy\FlyEnemy.cpp;C:\PG\GameDevelopmentApplication1\BomblingHunter\Development\x64\Debug\FlyEnemy.obj
+C:\PG\GameDevelopmentApplication1\BomblingHunter\Development\Score\Score.cpp;C:\PG\GameDevelopmentApplication1\BomblingHunter\Development\x64\Debug\Score.obj
+C:\PG\GameDevelopmentApplication1\BomblingHunter\Development\Time\Time.cpp;C:\PG\GameDevelopmentApplication1\BomblingHunter\Development\x64\Debug\Time.obj
 C:\PG\GameDevelopmentApplication1\BomblingHunter\Development\Utility\InputControl.cpp;C:\PG\GameDevelopmentApplication1\BomblingHunter\Development\x64\Debug\InputControl.obj
 C:\PG\GameDevelopmentApplication1\BomblingHunter\Development\Utility\Vector2D.cpp;C:\PG\GameDevelopmentApplication1\BomblingHunter\Development\x64\Debug\Vector2D.obj

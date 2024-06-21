@@ -102,7 +102,7 @@ void Harpy::OnHitCollision(GameObject* hit_object)
 //ˆÚ“®ˆ—
 void Harpy::Movement()
 {
-	if (((location.x + direction.x) < box_size.x) || (640.0f - box_size.x) < (location.x + direction.x))
+	if (((location.x + direction.x) < (-80.0f - box_size.x)) || (1100.0f - box_size.x) < (location.x + direction.x))
 	{
 		direction.x *= -1.0f;
 	}

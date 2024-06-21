@@ -15,7 +15,10 @@ private:
 	int get_random;
 	int DeleteObjFn;
 	int flame_count;
-
+	int result_image_bad;
+	int result_image_ok;
+	int result_image_good;
+	int result_image_perfect;
 
 
 public:
@@ -27,6 +30,7 @@ public:
 	void Draw() const;
 	void Score();
 	void Time();
+	void Result();
 	void Finalize();
 
 private:

@@ -1,5 +1,6 @@
 #include "EnemyBullet.h"
 #include "../Player/Player.h"
+#include "../../Time/Time.h"
 #include "DxLib.h"
 
 EnemyBullet::EnemyBullet() : direction(0.0f),em_se(),effect_count(0)
@@ -58,6 +59,7 @@ void EnemyBullet::OnHitCollision(GameObject* hit_object)
 	//ìñÇΩÇ¡ÇΩéûÇÃèàóù
 	if (dynamic_cast<Player*>(hit_object))
 	{
+		Time::timer -= 120;
 		Finalize();
 		PlaySoundMem(em_se, DX_PLAYTYPE_BACK,0);
 		EffectControl();

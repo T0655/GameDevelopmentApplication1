@@ -146,6 +146,8 @@
     <ClCompile Include="Objects\Player\Player.cpp" />
     <ClCompile Include="Scene\Scene.cpp" />
     <ClCompile Include="Objects\Enemy\FlyEnemy\FlyEnemy.cpp" />
+    <ClCompile Include="Score\Score.cpp" />
+    <ClCompile Include="Time\Time.cpp" />
     <ClCompile Include="Utility\InputControl.cpp" />
     <ClCompile Include="Utility\Vector2D.cpp" />
   </ItemGroup>
@@ -159,6 +161,8 @@
     <ClInclude Include="Objects\Player\Player.h" />
     <ClInclude Include="Scene\Scene.h" />
     <ClInclude Include="Objects\Enemy\FlyEnemy\FlyEnemy.h" />
+    <ClInclude Include="Score\Score.h" />
+    <ClInclude Include="Time\Time.h" />
     <ClInclude Include="Utility\InputControl.h" />
     <ClInclude Include="Utility\Vector2D.h" />
   </ItemGroup>

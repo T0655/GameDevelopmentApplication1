@@ -7,13 +7,17 @@
 #include "../Objects/Enemy/GoldEnemy/GoldEnemy.h"
 #include "../Objects/Enemy/FlyEnemy/FlyEnemy.h"
 #include "../Objects/EnemyBullet/EnemyBullet.h"
+#include "../Time/Time.h"
+#include "../Score/Score.h"
 #include "DxLib.h"
 #include <time.h>
 #include <math.h>
 
+
 //コンストラクタ
-Scene::Scene() :objects(),scene_images(),scene_bgm(),tm_images(),score()
+Scene::Scene() :objects(),scene_images(),scene_bgm(),tm_images(),score(), result_image_bad(),result_image_ok(), result_image_good(),result_image_perfect()
 {
+
 }
 
 //デストラクタ
@@ -26,13 +30,17 @@ Scene::~Scene()
 //初期化処理
 void Scene::Initialize()
 {
+	//画像
 	scene_images = LoadGraph("Resource/images/背景.png");
 	tm_images= LoadGraph("Resource/images/タイマー.png");
-
+	result_image_bad= LoadGraph("Resource/images/BAD.png");
+	result_image_ok= LoadGraph("Resource/images/OK.png");
+	result_image_good= LoadGraph("Resource/images/GOOD.png");
+	result_image_perfect= LoadGraph("Resource/images/Perfect.png");
+	//音源
 	scene_bgm = LoadSoundMem("Resource/sounds/BGM_arrows.wav");
 	//プレイヤーを生成する
 	CreateObject<Player>(Vector2D(320.0f, 60.0f));
-	
 }
 
 //更新処理
@@ -103,12 +111,11 @@ void Scene::Update()
 			}
 		}
 	}
-	
 	Enemy::count;
 	FlyEnemy::count;
 	Harpy::count;
 	int num1 = rand() % 100 + 1;
-	int num2 = rand() % 5 + 1;
+	int num2 = rand() % 3 + 1;
 	
 	flame_count++;
 	//ハコテキ
@@ -117,7 +124,8 @@ void Scene::Update()
 		if (Enemy::count < 2)
 		{
 			if (num1 < 20) {
-				CreateObject<Enemy>(Vector2D(100.0f, 485.0f));
+				CreateObject<Enemy>(Vector2D(-70.0f, 485.0f));
+				CreateObject<Enemy>(Vector2D(1000.0f, 485.0f));
 				flame_count = 0;
 			}
 		}
@@ -127,9 +135,10 @@ void Scene::Update()
 	{
 		if (Harpy::count < 2)
 		{
-			if (num1 < 50)
+			if (num1 < 40)
 			{
-				CreateObject<Harpy>(Vector2D(100.0f, 200.0f));
+				CreateObject<Harpy>(Vector2D(-70.0f, 200.0f));
+				CreateObject<Harpy>(Vector2D(880.0f, 400.0f));
 				flame_count = 0;
 			}
 		}
@@ -139,16 +148,33 @@ void Scene::Update()
 	{
 		if (FlyEnemy::count < 5)
 		{
-			if (num1 < 50)
+			if (num1<50)
 			{
-				CreateObject<FlyEnemy>(Vector2D(100.0f, 300.0f));
+				CreateObject<FlyEnemy>(Vector2D(-70.0f, 300.0f));
+				FlyEnemy::count++;
 				flame_count = 0;
 			}
+			if (FlyEnemy::count > 1)
+			{
+				CreateObject<FlyEnemy>(Vector2D(880.0f, 200.0f));
+				flame_count = 0;
+			}
+			if (FlyEnemy::count > 3)
+			{
+				CreateObject<FlyEnemy>(Vector2D(-70.0f, 400.0f));
+				flame_count = 0;
+			}
+			if (FlyEnemy::count > 4)
+			{
+				CreateObject<FlyEnemy>(Vector2D(1100.0f, 400.0f));
+				FlyEnemy::count++;
+				flame_count = 0;
+			}
+
 		}
 	}
-	//金テキ
 	
-	
+	Time();
 }
 
 //描画処理
@@ -162,7 +188,7 @@ void Scene::Draw()const
 	//音量調整
 	ChangeVolumeSoundMem(255 * 30 / 100, scene_bgm);
 	//BGM
-	PlaySoundMem(scene_bgm, DX_PLAYTYPE_BACK,0);
+	PlaySoundMem(scene_bgm, DX_PLAYTYPE_LOOP,FALSE);
 
 	//オブジェクトリスト内のオブジェクトを描画処理
 	for (GameObject* obj : objects)
@@ -173,20 +199,26 @@ void Scene::Draw()const
 
 void Scene::Score()
 {
-	
+	Score::score;
+	if (Score::score < 1000)
+	{
+		DrawGraph(0, -120, result_image_bad, FALSE);
+	}
 }
 
 void Scene::Time()
 {
-	/**time == 6000;
-	time--;
-	if (time < 0)
+	Time::timer;
+	Time::timer--;
+	if (Time::timer < 0)
 	{
-		Finalize();
+		Result();
 	}
+}
 
-	//制限時間の描画
-	DrawBox(491, 469, 509, 469 - time / 60 * 2, 0x0033ff, TRUE);*/
+void Scene::Result()
+{
+	Score();
 }
 
 //終了時処理
