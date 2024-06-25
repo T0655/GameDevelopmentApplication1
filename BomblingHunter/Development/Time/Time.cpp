@@ -1,6 +1,6 @@
 #include "Time.h"
 
-int Time::timer = 12000;
+int Time::timer = 1200;
 
 Time::Time()
 {

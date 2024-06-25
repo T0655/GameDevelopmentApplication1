@@ -13,6 +13,7 @@ private:
 	int tm_images;
 	int score;
 	int score_image;
+	int high_score_image;
 	int get_random;
 	int DeleteObjFn;
 	int flame_count;

@@ -59,7 +59,7 @@ void EnemyBullet::OnHitCollision(GameObject* hit_object)
 	//“–‚½‚Á‚½‚Ìˆ—
 	if (dynamic_cast<Player*>(hit_object))
 	{
-		Time::timer -= 120;
+		Time::timer-=120;
 		Finalize();
 		PlaySoundMem(em_se, DX_PLAYTYPE_BACK,0);
 		EffectControl();
