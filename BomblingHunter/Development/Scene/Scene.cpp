@@ -15,9 +15,18 @@
 
 
 //コンストラクタ
-Scene::Scene() :objects(),scene_images(),scene_bgm(),tm_images(),score(), result_image_bad(),result_image_ok(), result_image_good(),result_image_perfect()
+Scene::Scene() :objects(),scene_images(),scene_bgm(),tm_images(),score(),score_image(), result_image_bad(),result_image_ok(), result_image_good(),result_image_perfect()
 {
-
+	num_image[0] = NULL;
+	num_image[1] = NULL;
+	num_image[2] = NULL;
+	num_image[3] = NULL;
+	num_image[4] = NULL;
+	num_image[5] = NULL;
+	num_image[6] = NULL;
+	num_image[7] = NULL;
+	num_image[8] = NULL;
+	num_image[9] = NULL;
 }
 
 //デストラクタ
@@ -37,10 +46,22 @@ void Scene::Initialize()
 	result_image_ok= LoadGraph("Resource/images/OK.png");
 	result_image_good= LoadGraph("Resource/images/GOOD.png");
 	result_image_perfect= LoadGraph("Resource/images/Perfect.png");
+	score_image = LoadGraph("Resource/images/スコア.png");
+	num_image[0] = LoadGraph("Resource/images/スコア0.svg");
+	num_image[1] = LoadGraph("Resource/images/スコア1.svg");
+	num_image[2] = LoadGraph("Resource/images/スコア2.svg");
+	num_image[3] = LoadGraph("Resource/images/スコア3.svg");
+	num_image[4] = LoadGraph("Resource/images/スコア4.svg");
+	num_image[5] = LoadGraph("Resource/images/スコア5.svg");
+	num_image[6] = LoadGraph("Resource/images/スコア6.svg");
+	num_image[7] = LoadGraph("Resource/images/スコア7.svg");
+	num_image[8] = LoadGraph("Resource/images/スコア8.svg");
+	num_image[9] = LoadGraph("Resource/images/スコア9.svg");
 	//音源
 	scene_bgm = LoadSoundMem("Resource/sounds/BGM_arrows.wav");
 	//プレイヤーを生成する
 	CreateObject<Player>(Vector2D(320.0f, 60.0f));
+
 }
 
 //更新処理
@@ -174,17 +195,17 @@ void Scene::Update()
 		}
 	}
 	
-	Time();
 }
 
 //描画処理
 void Scene::Draw()const
 {
-	
 	//背景の描画
 	DrawGraph(0,-120, scene_images, FALSE);
 	//タイマーの描画
 	DrawGraph(15, 542, tm_images, TRUE);
+	//スコアの描画
+	DrawGraph(50, 542, score_image, TRUE);
 	//音量調整
 	ChangeVolumeSoundMem(255 * 30 / 100, scene_bgm);
 	//BGM
@@ -204,16 +225,26 @@ void Scene::Score()
 	{
 		DrawGraph(0, -120, result_image_bad, FALSE);
 	}
+	if (Score::score > 1200)
+	{
+		DrawGraph(0, -120, result_image_ok, FALSE);
+	}
+	if (Score::score < 1000)
+	{
+		DrawGraph(0, -120, result_image_good, FALSE);
+	}
+	if (Score::score < 1000)
+	{
+		DrawGraph(0, -120, result_image_perfect, FALSE);
+	}
 }
 
 void Scene::Time()
 {
-	Time::timer;
-	Time::timer--;
-	if (Time::timer < 0)
-	{
-		Result();
-	}
+	int timediff;
+	LONGLONG timelimit = GetNowHiPerformanceCount() + 120000000;
+	timediff = int(timelimit - GetNowHiPerformanceCount());
+	DrawFormatString(5, 5, GetColor(255, 255, 255), "%02d'%02d'%d%d", timediff / 60000000, (timediff % 60000000) / 1000000, ((timediff % 60000000) % 1000000) / 100000, (((timediff % 60000000) % 1000000) % 100000) / 10000);
 }
 
 void Scene::Result()

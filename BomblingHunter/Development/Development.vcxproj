@@ -196,7 +196,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resource\images\Finish.svg" />
-    <None Include="Resource\images\スコア.svg" />
+    <None Include="Resource\images\スコア.png" />
     <None Include="Resource\images\スコア0.svg" />
     <None Include="Resource\images\スコア1.svg" />
     <None Include="Resource\images\スコア2.svg" />

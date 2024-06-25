@@ -12,6 +12,7 @@ private:
 	int scene_bgm;
 	int tm_images;
 	int score;
+	int score_image;
 	int get_random;
 	int DeleteObjFn;
 	int flame_count;
@@ -19,6 +20,7 @@ private:
 	int result_image_ok;
 	int result_image_good;
 	int result_image_perfect;
+	int num_image[9];
 
 
 public:
