@@ -8,25 +8,18 @@
 #include "../Objects/Enemy/FlyEnemy/FlyEnemy.h"
 #include "../Objects/EnemyBullet/EnemyBullet.h"
 #include "../Time/Time.h"
-#include "../Score/Score.h"
 #include "DxLib.h"
 #include <time.h>
 #include <math.h>
 
+#define TIMELIMIT      (4000 * 3)//制限時間
+#define NUMBER         (10)
+
 
 //コンストラクタ
-Scene::Scene() :objects(),scene_images(),scene_bgm(),tm_images(),score(),score_image(),high_score_image(), result_image_bad(),result_image_ok(), result_image_good(),result_image_perfect()
+Scene::Scene() :objects(),game_score(), scene_images(), scene_bgm(), tm_images(), score(), score_image(), high_score_image(), result_image_bad(), result_image_ok(), result_image_good(), result_image_perfect()
 {
-	num_image[0] = NULL;
-	num_image[1] = NULL;
-	num_image[2] = NULL;
-	num_image[3] = NULL;
-	num_image[4] = NULL;
-	num_image[5] = NULL;
-	num_image[6] = NULL;
-	num_image[7] = NULL;
-	num_image[8] = NULL;
-	num_image[9] = NULL;
+	num_image[NUMBER];
 }
 
 //デストラクタ
@@ -39,6 +32,8 @@ Scene::~Scene()
 //初期化処理
 void Scene::Initialize()
 {
+	
+
 	//画像
 	scene_images = LoadGraph("Resource/images/背景.png");
 	tm_images= LoadGraph("Resource/images/タイマー.png");
@@ -48,20 +43,13 @@ void Scene::Initialize()
 	result_image_perfect= LoadGraph("Resource/images/Perfect.png");
 	score_image = LoadGraph("Resource/images/スコア.png");
 	high_score_image = LoadGraph("Resource/images/ハイスコア.png");
-	num_image[0] = LoadGraph("Resource/images/スコア0.png");
-	num_image[1] = LoadGraph("Resource/images/スコア1.png");
-	num_image[2] = LoadGraph("Resource/images/スコア2.png");
-	num_image[3] = LoadGraph("Resource/images/スコア3.png");
-	num_image[4] = LoadGraph("Resource/images/スコア4.png");
-	num_image[5] = LoadGraph("Resource/images/スコア5.png");
-	num_image[6] = LoadGraph("Resource/images/スコア6.png");
-	num_image[7] = LoadGraph("Resource/images/スコア7.png");
-	num_image[8] = LoadGraph("Resource/images/スコア8.png");
-	num_image[9] = LoadGraph("Resource/images/スコア9.png");
+	LoadDivGraph("images/number.png", NUMBER,NUMBER, 1, 60, 120, num_image);
 	//音源
 	scene_bgm = LoadSoundMem("Resource/sounds/BGM_arrows.wav");
 	//プレイヤーを生成する
 	CreateObject<Player>(Vector2D(320.0f, 60.0f));
+
+	Time::timer = TIMELIMIT;
 
 }
 
@@ -195,6 +183,7 @@ void Scene::Update()
 
 		}
 	}
+	Time::timer--;
 }
 
 //描画処理
@@ -218,37 +207,21 @@ void Scene::Draw()const
 	{
 		obj->Draw();
 	}
+
+	//制限時間の描画
+	//DrawGraph(300,560,560 - Time::timer / 60 * 2, num_image[NUMBER]);
+	DrawBox(491, 469, 509, 469 - Time::timer / 60 * 2, 0x0033ff, TRUE);
+	DrawFormatString;
 }
 
 void Scene::Score()
 {
-	Score::score;
-	if (Score::score < 1000)
-	{
-		DrawGraph(0, -120, result_image_bad, FALSE);
-	}
-	if (Score::score > 1200)
-	{
-		DrawGraph(0, -120, result_image_ok, FALSE);
-	}
-	if (Score::score > 1500)
-	{
-		DrawGraph(0, -120, result_image_good, FALSE);
-	}
-	if (Score::score > 2000)
-	{
-		DrawGraph(0, -120, result_image_perfect, FALSE);
-	}
+	
 }
 
 void Scene::Time()
 {
-	Time::timer;
-	Time::timer--;
-	if (Time::timer == 0)
-	{
-		Result();
-	}
+	
 
 }
 

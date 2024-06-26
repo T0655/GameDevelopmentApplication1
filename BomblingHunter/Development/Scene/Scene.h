@@ -8,6 +8,7 @@ class Scene
 {
 private:
 	std::vector<GameObject*>objects;    //オブジェクトリスト
+	int game_score;
 	int scene_images;
 	int scene_bgm;
 	int tm_images;
@@ -21,7 +22,7 @@ private:
 	int result_image_ok;
 	int result_image_good;
 	int result_image_perfect;
-	int num_image[9];
+	int num_image[10];
 
 
 public:
