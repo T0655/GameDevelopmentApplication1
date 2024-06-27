@@ -2,6 +2,7 @@
 #include "../../Bomb/Bomb.h"
 #include "DxLib.h"
 
+int GoldEnemy::count = 0;
 
 GoldEnemy::GoldEnemy() : animation_count(0), direction(0.0f),hit_se()
 {

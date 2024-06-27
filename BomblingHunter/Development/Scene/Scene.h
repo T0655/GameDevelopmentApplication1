@@ -9,10 +9,10 @@ class Scene
 private:
 	std::vector<GameObject*>objects;    //オブジェクトリスト
 	int game_score;
+	int high_score;
 	int scene_images;
 	int scene_bgm;
 	int tm_images;
-	int score;
 	int score_image;
 	int high_score_image;
 	int get_random;
@@ -23,19 +23,22 @@ private:
 	int result_image_good;
 	int result_image_perfect;
 	int num_image[10];
+	int GameCount;
+	int value;
+
+public:
+	static int score;
 
 
 public:
 	Scene();
 	~Scene();
 
-	void Initialize();
-	void Update();
-	void Draw() const;
-	void Score();
-	void Time();
-	void Result();
-	void Finalize();
+	void Initialize();       //初期化処理
+	void Update();           //更新処理
+	void Draw() const;       //描画処理
+	void HighScore();        //ハイスコア読み込み
+	void Finalize();         //終了時処理
 
 private:
 	//当たり判定チェックt処理

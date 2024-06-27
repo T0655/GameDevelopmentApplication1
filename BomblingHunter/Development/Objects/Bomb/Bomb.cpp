@@ -4,6 +4,7 @@
 #include "../Enemy/FlyEnemy/FlyEnemy.h"
 #include "../Harpy/Harpy.h"
 #include "../Enemy/GoldEnemy/GoldEnemy.h"
+#include "../../Scene/Scene.h"
 #include"DxLib.h"
 
 Bomb::Bomb(): bomb_image(0),direction(0.0f),ex_image(0),bomb_hit_se()
@@ -56,6 +57,7 @@ void Bomb::Finalize()
 //当たり判定通知処理
 void Bomb::OnHitCollision(GameObject* hit_object)
 {
+	Scene::score;
 	//当たった時の処理
 	if (!(dynamic_cast<Player*>(hit_object) != nullptr))
 	{
@@ -65,23 +67,27 @@ void Bomb::OnHitCollision(GameObject* hit_object)
 	if (dynamic_cast<Enemy*>(hit_object) != nullptr)
 	{
 		Enemy::count--;
+		Scene::score += 300;
 		
 	}
 	//ハーピーに当たった時
 	if (dynamic_cast<Harpy*>(hit_object) != nullptr)
 	{
 		Harpy::count--;
+		Scene::score -= 100;
 		
 	}
 	//ハネテキに当たった時
 	if (dynamic_cast<FlyEnemy*>(hit_object) != nullptr)
 	{
 		FlyEnemy::count--;
+		Scene::score += 100;
 	}
 	//金テキに当たった時
 	if (dynamic_cast<GoldEnemy*>(hit_object) != nullptr)
 	{
-		
+		Scene::score += 1500;
+		GoldEnemy::count--;
 	}
 }
 

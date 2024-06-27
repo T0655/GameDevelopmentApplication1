@@ -11,15 +11,18 @@
 #include "DxLib.h"
 #include <time.h>
 #include <math.h>
+#include <stdio.h>
 
 #define TIMELIMIT      (4000 * 3)//制限時間
 #define NUMBER         (10)
 
+int Scene::score = 0;
 
 //コンストラクタ
-Scene::Scene() :objects(),game_score(), scene_images(), scene_bgm(), tm_images(), score(), score_image(), high_score_image(), result_image_bad(), result_image_ok(), result_image_good(), result_image_perfect()
+Scene::Scene() :objects(),game_score(),high_score(), scene_images(), scene_bgm(), tm_images(),score_image(), high_score_image(), result_image_bad(), result_image_ok(), result_image_good(), result_image_perfect(),GameCount(),value()
 {
 	num_image[NUMBER];
+	
 }
 
 //デストラクタ
@@ -32,7 +35,6 @@ Scene::~Scene()
 //初期化処理
 void Scene::Initialize()
 {
-	
 
 	//画像
 	scene_images = LoadGraph("Resource/images/背景.png");
@@ -183,7 +185,18 @@ void Scene::Update()
 
 		}
 	}
+	//金のテキ
+	if (Scene::score > 1000)
+	{
+		if (GoldEnemy::count < 1)
+		{
+			CreateObject<GoldEnemy>(Vector2D(100.0f, 500.0f));
+			GoldEnemy::count++;
+		}
+	}
 	Time::timer--;
+
+	HighScore();
 }
 
 //描画処理
@@ -209,25 +222,28 @@ void Scene::Draw()const
 	}
 
 	//制限時間の描画
-	//DrawGraph(300,560,560 - Time::timer / 60 * 2, num_image[NUMBER]);
+	DrawFormatString(80, 560, GetColor(255, 255, 255), "%3d", Time::timer);
 	DrawBox(491, 469, 509, 469 - Time::timer / 60 * 2, 0x0033ff, TRUE);
-	DrawFormatString;
+	//スコア描画
+	DrawFormatString(290, 560, GetColor(255, 255, 255), "%3d", Scene::score);
+	//ハイスコア描画
+	DrawFormatString(620, 560, GetColor(255, 255, 255), "%3d", high_score);
 }
 
-void Scene::Score()
+void Scene::HighScore()
 {
-	
-}
 
-void Scene::Time()
-{
-	
-
-}
-
-void Scene::Result()
-{
-	Score();
+	if (GameCount == 0) {
+		if (Time::timer < 0)
+		{
+			value = Scene::score;
+			GameCount++;
+		}
+	}
+	if (GameCount > 0)
+	{
+		high_score = value;
+	}
 }
 
 //終了時処理
@@ -250,6 +266,7 @@ void Scene::Finalize()
 
 	//動的配列の開放
 	objects.clear();
+
 }
 
 #ifdef D_PIVOT_CENTER
