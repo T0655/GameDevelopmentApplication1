@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\PG\\GameDevelopmentApplication1\\BomblingHunter\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{989AE391-5E33-4E82-81F1-6E1CE7D9927E}|Development\\Development.vcxproj|C:\\PG\\GameDevelopmentApplication1\\BomblingHunter\\Development\\Objects\\Enemy\\Enemy.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{989AE391-5E33-4E82-81F1-6E1CE7D9927E}|Development\\Development.vcxproj|solutionrelative:Development\\Objects\\Enemy\\Enemy.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{989AE391-5E33-4E82-81F1-6E1CE7D9927E}|Development\\Development.vcxproj|C:\\PG\\GameDevelopmentApplication1\\BomblingHunter\\Development\\Scene\\Scene.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{989AE391-5E33-4E82-81F1-6E1CE7D9927E}|Development\\Development.vcxproj|solutionrelative:Development\\Scene\\Scene.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
@@ -18,11 +22,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
+              "Title": "Enemy.cpp",
+              "DocumentMoniker": "C:\\PG\\GameDevelopmentApplication1\\BomblingHunter\\Development\\Objects\\Enemy\\Enemy.cpp",
+              "RelativeDocumentMoniker": "Development\\Objects\\Enemy\\Enemy.cpp",
+              "ToolTip": "C:\\PG\\GameDevelopmentApplication1\\BomblingHunter\\Development\\Objects\\Enemy\\Enemy.cpp",
+              "RelativeToolTip": "Development\\Objects\\Enemy\\Enemy.cpp",
+              "ViewState": "AQIAAGYAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-06-28T02:52:20.548Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "Scene.h",
               "DocumentMoniker": "C:\\PG\\GameDevelopmentApplication1\\BomblingHunter\\Development\\Scene\\Scene.h",
               "RelativeDocumentMoniker": "Development\\Scene\\Scene.h",
@@ -30,18 +47,17 @@
               "RelativeToolTip": "Development\\Scene\\Scene.h",
               "ViewState": "AQIAAAkAAAAAAAAAAAAAABoAAAALAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-06-21T02:21:10.793Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-21T02:21:10.793Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Scene.cpp",
               "DocumentMoniker": "C:\\PG\\GameDevelopmentApplication1\\BomblingHunter\\Development\\Scene\\Scene.cpp",
               "RelativeDocumentMoniker": "Development\\Scene\\Scene.cpp",
               "ToolTip": "C:\\PG\\GameDevelopmentApplication1\\BomblingHunter\\Development\\Scene\\Scene.cpp",
               "RelativeToolTip": "Development\\Scene\\Scene.cpp",
-              "ViewState": "AQIAAOQAAAAAAAAAAAAAAO8AAAAPAAAA",
+              "ViewState": "AQIAAGMAAAAAAAAAAAAAAO8AAAAPAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-06-21T02:02:02.221Z",
               "EditorCaption": ""
