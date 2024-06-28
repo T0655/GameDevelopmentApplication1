@@ -13,7 +13,7 @@ protected:
 	double radian;               //向き
 	int image;                   //描画する画像
 	int sound;                   //再生する音源
-	bool delete_flag;
+	bool delete_flag;            //デリートフラグ
 
 public:
 	GameObject();

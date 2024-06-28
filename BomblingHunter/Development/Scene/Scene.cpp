@@ -39,12 +39,12 @@ void Scene::Initialize()
 	//画像
 	scene_images = LoadGraph("Resource/images/背景.png");
 	tm_images= LoadGraph("Resource/images/タイマー.png");
-	result_image_bad= LoadGraph("Resource/images/BAD.png");
-	result_image_ok= LoadGraph("Resource/images/OK.png");
-	result_image_good= LoadGraph("Resource/images/GOOD.png");
-	result_image_perfect= LoadGraph("Resource/images/Perfect.png");
 	score_image = LoadGraph("Resource/images/スコア.png");
 	high_score_image = LoadGraph("Resource/images/ハイスコア.png");
+	result_image_bad = LoadGraph("Resource/images/BAD.png");;
+	result_image_ok = LoadGraph("Resource/images/OK.png");;
+	result_image_good = LoadGraph("Resource/images/GOOD.png");;
+	result_image_perfect = LoadGraph("Resource/images/Perfect.png");;
 	LoadDivGraph("images/number.png", NUMBER,NUMBER, 1, 60, 120, num_image);
 	//音源
 	scene_bgm = LoadSoundMem("Resource/sounds/BGM_arrows.wav");
@@ -123,12 +123,17 @@ void Scene::Update()
 			}
 		}
 	}
+	//エネミーカウント
 	Enemy::count;
+	//ハネテキカウント
 	FlyEnemy::count;
+	//ハーピーカウント
 	Harpy::count;
+	//乱数
 	int num1 = rand() % 100 + 1;
 	int num2 = rand() % 3 + 1;
 	
+	//フレーム更新
 	flame_count++;
 	//ハコテキ
 	if (flame_count > 120)
@@ -194,13 +199,14 @@ void Scene::Update()
 			GoldEnemy::count++;
 		}
 	}
-	Time::timer--;
 
-	HighScore();
+	//タイマー更新
+	Time::timer--;
+	
 }
 
 //描画処理
-void Scene::Draw()const
+void Scene::Draw()
 {
 	//背景の描画
 	DrawGraph(0,-120, scene_images, FALSE);
@@ -223,11 +229,12 @@ void Scene::Draw()const
 
 	//制限時間の描画
 	DrawFormatString(80, 560, GetColor(255, 255, 255), "%3d", Time::timer);
-	DrawBox(491, 469, 509, 469 - Time::timer / 60 * 2, 0x0033ff, TRUE);
 	//スコア描画
 	DrawFormatString(290, 560, GetColor(255, 255, 255), "%3d", Scene::score);
 	//ハイスコア描画
 	DrawFormatString(620, 560, GetColor(255, 255, 255), "%3d", high_score);
+	 
+	ResultTime();
 }
 
 void Scene::HighScore()
@@ -246,6 +253,15 @@ void Scene::HighScore()
 	}
 }
 
+void Scene::ResultTime()
+{
+	if (Time::timer < 0)
+	{
+		if(Scene::score<500)
+		DrawGraph(50, 500, result_image_perfect, TRUE);
+	}
+}
+
 //終了時処理
 void Scene::Finalize()
 {
@@ -261,7 +277,7 @@ void Scene::Finalize()
 		obj->Finalize();
 		delete obj;
 	}
-
+	
 	StopSoundMem(scene_bgm);
 
 	//動的配列の開放

@@ -6,11 +6,6 @@ C:\PG\GameDevelopmentApplication1\BomblingHunter\Development\Objects\Bomb\Bomb.c
 C:\PG\GameDevelopmentApplication1\BomblingHunter\Development\Objects\Enemy\Enemy.cpp;C:\PG\GameDevelopmentApplication1\BomblingHunter\Development\x64\Debug\Enemy.obj
 C:\PG\GameDevelopmentApplication1\BomblingHunter\Development\Objects\GameObjects.cpp;C:\PG\GameDevelopmentApplication1\BomblingHunter\Development\x64\Debug\GameObjects.obj
 C:\PG\GameDevelopmentApplication1\BomblingHunter\Development\Objects\Player\Player.cpp;C:\PG\GameDevelopmentApplication1\BomblingHunter\Development\x64\Debug\Player.obj
-C:\PG\GameDevelopmentApplication1\BomblingHunter\Development\Scene\Result\BAD\ResultBAD.cpp;C:\PG\GameDevelopmentApplication1\BomblingHunter\Development\x64\Debug\ResultBAD.obj
-C:\PG\GameDevelopmentApplication1\BomblingHunter\Development\Scene\Result\GOOD\ResultGOOD.cpp;C:\PG\GameDevelopmentApplication1\BomblingHunter\Development\x64\Debug\ResultGOOD.obj
-C:\PG\GameDevelopmentApplication1\BomblingHunter\Development\Scene\Result\OK\ResultOK.cpp;C:\PG\GameDevelopmentApplication1\BomblingHunter\Development\x64\Debug\ResultOK.obj
-C:\PG\GameDevelopmentApplication1\BomblingHunter\Development\Scene\Result\Perfect\ResultPerfect.cpp;C:\PG\GameDevelopmentApplication1\BomblingHunter\Development\x64\Debug\ResultPerfect.obj
-C:\PG\GameDevelopmentApplication1\BomblingHunter\Development\Scene\SceneManager.cpp;C:\PG\GameDevelopmentApplication1\BomblingHunter\Development\x64\Debug\SceneManager.obj
 C:\PG\GameDevelopmentApplication1\BomblingHunter\Development\Scene\Scene.cpp;C:\PG\GameDevelopmentApplication1\BomblingHunter\Development\x64\Debug\Scene.obj
 C:\PG\GameDevelopmentApplication1\BomblingHunter\Development\Objects\Enemy\FlyEnemy\FlyEnemy.cpp;C:\PG\GameDevelopmentApplication1\BomblingHunter\Development\x64\Debug\FlyEnemy.obj
 C:\PG\GameDevelopmentApplication1\BomblingHunter\Development\Time\Time.cpp;C:\PG\GameDevelopmentApplication1\BomblingHunter\Development\x64\Debug\Time.obj
