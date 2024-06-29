@@ -2,6 +2,7 @@
 #include "../../Bomb/Bomb.h"
 #include "DxLib.h"
 
+//ハネテキ初期化
 int FlyEnemy::count = 0;
 
 FlyEnemy::FlyEnemy() : animation_count(0), direction(0.0f) ,hit_se()

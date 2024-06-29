@@ -2,6 +2,7 @@
 #include "../Bomb/Bomb.h"
 #include "DxLib.h"
 
+//エネミーカウント初期化
 int Enemy::count = 0;
 
 Enemy::Enemy() : animation_count(0), direction(0.0f),hit_se()
@@ -89,6 +90,7 @@ void Enemy::Finalize()
 //当たり判定通知処理
 void Enemy::OnHitCollision(GameObject* hit_object)
 {
+	//爆弾に当たった時
 	if (dynamic_cast<Bomb*>(hit_object))
 	{
 		direction = 0.0f;

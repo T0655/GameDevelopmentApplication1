@@ -111,10 +111,10 @@ void Player::Movement()
 		location.x = box_size.x / 2.0f;
 	}
 	//右端で止める(赤い四角基準)
-	else if ((640.0f - (box_size.x / 2.0f)) < location.x)
+	else if ((800.0f - (box_size.x / 2.0f)) < location.x)
 	{
 		velocity.x = 0.0f;
-		location.x = 640.0f - (box_size.x / 2.0f);
+		location.x = 800.0f - (box_size.x / 2.0f);
 	}
 
 	//現在の位置座標に速さを加算する

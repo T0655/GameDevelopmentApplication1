@@ -2,6 +2,7 @@
 #include "../Bomb/Bomb.h"
 #include "DxLib.h"
 
+//ハーピーカウント初期化
 int Harpy::count = 0;
 
 Harpy::Harpy() : animation_count(0), direction(0.0f),hit_se()
@@ -90,6 +91,7 @@ void Harpy::Finalize()
 //当たり判定通知処理
 void Harpy::OnHitCollision(GameObject* hit_object)
 {
+	//爆弾に当たった時
 	if (dynamic_cast<Bomb*>(hit_object))
 	{
 		direction = 0.0f;

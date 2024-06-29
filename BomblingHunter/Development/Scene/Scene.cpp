@@ -236,10 +236,10 @@ void Scene::Draw()
 	 
 	ResultTime();
 }
-
+//ハイスコア処理
 void Scene::HighScore()
 {
-
+	
 	if (GameCount == 0) {
 		if (Time::timer < 0)
 		{
@@ -253,12 +253,13 @@ void Scene::HighScore()
 	}
 }
 
+//リザルト後処理
 void Scene::ResultTime()
 {
+	//0秒後
 	if (Time::timer < 0)
 	{
-		if(Scene::score<500)
-		DrawGraph(50, 500, result_image_perfect, TRUE);
+
 	}
 }
 

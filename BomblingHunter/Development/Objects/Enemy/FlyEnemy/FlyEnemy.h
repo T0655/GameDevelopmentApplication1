@@ -11,7 +11,7 @@ private:
 	Vector2D direction;           //進行方向
 
 public:
-	static int count;             //エネミーカウント
+	static int count;             //カウント
 
 
 public:

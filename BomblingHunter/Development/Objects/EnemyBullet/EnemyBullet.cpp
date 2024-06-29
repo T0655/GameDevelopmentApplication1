@@ -19,11 +19,12 @@ EnemyBullet::~EnemyBullet()
 //初期化処理
 void EnemyBullet::Initialize()
 {
+	//画像読み込み
 	em_effect[0] = LoadGraph("Resource/images/敵弾1.png");
 	em_effect[1] = LoadGraph("Resource/images/敵弾エフェクト1.png");
 	em_effect[2] = LoadGraph("Resource/images/敵弾エフェクト2.png");
 	em_effect[3] = LoadGraph("Resource/images/敵弾エフェクト3.png");
-
+	//音源読み込み
 	em_se = LoadSoundMem("Resource/sounds/bishi.wav");
 	//初期進行方向の設定
 	direction = Vector2D(0.0f, -2.0f);
@@ -78,7 +79,7 @@ void EnemyBullet::Movement()
 	location += direction;
 }
 
-//エフェクト変化
+//エフェクト処理
 void EnemyBullet::EffectControl()
 {
 	//フレームカウントを加算する

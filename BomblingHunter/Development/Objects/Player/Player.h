@@ -8,7 +8,7 @@ private:
 	int animation[2];             //アニメーション画像
 	int animation_count;          //アニメーション時間
 	int filp_flag;                //反転フラグ
-	int hit_se;
+	int hit_se;                   //ヒットSE
 
 public:
 	Player();

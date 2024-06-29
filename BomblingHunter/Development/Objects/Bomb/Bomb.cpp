@@ -32,7 +32,7 @@ void Bomb::Initialize()
 	bomb_hit_se = LoadSoundMem("Resource/sounds/explosion.wav");
 	//初期進行方向の設定
 	direction = Vector2D(0.0f, 2.0f);
-
+	//初期化画像
 	bomb_image = bomb_effect[0];
 }
 
@@ -108,7 +108,7 @@ void Bomb::Movement()
 	//進行方向に向かって、位置座標を変更する
 	location += direction;
 }
-
+//エフェクト処理
 void Bomb::EffectControl()
 {
 	//フレームカウントを加算する

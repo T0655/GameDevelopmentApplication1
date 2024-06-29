@@ -23,7 +23,7 @@ public:
 	virtual void Update();       //更新処理
 	virtual void Draw() const;   //描画処理
 	virtual void Finalize();     //終了時処理
-	bool DeleteObjectFinalize();
+	bool DeleteObjectFinalize(); //削除終了処理
 
 
 

@@ -2,6 +2,7 @@
 #include "../../Bomb/Bomb.h"
 #include "DxLib.h"
 
+//金のテキカウント
 int GoldEnemy::count = 0;
 
 GoldEnemy::GoldEnemy() : animation_count(0), direction(0.0f),hit_se()
@@ -110,7 +111,8 @@ void GoldEnemy::OnHitCollision(GameObject* hit_object)
 //移動処理
 void GoldEnemy::Movement()
 {
-	if (((location.x + direction.x) < (-80.0f - box_size.x)) || (1040.0f - box_size.x) < (location.x + direction.x))
+
+	if (((location.x + direction.x) < (-80.0f - box_size.x)) || (1100.0f - box_size.x) < (location.x + direction.x))
 	{
 		direction.x *= -1.0f;
 	}

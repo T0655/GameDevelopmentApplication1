@@ -38,7 +38,7 @@ public:
 	void Update();           //更新処理
 	void Draw();       //描画処理
 	void HighScore();        //ハイスコア読み込み
-	void ResultTime();
+	void ResultTime();       //リザルト後処理
 	void Finalize();         //終了時処理
 
 private:

@@ -67,6 +67,7 @@ Vector2D GameObject::GetBoxSize()const
 	return box_size;
 }
 
+//íœI—¹ˆ—
 bool GameObject::DeleteObjectFinalize()
 {
 	return this->delete_flag;
