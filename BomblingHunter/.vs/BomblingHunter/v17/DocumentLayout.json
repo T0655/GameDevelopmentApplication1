@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\PG\\GameDevelopmentApplication1\\BomblingHunter\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{989AE391-5E33-4E82-81F1-6E1CE7D9927E}|Development\\Development.vcxproj|C:\\PG\\GameDevelopmentApplication1\\BomblingHunter\\Development\\Scene\\Scene.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{989AE391-5E33-4E82-81F1-6E1CE7D9927E}|Development\\Development.vcxproj|solutionrelative:Development\\Scene\\Scene.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{989AE391-5E33-4E82-81F1-6E1CE7D9927E}|Development\\Development.vcxproj|C:\\PG\\GameDevelopmentApplication1\\BomblingHunter\\Development\\Objects\\Bomb\\Bomb.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{989AE391-5E33-4E82-81F1-6E1CE7D9927E}|Development\\Development.vcxproj|solutionrelative:Development\\Objects\\Bomb\\Bomb.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
@@ -43,6 +47,19 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "Scene.cpp",
+              "DocumentMoniker": "C:\\PG\\GameDevelopmentApplication1\\BomblingHunter\\Development\\Scene\\Scene.cpp",
+              "RelativeDocumentMoniker": "Development\\Scene\\Scene.cpp",
+              "ToolTip": "C:\\PG\\GameDevelopmentApplication1\\BomblingHunter\\Development\\Scene\\Scene.cpp",
+              "RelativeToolTip": "Development\\Scene\\Scene.cpp",
+              "ViewState": "AQIAANgAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-06-30T22:20:20.378Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "Bomb.cpp",
               "DocumentMoniker": "C:\\PG\\GameDevelopmentApplication1\\BomblingHunter\\Development\\Objects\\Bomb\\Bomb.cpp",
               "RelativeDocumentMoniker": "Development\\Objects\\Bomb\\Bomb.cpp",
@@ -55,7 +72,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Bomb.h",
               "DocumentMoniker": "C:\\PG\\GameDevelopmentApplication1\\BomblingHunter\\Development\\Objects\\Bomb\\Bomb.h",
               "RelativeDocumentMoniker": "Development\\Objects\\Bomb\\Bomb.h",
@@ -63,12 +80,11 @@
               "RelativeToolTip": "Development\\Objects\\Bomb\\Bomb.h",
               "ViewState": "AQIAAAkAAAAAAAAAAAAAABwAAAAlAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-06-29T20:43:45.961Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-29T20:43:45.961Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "FlyEnemy.cpp",
               "DocumentMoniker": "C:\\PG\\GameDevelopmentApplication1\\BomblingHunter\\Development\\Objects\\Enemy\\FlyEnemy\\FlyEnemy.cpp",
               "RelativeDocumentMoniker": "Development\\Objects\\Enemy\\FlyEnemy\\FlyEnemy.cpp",
@@ -76,12 +92,11 @@
               "RelativeToolTip": "Development\\Objects\\Enemy\\FlyEnemy\\FlyEnemy.cpp",
               "ViewState": "AQIAAH4AAAAAAAAAAAAAAAQAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-06-29T20:43:18.25Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-29T20:43:18.25Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "FlyEnemy.h",
               "DocumentMoniker": "C:\\PG\\GameDevelopmentApplication1\\BomblingHunter\\Development\\Objects\\Enemy\\FlyEnemy\\FlyEnemy.h",
               "RelativeDocumentMoniker": "Development\\Objects\\Enemy\\FlyEnemy\\FlyEnemy.h",
@@ -89,12 +104,11 @@
               "RelativeToolTip": "Development\\Objects\\Enemy\\FlyEnemy\\FlyEnemy.h",
               "ViewState": "AQIAAAkAAAAAAAAAAAAAAA0AAAAhAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-06-29T20:43:08.703Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-29T20:43:08.703Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "GoldEnemy.cpp",
               "DocumentMoniker": "C:\\PG\\GameDevelopmentApplication1\\BomblingHunter\\Development\\Objects\\Enemy\\GoldEnemy\\GoldEnemy.cpp",
               "RelativeDocumentMoniker": "Development\\Objects\\Enemy\\GoldEnemy\\GoldEnemy.cpp",
@@ -102,12 +116,11 @@
               "RelativeToolTip": "Development\\Objects\\Enemy\\GoldEnemy\\GoldEnemy.cpp",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAKAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-06-29T20:42:47.478Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-29T20:42:47.478Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "GoldEnemy.h",
               "DocumentMoniker": "C:\\PG\\GameDevelopmentApplication1\\BomblingHunter\\Development\\Objects\\Enemy\\GoldEnemy\\GoldEnemy.h",
               "RelativeDocumentMoniker": "Development\\Objects\\Enemy\\GoldEnemy\\GoldEnemy.h",
@@ -115,12 +128,11 @@
               "RelativeToolTip": "Development\\Objects\\Enemy\\GoldEnemy\\GoldEnemy.h",
               "ViewState": "AQIAAAYAAAAAAAAAAAAAAA0AAAAlAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-06-29T20:42:38.605Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-29T20:42:38.605Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "Enemy.h",
               "DocumentMoniker": "C:\\PG\\GameDevelopmentApplication1\\BomblingHunter\\Development\\Objects\\Enemy\\Enemy.h",
               "RelativeDocumentMoniker": "Development\\Objects\\Enemy\\Enemy.h",
@@ -128,8 +140,7 @@
               "RelativeToolTip": "Development\\Objects\\Enemy\\Enemy.h",
               "ViewState": "AQIAAB4AAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-06-29T20:42:33.119Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-29T20:42:33.119Z"
             }
           ]
         }
