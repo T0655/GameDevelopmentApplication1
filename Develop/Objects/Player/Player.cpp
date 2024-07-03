@@ -4,6 +4,7 @@
 #include "DxLib.h"
 #include "../Food/Food.h"
 
+
 #define D_PLAYER_SPEED	(50.0f)
 
 Player::Player() :
