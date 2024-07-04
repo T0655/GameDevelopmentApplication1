@@ -1,15 +1,5 @@
 ﻿  EnemyBase.cpp
-  InGameScene.cpp
 C:\dxlib\DxFunctionWin.h(268,1): warning C4010: 単一行コメント (//) に、行連結文字があります。
-  (ソース ファイル 'Scenes/InGame/InGameScene.cpp' をコンパイルしています)
+  (ソース ファイル 'Objects/Enemy/EnemyBase.cpp' をコンパイルしています)
   
-  SceneManager.cpp
-C:\dxlib\DxFunctionWin.h(268,1): warning C4010: 単一行コメント (//) に、行連結文字があります。
-  (ソース ファイル 'Scenes/SceneManager.cpp' をコンパイルしています)
-  
-  ResourceManager.cpp
-C:\dxlib\DxFunctionWin.h(268,1): warning C4010: 単一行コメント (//) に、行連結文字があります。
-  (ソース ファイル 'Utility/ResourceManager.cpp' をコンパイルしています)
-  
-  コードを生成中...
   Develop.vcxproj -> C:\PG\GameDevelopmentApplication1\x64\Debug\Develop.exe
