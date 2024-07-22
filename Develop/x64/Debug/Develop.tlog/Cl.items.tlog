@@ -1,3 +1,6 @@
+C:\PG\GameDevelopmentApplication1\Develop\Objects\Enemy\Ghost\Aosuke\Aosuke.cpp;C:\PG\GameDevelopmentApplication1\Develop\x64\Debug\Aosuke.obj
+C:\PG\GameDevelopmentApplication1\Develop\Objects\Enemy\Ghost\Guzuta\Guzuta.cpp;C:\PG\GameDevelopmentApplication1\Develop\x64\Debug\Guzuta.obj
+C:\PG\GameDevelopmentApplication1\Develop\Objects\Enemy\Ghost\Akabe\Akabe.cpp;C:\PG\GameDevelopmentApplication1\Develop\x64\Debug\Akabe.obj
 C:\PG\GameDevelopmentApplication1\Develop\AppMain.cpp;C:\PG\GameDevelopmentApplication1\Develop\x64\Debug\AppMain.obj
 C:\PG\GameDevelopmentApplication1\Develop\Objects\Enemy\EnemyBase.cpp;C:\PG\GameDevelopmentApplication1\Develop\x64\Debug\EnemyBase.obj
 C:\PG\GameDevelopmentApplication1\Develop\Objects\Food\Food.cpp;C:\PG\GameDevelopmentApplication1\Develop\x64\Debug\Food.obj
@@ -5,6 +8,7 @@ C:\PG\GameDevelopmentApplication1\Develop\Objects\Food\PowerFood.cpp;C:\PG\GameD
 C:\PG\GameDevelopmentApplication1\Develop\Objects\GameObjectBase.cpp;C:\PG\GameDevelopmentApplication1\Develop\x64\Debug\GameObjectBase.obj
 C:\PG\GameDevelopmentApplication1\Develop\Objects\Player\Player.cpp;C:\PG\GameDevelopmentApplication1\Develop\x64\Debug\Player.obj
 C:\PG\GameDevelopmentApplication1\Develop\Objects\Wall\Wall.cpp;C:\PG\GameDevelopmentApplication1\Develop\x64\Debug\Wall.obj
+C:\PG\GameDevelopmentApplication1\Develop\Objects\Enemy\Ghost\Pinkey\Pinkey.cpp;C:\PG\GameDevelopmentApplication1\Develop\x64\Debug\Pinkey.obj
 C:\PG\GameDevelopmentApplication1\Develop\Scenes\InGame\InGameScene.cpp;C:\PG\GameDevelopmentApplication1\Develop\x64\Debug\InGameScene.obj
 C:\PG\GameDevelopmentApplication1\Develop\Scenes\InGame\ResultScene.cpp;C:\PG\GameDevelopmentApplication1\Develop\x64\Debug\ResultScene.obj
 C:\PG\GameDevelopmentApplication1\Develop\Scenes\SceneManager.cpp;C:\PG\GameDevelopmentApplication1\Develop\x64\Debug\SceneManager.obj
