@@ -14,7 +14,7 @@ enum eEnemyState
 
 class EnemyBase : public GameObject
 {
-private:
+protected:
 	// 進行方向状態
 	enum eMoveState : unsigned char
 	{
@@ -27,6 +27,7 @@ private:
 protected:
 	std::vector<int> move_animation;		// ゴーストアニメーション画像
 	std::vector<int> eye_animation;		    // 目だけの状態のアニメーション画像
+	Vector2D old_location;					// 前回のlocation
 	Vector2D velocity;						// 移動量
 	eEnemyState enemy_state;				// プレイヤー状態
 	eMoveState now_direction;				// 現在進行方向状態
@@ -48,6 +49,7 @@ public:
 	virtual void Finalize() override;
 
 	virtual void OnHitCollision(GameObjectBase* hit_object) override;
+
 public:
 	eEnemyState GetEnemyState() const;
 

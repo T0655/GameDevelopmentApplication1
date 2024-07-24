@@ -1,6 +1,7 @@
 #include "EnemyBase.h"
 #include "DxLib.h"
 #include "../../Utility/ResourceManager.h"
+#include "../Player/Player.h"
 
 //コンストラクタ
 EnemyBase::EnemyBase() 
@@ -47,7 +48,7 @@ void EnemyBase::Initialize()
 //更新処理
 void EnemyBase::Update(float delta_second) 
 {
-	//Movement;
+	Movement(delta_second);
 }
 
 //描画処理
@@ -104,18 +105,23 @@ void EnemyBase::Movement(float delta_second)
 	case eEnemyState::WAIT:
 		// 画像の設定
 		image = move_animation[9];
+		WaitMoment(delta_second);
 		break;
 	case eEnemyState::WORK:
 		// アニメーション制御
 		AnimationControl(delta_second);
 		break;
 	case eEnemyState::TERRITORY:
+		TerritoryMove(delta_second);
 		break;
 	case eEnemyState::WEEKEND:
+		WeekendMove(delta_second);
 		break;
 	case eEnemyState::CHASE:
+		ChaseMoment(delta_second);
 		break;
 	case eEnemyState::RUN:
+		RunMoment(delta_second);
 		break;
 	default:
 		break;
@@ -125,37 +131,25 @@ void EnemyBase::Movement(float delta_second)
 //エネミー待機処理
 void EnemyBase::WaitMoment(float delta_second)
 {
-	if (enemy_state == WAIT)
-	{
-
-	}
+	
 }
 
 //ナワバリ巡回処理
 void EnemyBase::TerritoryMove(float delta_second)
 {
-	if (enemy_state == TERRITORY)
-	{
-
-	}
+	
 }
 
 //イジケ状態処理
 void EnemyBase::WeekendMove(float delta_second)
 {
-	if (enemy_state == WEEKEND)
-	{
 
-	}
 }
 
 //追いかけ処理
 void EnemyBase::ChaseMoment(float delta_second)
 {
-	if (enemy_state == CHASE)
-	{
-
-	}
+	
 }
 
 //帰巣処理

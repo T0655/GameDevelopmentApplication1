@@ -42,8 +42,12 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 4,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
             {
               "$type": "Document",
               "DocumentIndex": 3,
@@ -54,8 +58,7 @@
               "RelativeToolTip": "Development\\Scene\\Scene.cpp",
               "ViewState": "AQIAANgAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-06-30T22:20:20.378Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-30T22:20:20.378Z"
             },
             {
               "$type": "Document",
@@ -79,8 +82,7 @@
               "RelativeToolTip": "Development\\Objects\\Enemy\\FlyEnemy\\FlyEnemy.cpp",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-06-29T20:43:18.25Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-29T20:43:18.25Z"
             },
             {
               "$type": "Document",
@@ -90,7 +92,7 @@
               "RelativeDocumentMoniker": "Development\\Objects\\Enemy\\Enemy.h",
               "ToolTip": "C:\\PG\\GameDevelopmentApplication1\\BomblingHunter\\Development\\Objects\\Enemy\\Enemy.h",
               "RelativeToolTip": "Development\\Objects\\Enemy\\Enemy.h",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2024-06-29T20:42:33.119Z",
               "EditorCaption": ""
@@ -105,8 +107,7 @@
               "RelativeToolTip": "Development\\Objects\\Enemy\\FlyEnemy\\FlyEnemy.h",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAhAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-06-29T20:43:08.703Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-29T20:43:08.703Z"
             },
             {
               "$type": "Document",
