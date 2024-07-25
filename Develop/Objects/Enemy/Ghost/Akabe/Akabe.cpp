@@ -36,12 +36,14 @@ void Akabe::Initialize()
 
 	// 可動性の設定
 	mobility = eMobilityType::Movable;
+
+	enemy_state = WAIT;
 }
 
 //更新処理
 void Akabe::Update(float delta_second)
 {
-	Movement(delta_second);
+	EnemyBase::Movement(delta_second);
 }
 
 //描画処理
@@ -119,24 +121,7 @@ void Akabe::Movement(float delta_second)
 		break;
 	}
 
-	// 進行方向の移動量を追加
-	switch (now_direction)
-	{
-	case eMoveState::UP:
-		velocity.y = -1.0f;
-		break;
-	case eMoveState::DOWN:
-		velocity.y = 1.0f;
-		break;
-	case eMoveState::LEFT:
-		velocity.x = -1.0f;
-		break;
-	case eMoveState::RIGHT:
-		velocity.x = 1.0f;
-		break;
-	default:
-		break;
-	}
+	
 }
 
 //エネミー待機処理
@@ -160,22 +145,12 @@ void Akabe::TerritoryMove(float delta_second)
 	{
 		enemy_state = CHASE;
 	}
-	// 入力状態の取得
-	InputManager* input = InputManager::GetInstance();
-
-	// 現在パネルの状態を確認
-	ePanelID panel = StageData::GetPanelData(location);
-
-	if (input->GetKeyDown(KEY_INPUT_D))
-	{
-		velocity.x = 5.0f;
-	}
 }
 
-//イジケ状態処理
+//イジケ状態
 void Akabe::WeekendMove(float delta_second)
 {
-	
+
 }
 
 //追いかけ処理
@@ -186,10 +161,24 @@ void Akabe::ChaseMoment(float delta_second)
 	now_direction = RIGHT;
 }
 
-//帰巣処理
 void Akabe::RunMoment(float delta_second)
 {
-	
+	// 死亡中のアニメーション
+	animation_time += delta_second;
+	if (animation_time >= 0.07f)
+	{
+		animation_time = 0.0f;
+		animation_count++;
+		// 復活させる
+		if (animation_count >= eye_animation.size())
+		{
+			enemy_state = eEnemyState::CHASE;
+			animation_count = 0;
+		}
+	}
+	image = eye_animation[animation_count];
+
+	location.x = 5.0;
 }
 
 //アニメーション処理
