@@ -4,6 +4,8 @@
 #include "../../../Player/Player.h"
 #include "../../Utility/InputManager.h"
 
+#define D_ENEMY_SPEED (0.0f)
+
 //コンストラクタ
 Akabe::Akabe()
 {
@@ -36,8 +38,6 @@ void Akabe::Initialize()
 
 	// 可動性の設定
 	mobility = eMobilityType::Movable;
-
-	enemy_state = WAIT;
 }
 
 //更新処理
@@ -95,11 +95,12 @@ void Akabe::OnHitCollision(GameObjectBase* hit_object)
 //移動処理
 void Akabe::Movement(float delta_second)
 {
+	enemy_state = WORK;
+
 	switch (enemy_state)
 	{
 	case eEnemyState::WAIT:
-		// 画像の設定
-		image = move_animation[9];
+		WaitMoment(delta_second);
 		break;
 	case eEnemyState::WORK:
 		// アニメーション制御
@@ -121,30 +122,40 @@ void Akabe::Movement(float delta_second)
 		break;
 	}
 
-	
+	// 進行方向の移動量を追加
+	switch (now_direction)
+	{
+	case eMoveState::UP:
+		velocity.y = -1.0f;
+		break;
+	case eMoveState::DOWN:
+		velocity.y = 1.0f;
+		break;
+	case eMoveState::LEFT:
+		velocity.x = -1.0f;
+		break;
+	case eMoveState::RIGHT:
+		velocity.x = 1.0f;
+		break;
+	default:
+		break;
+	}
+
+	// 移動量 * 速さ * 時間 で移動先を決定する
+	location += velocity * D_ENEMY_SPEED * delta_second;
 }
 
 //エネミー待機処理
 void Akabe::WaitMoment(float delta_second)
 {
-	if (enemy_time < 0.0f)
-	{
-		enemy_state = TERRITORY;
-	}
+	// 画像の設定
+	image = move_animation[0];
 }
 
 //ナワバリ巡回処理
 void Akabe::TerritoryMove(float delta_second)
 {
-	// 
-	if (enemy_state == TERRITORY)
-	{
-		now_direction = RIGHT;
-	}
-	else if (enemy_time < 4.5f)
-	{
-		enemy_state = CHASE;
-	}
+	
 }
 
 //イジケ状態

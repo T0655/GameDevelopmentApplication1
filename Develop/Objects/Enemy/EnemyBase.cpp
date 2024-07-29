@@ -4,14 +4,16 @@
 #include "../Player/Player.h"
 #include "../../Utility/InputManager.h"
 
+#define D_ENEMY_SPEED	(100.0f)
+
 //コンストラクタ
 EnemyBase::EnemyBase() 
 : move_animation(),
   eye_animation(),
   velocity(0.0f),
   enemy_state(eEnemyState::WAIT),
-  now_direction(eMoveState::RIGHT),
-  next_direction_state(eMoveState::RIGHT),
+  now_direction(eMoveState::LEFT),
+  next_direction_state(eMoveState::LEFT),
   animation_time(0.0f),
   animation_count(0),
   enemy_time(0.0f),
@@ -44,12 +46,15 @@ void EnemyBase::Initialize()
 
 	// 可動性の設定
 	mobility = eMobilityType::Movable;
+
+	enemy_time = 0.0f;
 }
 
 //更新処理
 void EnemyBase::Update(float delta_second) 
 {
 	Movement(delta_second);
+	enemy_time++;
 }
 
 //描画処理
@@ -110,8 +115,6 @@ void EnemyBase::Movement(float delta_second)
 	switch (enemy_state)
 	{
 	case eEnemyState::WAIT:
-		// 画像の設定
-		image = move_animation[9];
 		WaitMoment(delta_second);
 		break;
 	case eEnemyState::WORK:
@@ -152,27 +155,35 @@ void EnemyBase::Movement(float delta_second)
 	default:
 		break;
 	}
+
+	// 移動量 * 速さ * 時間 で移動先を決定する
+	location += velocity * D_ENEMY_SPEED * delta_second;
 }
 
 //エネミー待機処理
 void EnemyBase::WaitMoment(float delta_second)
 {
-	if (enemy_time < 0.0f)
-	{
-		enemy_state = WORK;
+	image = move_animation[0];
+
+	if (enemy_time < 100.0f) {
+		enemy_state = eEnemyState::TERRITORY;
+		now_direction = eMoveState::RIGHT;
 	}
 }
 
 //ナワバリ巡回処理
 void EnemyBase::TerritoryMove(float delta_second)
 {
-	
+	if (now_direction == eMoveState::RIGHT)
+	{
+		now_direction = eMoveState::UP;
+	}
 }
 
 //イジケ状態処理
 void EnemyBase::WeekendMove(float delta_second)
 {
-
+	image = move_animation[17];
 }
 
 //追いかけ処理
@@ -184,20 +195,13 @@ void EnemyBase::ChaseMoment(float delta_second)
 //帰巣処理
 void EnemyBase::RunMoment(float delta_second)
 {
-	// 死亡中のアニメーション
-	animation_time += delta_second;
-	if (animation_time >= 0.07f)
+	if (enemy_state == eEnemyState::RUN)
 	{
-		animation_time = 0.0f;
-		animation_count++;
-		// 復活させる
-		if (animation_count >= eye_animation.size())
-		{
-			enemy_state = eEnemyState::CHASE;
-			animation_count = 0;
-		}
+
 	}
-	image = eye_animation[animation_count];
+	image = eye_animation[4];
+
+
 }
 
 //アニメーション処理
