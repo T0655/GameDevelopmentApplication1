@@ -6,6 +6,10 @@ class InGameScene : public SceneBase
 {
 private:
 	class Player* player;		// プレイヤー情報
+	class Akabe* akabe;         // アカベエ情報
+	class Aosuke* aosuke;       // アオスケ
+	class Guzuta* guzuta;       // グズタ
+	class Pinkey* pinkey;       // ピンキー
 	int back_ground_image;		// 背景画像
 	int back_ground_sound;		// BGM
 	bool pause_flag;			// 一時停止フラグ

@@ -4,7 +4,7 @@
 #include "../../../Player/Player.h"
 #include "../../Utility/InputManager.h"
 
-#define D_ENEMY_SPEED (0.0f)
+#define D_ENEMY_SPEED (50.0f)
 
 //コンストラクタ
 Akabe::Akabe()
@@ -38,6 +38,8 @@ void Akabe::Initialize()
 
 	// 可動性の設定
 	mobility = eMobilityType::Movable;
+
+	enemy_time = 0.0f;
 }
 
 //更新処理
@@ -90,13 +92,19 @@ void Akabe::OnHitCollision(GameObjectBase* hit_object)
 	{
 		enemy_state = eEnemyState::WEEKEND;
 	}
+	// もしイジケ状態なら
+	if (enemy_state == eEnemyState::WEEKEND)
+	{
+		if (hit_object->GetCollision().object_type == eObjectType::player)
+		{
+			enemy_state = eEnemyState::RUN;
+		}
+	}
 }
 
 //移動処理
 void Akabe::Movement(float delta_second)
 {
-	enemy_state = WORK;
-
 	switch (enemy_state)
 	{
 	case eEnemyState::WAIT:
@@ -148,20 +156,27 @@ void Akabe::Movement(float delta_second)
 //エネミー待機処理
 void Akabe::WaitMoment(float delta_second)
 {
-	// 画像の設定
 	image = move_animation[0];
+
+	if (enemy_time == 0.0f) {
+		enemy_state = eEnemyState::TERRITORY;
+		now_direction = eMoveState::RIGHT;
+	}
 }
 
 //ナワバリ巡回処理
 void Akabe::TerritoryMove(float delta_second)
 {
-	
+	if (enemy_state == eEnemyState::TERRITORY)
+	{
+		now_direction = eMoveState::DOWN;
+	}
 }
 
 //イジケ状態
 void Akabe::WeekendMove(float delta_second)
 {
-
+	image = move_animation[16];
 }
 
 //追いかけ処理
@@ -174,26 +189,32 @@ void Akabe::ChaseMoment(float delta_second)
 
 void Akabe::RunMoment(float delta_second)
 {
-	// 死亡中のアニメーション
-	animation_time += delta_second;
-	if (animation_time >= 0.07f)
+	if (enemy_state == eEnemyState::RUN)
 	{
-		animation_time = 0.0f;
-		animation_count++;
-		// 復活させる
-		if (animation_count >= eye_animation.size())
-		{
-			enemy_state = eEnemyState::CHASE;
-			animation_count = 0;
-		}
-	}
-	image = eye_animation[animation_count];
 
-	location.x = 5.0;
+	}
+	image = eye_animation[4];
 }
 
 //アニメーション処理
 void Akabe::AnimationControl(float delta_second)
 {
+	// 移動中のアニメーション
+	animation_time += delta_second;
+	if (animation_time >= (1.0f / 16.0f))
+	{
+		animation_time = 0.0f;
+		animation_count++;
+		if (animation_count >= 4)
+		{
+			animation_count = 0;
+		}
+		// 画像の設定
+		int dir_num = (int)now_direction;
+		if (0 <= dir_num && dir_num < 4)
+		{
+			image = move_animation[(dir_num * 3) + animation_num[animation_count]];
+		}
 
+	}
 }
