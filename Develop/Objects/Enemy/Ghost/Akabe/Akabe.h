@@ -7,6 +7,7 @@ class Akabe : public EnemyBase
 {
 private:
 	Player* player;
+	Akabe* akabe;
     eEnemyState enemy_state;
 
 public:

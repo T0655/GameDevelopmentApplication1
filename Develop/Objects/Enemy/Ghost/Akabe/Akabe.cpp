@@ -4,12 +4,13 @@
 #include "../../../Player/Player.h"
 #include "../../Utility/InputManager.h"
 
-#define D_ENEMY_SPEED (50.0f)
+#define D_ENEMY_SPEED (100.0f)
 
 //コンストラクタ
 Akabe::Akabe()
 {
 	Player* player;
+	Akabe* akabe;
 	eEnemyState enemy_state;
 }
 //デストラクタ
@@ -46,6 +47,7 @@ void Akabe::Initialize()
 void Akabe::Update(float delta_second)
 {
 	EnemyBase::Movement(delta_second);
+	enemy_time++;
 }
 
 //描画処理
@@ -158,7 +160,7 @@ void Akabe::WaitMoment(float delta_second)
 {
 	image = move_animation[0];
 
-	if (enemy_time == 0.0f) {
+	if (enemy_time == 150.0f) {
 		enemy_state = eEnemyState::TERRITORY;
 		now_direction = eMoveState::RIGHT;
 	}
@@ -167,9 +169,9 @@ void Akabe::WaitMoment(float delta_second)
 //ナワバリ巡回処理
 void Akabe::TerritoryMove(float delta_second)
 {
-	if (enemy_state == eEnemyState::TERRITORY)
+	if (now_direction == eMoveState::RIGHT)
 	{
-		now_direction = eMoveState::DOWN;
+		now_direction = eMoveState::UP;
 	}
 }
 
