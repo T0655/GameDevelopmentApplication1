@@ -197,13 +197,13 @@ void InGameScene::LoadStageMapCSV()
 				generate_location = (Vector2D((float)(spos_x - 1), (float)(spos_y - 1)) * D_OBJECT_SIZE) + (D_OBJECT_SIZE / 2.0f);
 				akabe = CreateObject<Akabe>(generate_location);
 				break;
-			/*/ アオスケ
-			case 'B':
+			// アオスケ
+			case 'K':
 				generate_location = (Vector2D((float)(spos_x - 1), (float)(spos_y - 1)) * D_OBJECT_SIZE) + (D_OBJECT_SIZE / 2.0f);
 				aosuke = CreateObject<Aosuke>(generate_location);
 				break;
 				// グズタ
-			case 'G':
+			case 'Z':
 				generate_location = (Vector2D((float)(spos_x - 1), (float)(spos_y - 1)) * D_OBJECT_SIZE) + (D_OBJECT_SIZE / 2.0f);
 				guzuta = CreateObject<Guzuta>(generate_location);
 				break;
@@ -211,7 +211,7 @@ void InGameScene::LoadStageMapCSV()
 			case 'N':
 				generate_location = (Vector2D((float)(spos_x - 1), (float)(spos_y - 1)) * D_OBJECT_SIZE) + (D_OBJECT_SIZE / 2.0f);
 				pinkey = CreateObject<Pinkey>(generate_location);
-				break;*/
+				break;
 			// 上記以外
 			default:
 				break;

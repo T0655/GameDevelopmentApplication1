@@ -150,7 +150,7 @@ void Guzuta::Movement(float delta_second)
 //エネミー待機処理
 void Guzuta::WaitMoment(float delta_second)
 {
-	image = move_animation[6];
+	image = move_animation[7];
 
 	if (enemy_time < 100.0f) {
 		enemy_state = eEnemyState::TERRITORY;

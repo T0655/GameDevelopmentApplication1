@@ -7,11 +7,12 @@
 #define D_ENEMY_SPEED (100.0f)
 
 //コンストラクタ
-Akabe::Akabe()
+Akabe::Akabe():enemy_state(eEnemyState::WAIT),
+now_direction(eMoveState::LEFT),
+next_direction_state(eMoveState::LEFT)
 {
 	Player* player;
 	Akabe* akabe;
-	eEnemyState enemy_state;
 }
 //デストラクタ
 Akabe::~Akabe()
@@ -137,19 +138,26 @@ void Akabe::Movement(float delta_second)
 	{
 	case eMoveState::UP:
 		velocity.y = -1.0f;
+		eye_image = eye_animation[0];
 		break;
 	case eMoveState::DOWN:
 		velocity.y = 1.0f;
+		eye_image = eye_animation[2];
 		break;
 	case eMoveState::LEFT:
 		velocity.x = -1.0f;
+		eye_image = eye_animation[3];
 		break;
 	case eMoveState::RIGHT:
 		velocity.x = 1.0f;
+		eye_image = eye_animation[1];
 		break;
 	default:
 		break;
 	}
+
+	// 前回座標の更新
+	old_location = location;
 
 	// 移動量 * 速さ * 時間 で移動先を決定する
 	location += velocity * D_ENEMY_SPEED * delta_second;
@@ -159,20 +167,21 @@ void Akabe::Movement(float delta_second)
 void Akabe::WaitMoment(float delta_second)
 {
 	image = move_animation[0];
+	eye_image = eye_animation[0];
 
-	if (enemy_time == 150.0f) {
+	if (enemy_time < 0.0f) {
 		enemy_state = eEnemyState::TERRITORY;
-		now_direction = eMoveState::RIGHT;
 	}
 }
 
 //ナワバリ巡回処理
 void Akabe::TerritoryMove(float delta_second)
 {
-	if (now_direction == eMoveState::RIGHT)
-	{
+	if (now_direction == eMoveState::LEFT) {
 		now_direction = eMoveState::UP;
-	}
+	};
+	
+	akabe->SetLocation(location);
 }
 
 //イジケ状態
@@ -184,7 +193,7 @@ void Akabe::WeekendMove(float delta_second)
 //追いかけ処理
 void Akabe::ChaseMoment(float delta_second)
 {
-	player->GetLocation();
+	akabe->GetLocation();
 
 	now_direction = RIGHT;
 }
@@ -195,7 +204,6 @@ void Akabe::RunMoment(float delta_second)
 	{
 
 	}
-	image = eye_animation[4];
 }
 
 //アニメーション処理
@@ -216,6 +224,7 @@ void Akabe::AnimationControl(float delta_second)
 		if (0 <= dir_num && dir_num < 4)
 		{
 			image = move_animation[(dir_num * 3) + animation_num[animation_count]];
+			eye_image = eye_animation[(dir_num * 3) + animation_num[animation_count]];
 		}
 
 	}

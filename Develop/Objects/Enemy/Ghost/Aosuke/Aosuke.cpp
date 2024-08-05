@@ -45,7 +45,7 @@ void Aosuke::Initialize()
 //更新処理
 void Aosuke::Update(float delta_second)
 {
-	Movement(delta_second);
+	EnemyBase::Movement(delta_second);
 }
 
 //描画処理
@@ -150,7 +150,7 @@ void Aosuke::Movement(float delta_second)
 //エネミー待機処理
 void Aosuke::WaitMoment(float delta_second)
 {
-	image = move_animation[4];
+	image = move_animation[5];
 
 	if (enemy_time < 100.0f) {
 		enemy_state = eEnemyState::TERRITORY;

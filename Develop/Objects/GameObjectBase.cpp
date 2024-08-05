@@ -6,6 +6,7 @@ GameObjectBase::GameObjectBase() :
 	owner_scene(nullptr),
 	location(0.0f),
 	image(NULL),
+	eye_image(NULL),
 	z_layer(0),
 	mobility(eMobilityType::Stationary)
 {
@@ -43,6 +44,7 @@ void GameObjectBase::Draw(const Vector2D& screen_offset) const
 	// オフセット値を基に画像の描画を行う
 	Vector2D graph_location = this->location + screen_offset;
 	DrawRotaGraphF(graph_location.x, graph_location.y, 1.0, 0.0, image, TRUE);
+	DrawRotaGraphF(graph_location.x, graph_location.y, 1.0, 0.0, eye_image, TRUE);
 }
 
 /// <summary>
