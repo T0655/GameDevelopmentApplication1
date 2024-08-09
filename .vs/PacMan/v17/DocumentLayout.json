@@ -3,20 +3,20 @@
   "WorkspaceRootPath": "C:\\PG\\GameDevelopmentApplication1\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{5BA94388-3C7A-4AB9-BEB5-58CD2533D611}|Develop\\Develop.vcxproj|C:\\PG\\GameDevelopmentApplication1\\Develop\\Objects\\Player\\Player.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{5BA94388-3C7A-4AB9-BEB5-58CD2533D611}|Develop\\Develop.vcxproj|solutionrelative:Develop\\Objects\\Player\\Player.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{5BA94388-3C7A-4AB9-BEB5-58CD2533D611}|Develop\\Develop.vcxproj|C:\\PG\\GameDevelopmentApplication1\\Develop\\Objects\\Enemy\\EnemyBase.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{5BA94388-3C7A-4AB9-BEB5-58CD2533D611}|Develop\\Develop.vcxproj|solutionrelative:Develop\\Objects\\Enemy\\EnemyBase.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5BA94388-3C7A-4AB9-BEB5-58CD2533D611}|Develop\\Develop.vcxproj|C:\\PG\\GameDevelopmentApplication1\\Develop\\Objects\\Enemy\\Ghost\\Akabe\\Akabe.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{5BA94388-3C7A-4AB9-BEB5-58CD2533D611}|Develop\\Develop.vcxproj|solutionrelative:Develop\\Objects\\Enemy\\Ghost\\Akabe\\Akabe.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5BA94388-3C7A-4AB9-BEB5-58CD2533D611}|Develop\\Develop.vcxproj|C:\\PG\\GameDevelopmentApplication1\\Develop\\Objects\\Enemy\\EnemyBase.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{5BA94388-3C7A-4AB9-BEB5-58CD2533D611}|Develop\\Develop.vcxproj|solutionrelative:Develop\\Objects\\Enemy\\EnemyBase.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{5BA94388-3C7A-4AB9-BEB5-58CD2533D611}|Develop\\Develop.vcxproj|C:\\PG\\GameDevelopmentApplication1\\Develop\\Objects\\Enemy\\EnemyBase.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{5BA94388-3C7A-4AB9-BEB5-58CD2533D611}|Develop\\Develop.vcxproj|solutionrelative:Develop\\Objects\\Enemy\\EnemyBase.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5BA94388-3C7A-4AB9-BEB5-58CD2533D611}|Develop\\Develop.vcxproj|C:\\PG\\GameDevelopmentApplication1\\Develop\\Objects\\Player\\Player.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{5BA94388-3C7A-4AB9-BEB5-58CD2533D611}|Develop\\Develop.vcxproj|solutionrelative:Develop\\Objects\\Player\\Player.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5BA94388-3C7A-4AB9-BEB5-58CD2533D611}|Develop\\Develop.vcxproj|C:\\PG\\GameDevelopmentApplication1\\Develop\\Objects\\GameObjectBase.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -58,7 +58,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 10,
           "Children": [
             {
               "$type": "Bookmark",
@@ -74,8 +74,7 @@
               "RelativeToolTip": "Develop\\Objects\\Enemy\\Ghost\\Aosuke\\Aosuke.h",
               "ViewState": "AQIAAA8AAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-08-05T05:38:13.672Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-05T05:38:13.672Z"
             },
             {
               "$type": "Document",
@@ -87,8 +86,7 @@
               "RelativeToolTip": "Develop\\Objects\\Enemy\\Ghost\\Pinkey\\Pinkey.cpp",
               "ViewState": "AQIAAA4AAAAAAAAAAAAiwBkAAAAeAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-08-05T05:26:19.641Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-05T05:26:19.641Z"
             },
             {
               "$type": "Document",
@@ -100,8 +98,7 @@
               "RelativeToolTip": "Develop\\Objects\\Enemy\\Ghost\\Guzuta\\Guzuta.cpp",
               "ViewState": "AQIAAA4AAAAAAAAAAAAiwBkAAAAeAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-08-05T04:16:45.985Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-05T04:16:45.985Z"
             },
             {
               "$type": "Document",
@@ -113,8 +110,7 @@
               "RelativeToolTip": "Develop\\Objects\\Enemy\\Ghost\\Aosuke\\Aosuke.cpp",
               "ViewState": "AQIAAA4AAAAAAAAAAAAiwBkAAAAeAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-08-05T04:16:24.132Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-05T04:16:24.132Z"
             },
             {
               "$type": "Document",
@@ -126,8 +122,7 @@
               "RelativeToolTip": "Develop\\Objects\\Enemy\\Ghost\\Akabe\\Akabe.h",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAcAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-08-01T04:52:32.83Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-01T04:52:32.83Z"
             },
             {
               "$type": "Document",
@@ -137,7 +132,7 @@
               "RelativeDocumentMoniker": "Develop\\Objects\\Enemy\\Ghost\\Akabe\\Akabe.cpp",
               "ToolTip": "C:\\PG\\GameDevelopmentApplication1\\Develop\\Objects\\Enemy\\Ghost\\Akabe\\Akabe.cpp",
               "RelativeToolTip": "Develop\\Objects\\Enemy\\Ghost\\Akabe\\Akabe.cpp",
-              "ViewState": "AQIAAGYAAAAAAAAAAAAAAG0AAAABAAAA",
+              "ViewState": "AQIAAIoAAAAAAAAAAAAAAJAAAAAdAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-07-24T03:02:52.539Z",
               "EditorCaption": ""
@@ -152,12 +147,11 @@
               "RelativeToolTip": "Develop\\Objects\\Player\\Player.h",
               "ViewState": "AQIAABgAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-08-01T04:30:57.12Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-01T04:30:57.12Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "Player.cpp",
               "DocumentMoniker": "C:\\PG\\GameDevelopmentApplication1\\Develop\\Objects\\Player\\Player.cpp",
               "RelativeDocumentMoniker": "Develop\\Objects\\Player\\Player.cpp",
@@ -170,26 +164,26 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "EnemyBase.h",
               "DocumentMoniker": "C:\\PG\\GameDevelopmentApplication1\\Develop\\Objects\\Enemy\\EnemyBase.h",
               "RelativeDocumentMoniker": "Develop\\Objects\\Enemy\\EnemyBase.h",
               "ToolTip": "C:\\PG\\GameDevelopmentApplication1\\Develop\\Objects\\Enemy\\EnemyBase.h",
               "RelativeToolTip": "Develop\\Objects\\Enemy\\EnemyBase.h",
-              "ViewState": "AQIAABsAAAAAAAAAAAAAAB4AAAAfAAAA",
+              "ViewState": "AQIAAA8AAAAAAAAAAAAAAB4AAAAfAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2024-07-30T05:48:28.255Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "EnemyBase.cpp",
               "DocumentMoniker": "C:\\PG\\GameDevelopmentApplication1\\Develop\\Objects\\Enemy\\EnemyBase.cpp",
               "RelativeDocumentMoniker": "Develop\\Objects\\Enemy\\EnemyBase.cpp",
               "ToolTip": "C:\\PG\\GameDevelopmentApplication1\\Develop\\Objects\\Enemy\\EnemyBase.cpp",
               "RelativeToolTip": "Develop\\Objects\\Enemy\\EnemyBase.cpp",
-              "ViewState": "AQIAAJcAAAAAAAAAAAAiwCEAAAAeAAAA",
+              "ViewState": "AQIAANYAAAAAAAAAAAAiwCEAAAAeAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-07-30T05:45:00.957Z",
               "EditorCaption": ""
@@ -204,8 +198,7 @@
               "RelativeToolTip": "Develop\\Objects\\GameObjectBase.cpp",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAARAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-07-30T05:57:32.037Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-30T05:57:32.037Z"
             },
             {
               "$type": "Document",
@@ -217,8 +210,7 @@
               "RelativeToolTip": "Develop\\Objects\\GameObjectBase.h",
               "ViewState": "AQIAABIAAAAAAAAAAAAAABgAAAAyAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-07-30T05:57:13.543Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-30T05:57:13.543Z"
             }
           ]
         }

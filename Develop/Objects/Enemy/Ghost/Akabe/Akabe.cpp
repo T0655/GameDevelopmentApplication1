@@ -138,19 +138,19 @@ void Akabe::Movement(float delta_second)
 	{
 	case eMoveState::UP:
 		velocity.y = -1.0f;
-		eye_image = eye_animation[0];
+		eye_image = eye_animation[1];
 		break;
 	case eMoveState::DOWN:
 		velocity.y = 1.0f;
-		eye_image = eye_animation[2];
+		eye_image = eye_animation[3];
 		break;
 	case eMoveState::LEFT:
 		velocity.x = -1.0f;
-		eye_image = eye_animation[3];
+		eye_image = eye_animation[4];
 		break;
 	case eMoveState::RIGHT:
 		velocity.x = 1.0f;
-		eye_image = eye_animation[1];
+		eye_image = eye_animation[2];
 		break;
 	default:
 		break;
@@ -168,8 +168,9 @@ void Akabe::WaitMoment(float delta_second)
 {
 	image = move_animation[0];
 	eye_image = eye_animation[0];
+	
 
-	if (enemy_time < 0.0f) {
+	if (enemy_time < 100.0f) {
 		enemy_state = eEnemyState::TERRITORY;
 	}
 }
@@ -178,7 +179,7 @@ void Akabe::WaitMoment(float delta_second)
 void Akabe::TerritoryMove(float delta_second)
 {
 	if (now_direction == eMoveState::LEFT) {
-		now_direction = eMoveState::UP;
+		
 	};
 	
 	akabe->SetLocation(location);
