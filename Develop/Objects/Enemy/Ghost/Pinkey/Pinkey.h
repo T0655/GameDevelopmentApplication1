@@ -7,6 +7,7 @@ class Pinkey : public EnemyBase
 {
 private:
 	Player* player;
+	Pinkey* pinkey;
 	eEnemyState enemy_state;
 
 public:

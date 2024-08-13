@@ -94,6 +94,9 @@ void Player::Draw(const Vector2D& screen_offset) const
 {
 	// 親クラスの描画処理を呼び出す
 	__super::Draw(screen_offset);
+
+	DrawFormatString(200, 5, 0xffffff, "X座標:%f", location.x);
+	DrawFormatString(200, 20, 0xffffff, "Y座標:%f", location.y);
 }
 
 void Player::Finalize()

@@ -12,8 +12,8 @@ EnemyBase::EnemyBase()
   eye_animation(),
   velocity(0.0f),
   enemy_state(eEnemyState::WAIT),
-  now_direction(eMoveState::RIGHT),
-  next_direction_state(eMoveState::RIGHT),
+  now_direction(),
+  next_direction_state(),
   animation_time(0.0f),
   animation_count(0),
   enemy_time(0.0f),
@@ -142,6 +142,28 @@ void EnemyBase::Movement(float delta_second)
 	{
 	case eMoveState::UP:
 		velocity.y = -1.0f;
+		eye_image = eye_animation[0];
+		break;
+	case eMoveState::DOWN:
+		velocity.y = 1.0f;
+		eye_image = eye_animation[2];
+		break;
+	case eMoveState::LEFT:
+		velocity.x = -1.0f;
+		eye_image = eye_animation[3];
+		break;
+	case eMoveState::RIGHT:
+		velocity.x = 1.0f;
+		eye_image = eye_animation[1];
+		break;
+	default:
+		break;
+	}
+	
+	switch (next_direction_state)
+	{
+	case eMoveState::UP:
+		velocity.y = -1.0f;
 		break;
 	case eMoveState::DOWN:
 		velocity.y = 1.0f;
@@ -174,10 +196,7 @@ void EnemyBase::WaitMoment(float delta_second)
 //ナワバリ巡回処理
 void EnemyBase::TerritoryMove(float delta_second)
 {
-	if (now_direction == eMoveState::RIGHT)
-	{
-		now_direction = eMoveState::UP;
-	}
+	
 }
 
 //イジケ状態処理

@@ -7,6 +7,7 @@ class Guzuta : public EnemyBase
 {
 private:
 	Player* player;
+	Guzuta* guzuta;
 	eEnemyState enemy_state;
 
 public:

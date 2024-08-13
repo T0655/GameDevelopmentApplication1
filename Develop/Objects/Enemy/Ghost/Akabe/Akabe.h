@@ -9,8 +9,6 @@ private:
 	Player* player;
 	Akabe* akabe;
     eEnemyState enemy_state;
-	eMoveState now_direction;				// 現在進行方向状態
-	eMoveState next_direction_state;	    // 次回進行方向状態
 
 public:
 	Akabe();

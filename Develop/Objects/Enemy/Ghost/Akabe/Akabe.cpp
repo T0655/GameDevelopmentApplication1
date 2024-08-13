@@ -7,9 +7,7 @@
 #define D_ENEMY_SPEED (100.0f)
 
 //コンストラクタ
-Akabe::Akabe():enemy_state(eEnemyState::WAIT),
-now_direction(eMoveState::LEFT),
-next_direction_state(eMoveState::LEFT)
+Akabe::Akabe() 
 {
 	Player* player;
 	Akabe* akabe;
@@ -56,6 +54,10 @@ void Akabe::Draw(const Vector2D& screen_offset)const
 {
 	// 親クラスの描画処理を呼び出す
 	__super::Draw(screen_offset);
+
+	DrawFormatString(5, 5, 0xffffff, "X座標:%f", location.x);
+	DrawFormatString(5, 20, 0xffffff, "Y座標:%f", location.y);
+	DrawFormatString(5, 40, 0xffffff, "エネミー時間:%f", enemy_time);
 }
 
 //終了時処理
@@ -138,19 +140,19 @@ void Akabe::Movement(float delta_second)
 	{
 	case eMoveState::UP:
 		velocity.y = -1.0f;
-		eye_image = eye_animation[1];
+		eye_image = eye_animation[0];
 		break;
 	case eMoveState::DOWN:
 		velocity.y = 1.0f;
-		eye_image = eye_animation[3];
+		eye_image = eye_animation[2];
 		break;
 	case eMoveState::LEFT:
 		velocity.x = -1.0f;
-		eye_image = eye_animation[4];
+		eye_image = eye_animation[3];
 		break;
 	case eMoveState::RIGHT:
 		velocity.x = 1.0f;
-		eye_image = eye_animation[2];
+		eye_image = eye_animation[1];
 		break;
 	default:
 		break;
@@ -168,19 +170,41 @@ void Akabe::WaitMoment(float delta_second)
 {
 	image = move_animation[0];
 	eye_image = eye_animation[0];
+
+	now_direction = next_direction_state;
+	enemy_state = eEnemyState::WAIT;
+	next_direction_state = eMoveState::RIGHT;
 	
 
 	if (enemy_time < 100.0f) {
-		enemy_state = eEnemyState::TERRITORY;
+		
+		next_direction_state = eMoveState::RIGHT;
 	}
+
+	if (location.y == 35.5f&& location.x==636.5f) {
+		next_direction_state = eMoveState::DOWN;
+	}
+	/* 右下 左 左上の移動処理を作る
+	if (location.x == 636.5f && location.y == 204.0f) {
+		next_direction_state = eMoveState::UP;
+
+    // 左側
+    f(){
+	}
+
+	// 左上
+	f(){
+	}
+
+	}*/
+
+	
+	
 }
 
 //ナワバリ巡回処理
 void Akabe::TerritoryMove(float delta_second)
 {
-	if (now_direction == eMoveState::LEFT) {
-		
-	};
 	
 	akabe->SetLocation(location);
 }
