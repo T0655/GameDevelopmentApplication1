@@ -3,6 +3,26 @@
   "WorkspaceRootPath": "C:\\PG\\GameDevelopmentApplication1\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{5BA94388-3C7A-4AB9-BEB5-58CD2533D611}|Develop\\Develop.vcxproj|C:\\PG\\GameDevelopmentApplication1\\Develop\\Utility\\Collision.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{5BA94388-3C7A-4AB9-BEB5-58CD2533D611}|Develop\\Develop.vcxproj|solutionrelative:Develop\\Utility\\Collision.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5BA94388-3C7A-4AB9-BEB5-58CD2533D611}|Develop\\Develop.vcxproj|C:\\PG\\GameDevelopmentApplication1\\Develop\\Utility\\Vector2D.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{5BA94388-3C7A-4AB9-BEB5-58CD2533D611}|Develop\\Develop.vcxproj|solutionrelative:Develop\\Utility\\Vector2D.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5BA94388-3C7A-4AB9-BEB5-58CD2533D611}|Develop\\Develop.vcxproj|C:\\PG\\GameDevelopmentApplication1\\Develop\\Objects\\GameObjectBase.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{5BA94388-3C7A-4AB9-BEB5-58CD2533D611}|Develop\\Develop.vcxproj|solutionrelative:Develop\\Objects\\GameObjectBase.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5BA94388-3C7A-4AB9-BEB5-58CD2533D611}|Develop\\Develop.vcxproj|C:\\PG\\GameDevelopmentApplication1\\Develop\\Utility\\Collision.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{5BA94388-3C7A-4AB9-BEB5-58CD2533D611}|Develop\\Develop.vcxproj|solutionrelative:Develop\\Utility\\Collision.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5BA94388-3C7A-4AB9-BEB5-58CD2533D611}|Develop\\Develop.vcxproj|C:\\PG\\GameDevelopmentApplication1\\Develop\\Objects\\GameObjectBase.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{5BA94388-3C7A-4AB9-BEB5-58CD2533D611}|Develop\\Develop.vcxproj|solutionrelative:Develop\\Objects\\GameObjectBase.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{5BA94388-3C7A-4AB9-BEB5-58CD2533D611}|Develop\\Develop.vcxproj|C:\\PG\\GameDevelopmentApplication1\\Develop\\Objects\\Enemy\\Ghost\\Akabe\\Akabe.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{5BA94388-3C7A-4AB9-BEB5-58CD2533D611}|Develop\\Develop.vcxproj|solutionrelative:Develop\\Objects\\Enemy\\Ghost\\Akabe\\Akabe.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
@@ -30,7 +50,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
@@ -39,6 +59,71 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "Vector2D.h",
+              "DocumentMoniker": "C:\\PG\\GameDevelopmentApplication1\\Develop\\Utility\\Vector2D.h",
+              "RelativeDocumentMoniker": "Develop\\Utility\\Vector2D.h",
+              "ToolTip": "C:\\PG\\GameDevelopmentApplication1\\Develop\\Utility\\Vector2D.h",
+              "RelativeToolTip": "Develop\\Utility\\Vector2D.h",
+              "ViewState": "AQIAAFQAAAAAAAAAAAAAAAoAAAALAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-08-20T03:04:47.001Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "GameObjectBase.h",
+              "DocumentMoniker": "C:\\PG\\GameDevelopmentApplication1\\Develop\\Objects\\GameObjectBase.h",
+              "RelativeDocumentMoniker": "Develop\\Objects\\GameObjectBase.h",
+              "ToolTip": "C:\\PG\\GameDevelopmentApplication1\\Develop\\Objects\\GameObjectBase.h",
+              "RelativeToolTip": "Develop\\Objects\\GameObjectBase.h",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAAAAsAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-08-20T02:55:32.452Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "GameObjectBase.cpp",
+              "DocumentMoniker": "C:\\PG\\GameDevelopmentApplication1\\Develop\\Objects\\GameObjectBase.cpp",
+              "RelativeDocumentMoniker": "Develop\\Objects\\GameObjectBase.cpp",
+              "ToolTip": "C:\\PG\\GameDevelopmentApplication1\\Develop\\Objects\\GameObjectBase.cpp",
+              "RelativeToolTip": "Develop\\Objects\\GameObjectBase.cpp",
+              "ViewState": "AQIAAF0AAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-08-20T02:55:27.561Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Collision.h",
+              "DocumentMoniker": "C:\\PG\\GameDevelopmentApplication1\\Develop\\Utility\\Collision.h",
+              "RelativeDocumentMoniker": "Develop\\Utility\\Collision.h",
+              "ToolTip": "C:\\PG\\GameDevelopmentApplication1\\Develop\\Utility\\Collision.h",
+              "RelativeToolTip": "Develop\\Utility\\Collision.h",
+              "ViewState": "AQIAACcAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-08-20T02:55:16.075Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Collision.cpp",
+              "DocumentMoniker": "C:\\PG\\GameDevelopmentApplication1\\Develop\\Utility\\Collision.cpp",
+              "RelativeDocumentMoniker": "Develop\\Utility\\Collision.cpp",
+              "ToolTip": "C:\\PG\\GameDevelopmentApplication1\\Develop\\Utility\\Collision.cpp",
+              "RelativeToolTip": "Develop\\Utility\\Collision.cpp",
+              "ViewState": "AQIAADwAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-08-20T02:55:15.261Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "Player.cpp",
               "DocumentMoniker": "C:\\PG\\GameDevelopmentApplication1\\Develop\\Objects\\Player\\Player.cpp",
               "RelativeDocumentMoniker": "Develop\\Objects\\Player\\Player.cpp",
@@ -46,25 +131,24 @@
               "RelativeToolTip": "Develop\\Objects\\Player\\Player.cpp",
               "ViewState": "AQIAAOcAAAAAAAAAAAAAAFwAAAAPAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-08-13T00:49:02.038Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-13T00:49:02.038Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 5,
               "Title": "Akabe.cpp",
               "DocumentMoniker": "C:\\PG\\GameDevelopmentApplication1\\Develop\\Objects\\Enemy\\Ghost\\Akabe\\Akabe.cpp",
               "RelativeDocumentMoniker": "Develop\\Objects\\Enemy\\Ghost\\Akabe\\Akabe.cpp",
               "ToolTip": "C:\\PG\\GameDevelopmentApplication1\\Develop\\Objects\\Enemy\\Ghost\\Akabe\\Akabe.cpp",
               "RelativeToolTip": "Develop\\Objects\\Enemy\\Ghost\\Akabe\\Akabe.cpp",
-              "ViewState": "AQIAAMAAAAAAAAAAAAAAAMIAAAAGAAAA",
+              "ViewState": "AQIAALoAAAAAAAAAAAAAAL8AAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-08-13T00:47:40.845Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 9,
               "Title": "Akabe.h",
               "DocumentMoniker": "C:\\PG\\GameDevelopmentApplication1\\Develop\\Objects\\Enemy\\Ghost\\Akabe\\Akabe.h",
               "RelativeDocumentMoniker": "Develop\\Objects\\Enemy\\Ghost\\Akabe\\Akabe.h",
@@ -72,12 +156,11 @@
               "RelativeToolTip": "Develop\\Objects\\Enemy\\Ghost\\Akabe\\Akabe.h",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-08-13T00:47:40.101Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-13T00:47:40.101Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 8,
               "Title": "EnemyBase.h",
               "DocumentMoniker": "C:\\PG\\GameDevelopmentApplication1\\Develop\\Objects\\Enemy\\EnemyBase.h",
               "RelativeDocumentMoniker": "Develop\\Objects\\Enemy\\EnemyBase.h",
@@ -85,12 +168,11 @@
               "RelativeToolTip": "Develop\\Objects\\Enemy\\EnemyBase.h",
               "ViewState": "AQIAABUAAAAAAAAAAAAAAB4AAAAfAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-07-30T05:48:28.255Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-30T05:48:28.255Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 7,
               "Title": "EnemyBase.cpp",
               "DocumentMoniker": "C:\\PG\\GameDevelopmentApplication1\\Develop\\Objects\\Enemy\\EnemyBase.cpp",
               "RelativeDocumentMoniker": "Develop\\Objects\\Enemy\\EnemyBase.cpp",
@@ -98,8 +180,7 @@
               "RelativeToolTip": "Develop\\Objects\\Enemy\\EnemyBase.cpp",
               "ViewState": "AQIAAI0AAAAAAAAAAAAkwKAAAAACAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-07-30T05:45:00.957Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-30T05:45:00.957Z"
             }
           ]
         }
