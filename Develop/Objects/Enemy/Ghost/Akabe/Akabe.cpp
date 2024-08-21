@@ -9,8 +9,7 @@
 //コンストラクタ
 Akabe::Akabe() 
 {
-	Player* player;
-	Akabe* akabe;
+
 }
 //デストラクタ
 Akabe::~Akabe()
@@ -113,23 +112,23 @@ void Akabe::Movement(float delta_second)
 	switch (enemy_state)
 	{
 	case eEnemyState::WAIT:
-		WaitMoment(delta_second);
+		Akabe::WaitMoment(delta_second);
 		break;
 	case eEnemyState::WORK:
 		// アニメーション制御
-		AnimationControl(delta_second);
+		Akabe::AnimationControl(delta_second);
 		break;
 	case eEnemyState::TERRITORY:
-		TerritoryMove(delta_second);
+		Akabe::TerritoryMove(delta_second);
 		break;
 	case eEnemyState::WEEKEND:
-		WeekendMove(delta_second);
+		Akabe::WeekendMove(delta_second);
 		break;
 	case eEnemyState::CHASE:
-		ChaseMoment(delta_second);
+		Akabe::ChaseMoment(delta_second);
 		break;
 	case eEnemyState::RUN:
-		RunMoment(delta_second);
+		Akabe::RunMoment(delta_second);
 		break;
 	default:
 		break;
@@ -163,6 +162,8 @@ void Akabe::Movement(float delta_second)
 
 	// 移動量 * 速さ * 時間 で移動先を決定する
 	location += velocity * D_ENEMY_SPEED * delta_second;
+
+	this->player->SetLocation(location);
 }
 
 //エネミー待機処理
@@ -171,42 +172,33 @@ void Akabe::WaitMoment(float delta_second)
 	image = move_animation[0];
 	eye_image = eye_animation[0];
 
+	enemy_state = WAIT;
 	now_direction = next_direction_state;
-	enemy_state = eEnemyState::WAIT;
-	next_direction_state = eMoveState::RIGHT;
 	
-
-	if (enemy_time < 100.0f) {
-		
+	if (enemy_time < 200) {
 		next_direction_state = eMoveState::RIGHT;
+		enemy_state = TERRITORY;
 	}
 
-	if (location.y == 35.5f&& location.x==636.5f) {
+	if (location.y == 35.5f && location.x == 636.5f) {
 		next_direction_state = eMoveState::DOWN;
 	}
-	/* 右下 左 左上の移動処理を作る
-	if (location.x == 636.5f && location.y == 204.0f) {
+
+	if (location.x == 636.5f && location.y == 204.5f) {
+		next_direction_state = eMoveState::LEFT;
+	}
+
+	if (location.x == 515.5f && location.y < 204.5f) {
 		next_direction_state = eMoveState::UP;
-
-    // 左側
-    f(){
 	}
 
-	// 左上
-	f(){
-	}
-
-	}*/
-
-	
-	
+	player->GetLocation();
 }
 
 //ナワバリ巡回処理
 void Akabe::TerritoryMove(float delta_second)
 {
-	
-	akabe->SetLocation(location);
+
 }
 
 //イジケ状態
@@ -218,7 +210,7 @@ void Akabe::WeekendMove(float delta_second)
 //追いかけ処理
 void Akabe::ChaseMoment(float delta_second)
 {
-	akabe->GetLocation();
+	akabe->SetLocation(location);
 
 	now_direction = RIGHT;
 }
