@@ -8,7 +8,7 @@ class Aosuke : public EnemyBase
 private:
 	Player* player;
 	Aosuke* aosuke;
-	eEnemyState enemy_state;
+	eEnemyState aosuke_state;
 
 public:
 	Aosuke();

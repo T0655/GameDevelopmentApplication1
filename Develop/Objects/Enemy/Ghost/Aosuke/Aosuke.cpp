@@ -9,8 +9,7 @@
 //コンストラクタ
 Aosuke::Aosuke()
 {
-	Player* player;
-	eEnemyState enemy_state;
+	
 }
 //デストラクタ
 Aosuke::~Aosuke()
@@ -51,6 +50,9 @@ void Aosuke::Update(float delta_second)
 //描画処理
 void Aosuke::Draw(const Vector2D& screen_offset)const
 {
+	DrawFormatString(5, 5, 0xffffff, "X座標:%f", location.x);
+	DrawFormatString(5, 20, 0xffffff, "Y座標:%f", location.y);
+
 	// 親クラスの描画処理を呼び出す
 	__super::Draw(screen_offset);
 }
@@ -152,9 +154,17 @@ void Aosuke::WaitMoment(float delta_second)
 {
 	image = move_animation[5];
 
-	if (enemy_time < 100.0f) {
+	if (enemy_time < 1000.0f) {
 		enemy_state = eEnemyState::TERRITORY;
-		now_direction = eMoveState::RIGHT;
+		now_direction = eMoveState::UP;
+	}
+
+	if (location.x > 380.5f && location.y==323.5f) {
+		now_direction = eMoveState::LEFT;
+		if (now_direction == eMoveState::LEFT) {
+			next_direction_state = eMoveState::LEFT;
+		}
+
 	}
 }
 

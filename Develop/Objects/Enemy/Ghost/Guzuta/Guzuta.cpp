@@ -154,7 +154,7 @@ void Guzuta::WaitMoment(float delta_second)
 
 	if (enemy_time < 100.0f) {
 		enemy_state = eEnemyState::TERRITORY;
-		now_direction = eMoveState::RIGHT;
+		now_direction = eMoveState::UP;
 	}
 }
 

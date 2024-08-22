@@ -8,7 +8,7 @@ class Akabe : public EnemyBase
 private:
 	Player* player=nullptr;
 	Akabe* akabe;
-    eEnemyState enemy_state;
+    eEnemyState akabe_state;
 
 public:
 	Akabe();

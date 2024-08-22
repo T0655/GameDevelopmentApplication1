@@ -54,8 +54,7 @@ void Akabe::Draw(const Vector2D& screen_offset)const
 	// 親クラスの描画処理を呼び出す
 	__super::Draw(screen_offset);
 
-	DrawFormatString(5, 5, 0xffffff, "X座標:%f", location.x);
-	DrawFormatString(5, 20, 0xffffff, "Y座標:%f", location.y);
+	
 	DrawFormatString(5, 40, 0xffffff, "エネミー時間:%f", enemy_time);
 }
 
@@ -172,33 +171,55 @@ void Akabe::WaitMoment(float delta_second)
 	image = move_animation[0];
 	eye_image = eye_animation[0];
 
-	enemy_state = WAIT;
+	enemy_state = akabe_state;
 	now_direction = next_direction_state;
 	
-	if (enemy_time < 200) {
+	if (enemy_time < 500) {
 		next_direction_state = eMoveState::RIGHT;
-		enemy_state = TERRITORY;
+		akabe_state = eEnemyState::TERRITORY;
 	}
-
-	if (location.y == 35.5f && location.x == 636.5f) {
-		next_direction_state = eMoveState::DOWN;
-	}
-
-	if (location.x == 636.5f && location.y == 204.5f) {
-		next_direction_state = eMoveState::LEFT;
-	}
-
-	if (location.x == 515.5f && location.y < 204.5f) {
-		next_direction_state = eMoveState::UP;
-	}
-
-	player->GetLocation();
 }
 
 //ナワバリ巡回処理
 void Akabe::TerritoryMove(float delta_second)
 {
+	if (akabe_state == eEnemyState::TERRITORY) {
 
+		// ナワバリ中の時間設定と時間後の処理
+		if (enemy_time > 3500) {
+			akabe_state = eEnemyState::CHASE;
+			player->GetLocation();
+		}
+
+		// ナワバリ用右上の処理
+		if (location.y == 35.5f && location.x == 636.5f) {
+			now_direction = eMoveState::DOWN;
+			if (now_direction == eMoveState::DOWN) {
+				next_direction_state = eMoveState::DOWN;
+			}
+		}
+		// ナワバリ用右下の処理
+		if (location.x == 636.5f && location.y > 110.5f) {
+			now_direction = eMoveState::LEFT;
+			if (now_direction == eMoveState::LEFT) {
+				next_direction_state = eMoveState::LEFT;
+			}
+		}
+		// ナワバリ用左下の処理
+		if (location.x < 535.5f && location.y > 120.5f) {
+			now_direction = eMoveState::UP;
+			if (now_direction == eMoveState::UP) {
+				next_direction_state = eMoveState::UP;
+			}
+		}
+		// ナワバリ用左上の処理
+		if (location.x == 515.5f && location.y > 36.5f) {
+			now_direction = eMoveState::RIGHT;
+			if (now_direction == eMoveState::RIGHT) {
+				next_direction_state = eMoveState::RIGHT;
+			}
+		}
+	}
 }
 
 //イジケ状態
@@ -215,6 +236,7 @@ void Akabe::ChaseMoment(float delta_second)
 	now_direction = RIGHT;
 }
 
+// 帰巣処理
 void Akabe::RunMoment(float delta_second)
 {
 	if (enemy_state == eEnemyState::RUN)

@@ -152,9 +152,12 @@ void Pinkey::WaitMoment(float delta_second)
 {
 	image = move_animation[2];
 
+	enemy_state = pinkey_state;
+	now_direction = next_direction_state;
+
 	if (enemy_time < 100.0f) {
 		enemy_state = eEnemyState::TERRITORY;
-		now_direction = eMoveState::RIGHT;
+		now_direction = eMoveState::UP;
 	}
 }
 

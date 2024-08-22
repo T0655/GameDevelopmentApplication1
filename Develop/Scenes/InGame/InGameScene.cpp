@@ -209,7 +209,7 @@ void InGameScene::LoadStageMapCSV()
 				break;
 				// ピンキー
 			case 'N':
-				generate_location = (Vector2D((float)(spos_x - 1), (float)(spos_y - 1)) * D_OBJECT_SIZE) + (D_OBJECT_SIZE / 2.0f);
+				generate_location = (Vector2D((float)(spos_x -1.5), (float)(spos_y - 1)) * D_OBJECT_SIZE) + (D_OBJECT_SIZE / 2.0f);
 				pinkey = CreateObject<Pinkey>(generate_location);
 				break;
 			// 上記以外
