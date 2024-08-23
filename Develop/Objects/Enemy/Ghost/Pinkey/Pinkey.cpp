@@ -45,12 +45,14 @@ void Pinkey::Initialize()
 //更新処理
 void Pinkey::Update(float delta_second)
 {
+	enemy_time++;
 	EnemyBase::Movement(delta_second);
 }
 
 //描画処理
 void Pinkey::Draw(const Vector2D& screen_offset)const
 {
+	
 	// 親クラスの描画処理を呼び出す
 	__super::Draw(screen_offset);
 }
@@ -66,27 +68,27 @@ void Pinkey::Finalize()
 //当たり判定処理
 void Pinkey::OnHitCollision(GameObjectBase* hit_object)
 {
-	// 当たった、オブジェクトが壁だったら
-	if (hit_object->GetCollision().object_type == eObjectType::wall)
-	{
-		// 当たり判定情報を取得して、カプセルがある位置を求める
-		CapsuleCollision hc = hit_object->GetCollision();
-		hc.point[0] += hit_object->GetLocation();
-		hc.point[1] += hit_object->GetLocation();
+		// 当たった、オブジェクトが壁だったら
+		if (hit_object->GetCollision().object_type == eObjectType::wall && pinkey_state == eEnemyState::TERRITORY)
+		{
+				// 当たり判定情報を取得して、カプセルがある位置を求める
+				CapsuleCollision hc = hit_object->GetCollision();
+				hc.point[0] += hit_object->GetLocation();
+				hc.point[1] += hit_object->GetLocation();
 
-		// 最近傍点を求める
-		Vector2D near_point = NearPointCheck(hc, this->location);
+				// 最近傍点を求める
+				Vector2D near_point = NearPointCheck(hc, this->location);
 
-		// Enemyからnear_pointへの方向ベクトルを取得
-		Vector2D dv2 = near_point - this->location;
-		Vector2D dv = this->location - near_point;
+				// Enemyからnear_pointへの方向ベクトルを取得
+				Vector2D dv2 = near_point - this->location;
+				Vector2D dv = this->location - near_point;
 
-		// めり込んだ差分
-		float diff = (this->GetCollision().radius + hc.radius) - dv.Length();
+				// めり込んだ差分
+				float diff = (this->GetCollision().radius + hc.radius) - dv.Length();
 
-		// diffの分だけ戻る
-		location += dv.Normalize() * diff;
-	}
+				// diffの分だけ戻る
+				location += dv.Normalize() * diff;
+		}
 	// 当たるときプレイヤーがである場合
 	if (hit_object->GetCollision().object_type == eObjectType::special)
 	{
@@ -97,7 +99,6 @@ void Pinkey::OnHitCollision(GameObjectBase* hit_object)
 //移動処理
 void Pinkey::Movement(float delta_second)
 {
-	enemy_state = WORK;
 
 	switch (enemy_state)
 	{
@@ -155,18 +156,45 @@ void Pinkey::WaitMoment(float delta_second)
 	enemy_state = pinkey_state;
 	now_direction = next_direction_state;
 
-	if (enemy_time < 100.0f) {
-		enemy_state = eEnemyState::TERRITORY;
+	if (enemy_time > 300) {
 		now_direction = eMoveState::UP;
+		pinkey_state = eEnemyState::TERRITORY;
 	}
 }
 
 //ナワバリ巡回処理
 void Pinkey::TerritoryMove(float delta_second)
 {
-	if (now_direction == eMoveState::RIGHT)
+	// ナワバリ中の時間設定と時間後の処理
+	if (enemy_time > 3500) {
+		pinkey_state = eEnemyState::CHASE;
+		player->GetLocation();
+	}
+
+	if (now_direction == eMoveState::UP)
 	{
+		now_direction = eMoveState::LEFT;
+	}
+
+	if (location.x == 35.5f && location.y == 35.5f) {
+		now_direction = eMoveState::DOWN;
+		if (now_direction == eMoveState::DOWN) {
+				next_direction_state = eMoveState::DOWN;
+		}
+	}
+
+	if (location.x ==  35.5f && location.y > 115.5f) {
+		now_direction = eMoveState::RIGHT;
+		if (now_direction == eMoveState::RIGHT) {
+			next_direction_state = eMoveState::RIGHT;
+		}
+	}
+
+	if (location.x > 130.5f && location.y == 132.5f) {
 		now_direction = eMoveState::UP;
+		if (now_direction == eMoveState::UP) {
+			next_direction_state = eMoveState::UP;
+		}
 	}
 }
 
