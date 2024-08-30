@@ -10,6 +10,7 @@ enum eEnemyState
 	WEEKEND,    // イジケ状態
 	CHASE,      // 追いかけ状態
 	RUN,        // 帰巣状態
+	BASE,       // グズタとアオスケ専用
 };
 
 class EnemyBase : public GameObject

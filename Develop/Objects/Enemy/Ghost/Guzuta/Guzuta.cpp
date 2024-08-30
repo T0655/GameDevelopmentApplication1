@@ -46,6 +46,7 @@ void Guzuta::Initialize()
 void Guzuta::Update(float delta_second)
 {
 	EnemyBase::Movement(delta_second);
+	enemy_time++;
 }
 
 //描画処理
@@ -53,6 +54,9 @@ void Guzuta::Draw(const Vector2D& screen_offset)const
 {
 	// 親クラスの描画処理を呼び出す
 	__super::Draw(screen_offset);
+
+	DrawFormatString(5, 5, 0xffffff, "X座標:%f", location.x);
+	DrawFormatString(5, 20, 0xffffff, "Y座標:%f", location.y);
 }
 
 //終了時処理
@@ -67,7 +71,7 @@ void Guzuta::Finalize()
 void Guzuta::OnHitCollision(GameObjectBase* hit_object)
 {
 	// 当たった、オブジェクトが壁だったら
-	if (hit_object->GetCollision().object_type == eObjectType::wall)
+	if (hit_object->GetCollision().object_type == eObjectType::wall && guzuta_state == eEnemyState::WAIT)
 	{
 		// 当たり判定情報を取得して、カプセルがある位置を求める
 		CapsuleCollision hc = hit_object->GetCollision();
@@ -97,16 +101,21 @@ void Guzuta::OnHitCollision(GameObjectBase* hit_object)
 //移動処理
 void Guzuta::Movement(float delta_second)
 {
-	enemy_state = WORK;
+	guzuta_state = eEnemyState::WAIT;
 
 	switch (enemy_state)
 	{
 	case eEnemyState::WAIT:
 		WaitMoment(delta_second);
+		// アニメーション制御
+		AnimationControl(delta_second);
 		break;
 	case eEnemyState::WORK:
 		// アニメーション制御
 		AnimationControl(delta_second);
+		break;
+	case eEnemyState::BASE:
+		BaseMove(delta_second);
 		break;
 	case eEnemyState::TERRITORY:
 		TerritoryMove(delta_second);
@@ -152,9 +161,33 @@ void Guzuta::WaitMoment(float delta_second)
 {
 	image = move_animation[7];
 
-	if (enemy_time < 100.0f) {
-		enemy_state = eEnemyState::TERRITORY;
+	enemy_state = guzuta_state;
+	now_direction = next_direction_state;
+
+	if (enemy_time > 1400.0f) {
 		now_direction = eMoveState::UP;
+		guzuta_state = eEnemyState::BASE;
+	}
+
+	if (location.x == 396.0f && location.y == 323.5f) {
+		now_direction = eMoveState::LEFT;
+		if (now_direction == eMoveState::LEFT) {
+			next_direction_state = eMoveState::LEFT;
+		}
+	}
+
+	if (location.x == 275.5f && location.y == 323.5f) {
+		now_direction = eMoveState::RIGHT;
+		if (now_direction == eMoveState::RIGHT) {
+			next_direction_state = eMoveState::RIGHT;
+		}
+	}
+
+	if (location.x == 396.5f && location.y == 323.5f) {
+		now_direction = eMoveState::LEFT;
+		if (now_direction == eMoveState::LEFT) {
+			next_direction_state = eMoveState::LEFT;
+		}
 	}
 }
 
@@ -210,5 +243,12 @@ void Guzuta::AnimationControl(float delta_second)
 			image = move_animation[(dir_num * 3) + animation_num[animation_count]];
 		}
 
+	}
+}
+
+void Guzuta::BaseMove(float delta_second) {
+	
+	if (enemy_time > 1500.0f) {
+		guzuta_state = eEnemyState::TERRITORY;
 	}
 }

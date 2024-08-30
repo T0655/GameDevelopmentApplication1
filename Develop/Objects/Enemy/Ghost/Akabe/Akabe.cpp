@@ -232,8 +232,6 @@ void Akabe::WeekendMove(float delta_second)
 void Akabe::ChaseMoment(float delta_second)
 {
 	akabe->SetLocation(location);
-
-	now_direction = RIGHT;
 }
 
 // ‹A‘ƒˆ—

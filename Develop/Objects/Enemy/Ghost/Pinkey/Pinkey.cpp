@@ -45,14 +45,13 @@ void Pinkey::Initialize()
 //更新処理
 void Pinkey::Update(float delta_second)
 {
-	enemy_time++;
 	EnemyBase::Movement(delta_second);
+	enemy_time++;
 }
 
 //描画処理
 void Pinkey::Draw(const Vector2D& screen_offset)const
 {
-	
 	// 親クラスの描画処理を呼び出す
 	__super::Draw(screen_offset);
 }
@@ -69,7 +68,7 @@ void Pinkey::Finalize()
 void Pinkey::OnHitCollision(GameObjectBase* hit_object)
 {
 		// 当たった、オブジェクトが壁だったら
-		if (hit_object->GetCollision().object_type == eObjectType::wall && pinkey_state == eEnemyState::TERRITORY)
+		if (hit_object->GetCollision().object_type == eObjectType::wall && pinkey_state == eEnemyState::TERRITORY || pinkey_state == eEnemyState::CHASE)
 		{
 				// 当たり判定情報を取得して、カプセルがある位置を求める
 				CapsuleCollision hc = hit_object->GetCollision();
@@ -165,37 +164,38 @@ void Pinkey::WaitMoment(float delta_second)
 //ナワバリ巡回処理
 void Pinkey::TerritoryMove(float delta_second)
 {
-	// ナワバリ中の時間設定と時間後の処理
-	if (enemy_time > 3500) {
-		pinkey_state = eEnemyState::CHASE;
-		player->GetLocation();
-	}
+		// ナワバリ中の時間設定と時間後の処理
+		if (enemy_time > 3500) {
+			now_direction = eMoveState::DOWN;
+			pinkey_state = eEnemyState::CHASE;
+			player->GetLocation();
+		}
 
-	if (now_direction == eMoveState::UP)
-	{
-		now_direction = eMoveState::LEFT;
-	}
+		if (now_direction == eMoveState::UP)
+		{
+			now_direction = eMoveState::LEFT;
+		}
 
-	if (location.x == 35.5f && location.y == 35.5f) {
-		now_direction = eMoveState::DOWN;
-		if (now_direction == eMoveState::DOWN) {
+		if (location.x == 35.5f && location.y == 35.5f) {
+			now_direction = eMoveState::DOWN;
+			if (now_direction == eMoveState::DOWN) {
 				next_direction_state = eMoveState::DOWN;
+			}
 		}
-	}
 
-	if (location.x ==  35.5f && location.y > 115.5f) {
-		now_direction = eMoveState::RIGHT;
-		if (now_direction == eMoveState::RIGHT) {
-			next_direction_state = eMoveState::RIGHT;
+		if (location.x == 35.5f && location.y > 115.5f) {
+			now_direction = eMoveState::RIGHT;
+			if (now_direction == eMoveState::RIGHT) {
+				next_direction_state = eMoveState::RIGHT;
+			}
 		}
-	}
 
-	if (location.x > 130.5f && location.y == 132.5f) {
-		now_direction = eMoveState::UP;
-		if (now_direction == eMoveState::UP) {
-			next_direction_state = eMoveState::UP;
+		if (location.x > 131.5f && location.y == 132.5f) {
+			now_direction = eMoveState::UP;
+			if (now_direction == eMoveState::UP) {
+				next_direction_state = eMoveState::UP;
+			}
 		}
-	}
 }
 
 //イジケ状態
@@ -203,14 +203,17 @@ void Pinkey::WeekendMove(float delta_second)
 {
 
 }
-
 //追いかけ処理
 void Pinkey::ChaseMoment(float delta_second)
 {
-	player->GetLocation();
+	if (pinkey_state == eEnemyState::CHASE) {
+		if (now_direction = eMoveState::DOWN) {
+			now_direction = eMoveState::LEFT;
+		}
+	}
 
-	now_direction = RIGHT;
 }
+	
 
 void Pinkey::RunMoment(float delta_second)
 {

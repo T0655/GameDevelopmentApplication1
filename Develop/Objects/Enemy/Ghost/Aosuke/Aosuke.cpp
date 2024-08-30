@@ -45,13 +45,13 @@ void Aosuke::Initialize()
 void Aosuke::Update(float delta_second)
 {
 	EnemyBase::Movement(delta_second);
+	enemy_time++;
 }
 
 //描画処理
 void Aosuke::Draw(const Vector2D& screen_offset)const
 {
-	DrawFormatString(5, 5, 0xffffff, "X座標:%f", location.x);
-	DrawFormatString(5, 20, 0xffffff, "Y座標:%f", location.y);
+	
 	// 親クラスの描画処理を呼び出す
 	__super::Draw(screen_offset);
 }
@@ -98,8 +98,6 @@ void Aosuke::OnHitCollision(GameObjectBase* hit_object)
 //移動処理
 void Aosuke::Movement(float delta_second)
 {
-	enemy_state = WORK;
-
 	switch (enemy_state)
 	{
 	case eEnemyState::WAIT:
@@ -155,7 +153,9 @@ void Aosuke::WaitMoment(float delta_second)
 
 	if (enemy_time > 1500.0f) {
 		aosuke_state = eEnemyState::TERRITORY;
+		now_direction = eMoveState::UP;
 	}
+
 	// 初期位置の移動処理
 	if (location.x==300.0f && location.y==323.5f) {
 		now_direction = eMoveState::RIGHT;

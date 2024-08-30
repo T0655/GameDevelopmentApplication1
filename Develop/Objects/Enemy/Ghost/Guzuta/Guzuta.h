@@ -8,7 +8,7 @@ class Guzuta : public EnemyBase
 private:
 	Player* player;
 	Guzuta* guzuta;
-	eEnemyState enemy_state;
+	eEnemyState guzuta_state;
 
 public:
 	Guzuta();
@@ -31,5 +31,6 @@ private:
 	virtual void ChaseMoment(float delta_second);
 	virtual void RunMoment(float delta_second);
 	virtual void AnimationControl(float delta_second);
+	virtual void BaseMove(float delta_second);
 };
 
