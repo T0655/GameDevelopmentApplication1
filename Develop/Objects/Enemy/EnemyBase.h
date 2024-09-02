@@ -40,6 +40,8 @@ protected:
 
 	int animation_num[19];
 
+	
+
 public:
 	EnemyBase();
 	virtual ~EnemyBase();

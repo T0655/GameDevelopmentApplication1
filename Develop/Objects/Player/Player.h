@@ -26,8 +26,9 @@ private:
 		LEFT,
 		NONE,
 	};
-
 private:
+	static Player* player;
+
 	std::vector<int> move_animation;		// 移動のアニメーション画像
 	std::vector<int> dying_animation;		// 死亡のアニメーション画像
 	Vector2D old_location;					// 前回のlocation

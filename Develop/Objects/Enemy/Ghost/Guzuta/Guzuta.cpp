@@ -71,7 +71,7 @@ void Guzuta::Finalize()
 void Guzuta::OnHitCollision(GameObjectBase* hit_object)
 {
 	// 当たった、オブジェクトが壁だったら
-	if (hit_object->GetCollision().object_type == eObjectType::wall && guzuta_state == eEnemyState::WAIT)
+	if (hit_object->GetCollision().object_type == eObjectType::wall && guzuta_state == eEnemyState::WAIT || guzuta_state == eEnemyState::TERRITORY)
 	{
 		// 当たり判定情報を取得して、カプセルがある位置を求める
 		CapsuleCollision hc = hit_object->GetCollision();
@@ -91,6 +91,7 @@ void Guzuta::OnHitCollision(GameObjectBase* hit_object)
 		// diffの分だけ戻る
 		location += dv.Normalize() * diff;
 	}
+
 	// 当たるときプレイヤーがである場合
 	if (hit_object->GetCollision().object_type == eObjectType::special)
 	{
@@ -101,8 +102,6 @@ void Guzuta::OnHitCollision(GameObjectBase* hit_object)
 //移動処理
 void Guzuta::Movement(float delta_second)
 {
-	guzuta_state = eEnemyState::WAIT;
-
 	switch (enemy_state)
 	{
 	case eEnemyState::WAIT:
@@ -164,11 +163,6 @@ void Guzuta::WaitMoment(float delta_second)
 	enemy_state = guzuta_state;
 	now_direction = next_direction_state;
 
-	if (enemy_time > 1400.0f) {
-		now_direction = eMoveState::UP;
-		guzuta_state = eEnemyState::BASE;
-	}
-
 	if (location.x == 396.0f && location.y == 323.5f) {
 		now_direction = eMoveState::LEFT;
 		if (now_direction == eMoveState::LEFT) {
@@ -191,13 +185,16 @@ void Guzuta::WaitMoment(float delta_second)
 	}
 }
 
+void Guzuta::BaseMove(float delta_second) {
+	if (guzuta_state == eEnemyState::BASE) {
+		guzuta_state = eEnemyState::TERRITORY;
+	}
+}
+
 //ナワバリ巡回処理
 void Guzuta::TerritoryMove(float delta_second)
 {
-	if (now_direction == eMoveState::RIGHT)
-	{
-		now_direction = eMoveState::UP;
-	}
+	
 }
 
 //イジケ状態
@@ -209,6 +206,7 @@ void Guzuta::WeekendMove(float delta_second)
 //追いかけ処理
 void Guzuta::ChaseMoment(float delta_second)
 {
+	
 	player->GetLocation();
 
 	now_direction = RIGHT;
@@ -246,9 +244,3 @@ void Guzuta::AnimationControl(float delta_second)
 	}
 }
 
-void Guzuta::BaseMove(float delta_second) {
-	
-	if (enemy_time > 1500.0f) {
-		guzuta_state = eEnemyState::TERRITORY;
-	}
-}

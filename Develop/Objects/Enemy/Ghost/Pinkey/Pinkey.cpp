@@ -91,7 +91,7 @@ void Pinkey::OnHitCollision(GameObjectBase* hit_object)
 	// 当たるときプレイヤーがである場合
 	if (hit_object->GetCollision().object_type == eObjectType::special)
 	{
-		enemy_state = eEnemyState::WEEKEND;
+		enemy_state = eEnemyState::RUN;
 	}
 }
 
@@ -165,8 +165,7 @@ void Pinkey::WaitMoment(float delta_second)
 void Pinkey::TerritoryMove(float delta_second)
 {
 		// ナワバリ中の時間設定と時間後の処理
-		if (enemy_time > 3500) {
-			now_direction = eMoveState::DOWN;
+		if (enemy_time > 2700) {
 			pinkey_state = eEnemyState::CHASE;
 			player->GetLocation();
 		}
@@ -176,6 +175,7 @@ void Pinkey::TerritoryMove(float delta_second)
 			now_direction = eMoveState::LEFT;
 		}
 
+		// 左上処理
 		if (location.x == 35.5f && location.y == 35.5f) {
 			now_direction = eMoveState::DOWN;
 			if (now_direction == eMoveState::DOWN) {
@@ -183,6 +183,7 @@ void Pinkey::TerritoryMove(float delta_second)
 			}
 		}
 
+		// 左下処理
 		if (location.x == 35.5f && location.y > 115.5f) {
 			now_direction = eMoveState::RIGHT;
 			if (now_direction == eMoveState::RIGHT) {
@@ -190,10 +191,11 @@ void Pinkey::TerritoryMove(float delta_second)
 			}
 		}
 
+		// 右下処理
 		if (location.x > 131.5f && location.y == 132.5f) {
-			now_direction = eMoveState::UP;
-			if (now_direction == eMoveState::UP) {
-				next_direction_state = eMoveState::UP;
+			now_direction = eMoveState::DOWN;
+			if (now_direction == eMoveState::DOWN) {
+				next_direction_state = eMoveState::DOWN;
 			}
 		}
 }
@@ -201,16 +203,11 @@ void Pinkey::TerritoryMove(float delta_second)
 //イジケ状態
 void Pinkey::WeekendMove(float delta_second)
 {
-
+	image = move_animation[17];
 }
 //追いかけ処理
 void Pinkey::ChaseMoment(float delta_second)
 {
-	if (pinkey_state == eEnemyState::CHASE) {
-		if (now_direction = eMoveState::DOWN) {
-			now_direction = eMoveState::LEFT;
-		}
-	}
 
 }
 	

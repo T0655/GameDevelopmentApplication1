@@ -7,6 +7,9 @@
 
 #define D_PLAYER_SPEED	(50.0f)
 
+Player* Player::player= nullptr;
+
+
 Player::Player() :
 	move_animation(),
 	dying_animation(),
