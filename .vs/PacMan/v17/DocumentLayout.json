@@ -3,24 +3,24 @@
   "WorkspaceRootPath": "C:\\PG\\GameDevelopmentApplication1\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{5BA94388-3C7A-4AB9-BEB5-58CD2533D611}|Develop\\Develop.vcxproj|C:\\PG\\GameDevelopmentApplication1\\Develop\\Objects\\Enemy\\Ghost\\Akabe\\Akabe.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{5BA94388-3C7A-4AB9-BEB5-58CD2533D611}|Develop\\Develop.vcxproj|solutionrelative:Develop\\Objects\\Enemy\\Ghost\\Akabe\\Akabe.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5BA94388-3C7A-4AB9-BEB5-58CD2533D611}|Develop\\Develop.vcxproj|C:\\PG\\GameDevelopmentApplication1\\Develop\\Utility\\ResourceManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{5BA94388-3C7A-4AB9-BEB5-58CD2533D611}|Develop\\Develop.vcxproj|solutionrelative:Develop\\Utility\\ResourceManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{5BA94388-3C7A-4AB9-BEB5-58CD2533D611}|Develop\\Develop.vcxproj|C:\\PG\\GameDevelopmentApplication1\\Develop\\Objects\\Player\\Player.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{5BA94388-3C7A-4AB9-BEB5-58CD2533D611}|Develop\\Develop.vcxproj|solutionrelative:Develop\\Objects\\Player\\Player.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5BA94388-3C7A-4AB9-BEB5-58CD2533D611}|Develop\\Develop.vcxproj|C:\\PG\\GameDevelopmentApplication1\\Develop\\Objects\\Player\\Player.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{5BA94388-3C7A-4AB9-BEB5-58CD2533D611}|Develop\\Develop.vcxproj|solutionrelative:Develop\\Objects\\Player\\Player.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5BA94388-3C7A-4AB9-BEB5-58CD2533D611}|Develop\\Develop.vcxproj|C:\\PG\\GameDevelopmentApplication1\\Develop\\Utility\\ResourceManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{5BA94388-3C7A-4AB9-BEB5-58CD2533D611}|Develop\\Develop.vcxproj|solutionrelative:Develop\\Utility\\ResourceManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5BA94388-3C7A-4AB9-BEB5-58CD2533D611}|Develop\\Develop.vcxproj|C:\\PG\\GameDevelopmentApplication1\\Develop\\Objects\\Player\\Player.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{5BA94388-3C7A-4AB9-BEB5-58CD2533D611}|Develop\\Develop.vcxproj|solutionrelative:Develop\\Objects\\Player\\Player.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{5BA94388-3C7A-4AB9-BEB5-58CD2533D611}|Develop\\Develop.vcxproj|C:\\PG\\GameDevelopmentApplication1\\Develop\\Utility\\ResourceManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{5BA94388-3C7A-4AB9-BEB5-58CD2533D611}|Develop\\Develop.vcxproj|solutionrelative:Develop\\Utility\\ResourceManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5BA94388-3C7A-4AB9-BEB5-58CD2533D611}|Develop\\Develop.vcxproj|C:\\PG\\GameDevelopmentApplication1\\Develop\\Objects\\Enemy\\Ghost\\Akabe\\Akabe.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{5BA94388-3C7A-4AB9-BEB5-58CD2533D611}|Develop\\Develop.vcxproj|solutionrelative:Develop\\Objects\\Enemy\\Ghost\\Akabe\\Akabe.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5BA94388-3C7A-4AB9-BEB5-58CD2533D611}|Develop\\Develop.vcxproj|C:\\PG\\GameDevelopmentApplication1\\Develop\\Objects\\Enemy\\Ghost\\Guzuta\\Guzuta.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -62,7 +62,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -70,65 +70,68 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 4,
               "Title": "Akabe.h",
               "DocumentMoniker": "C:\\PG\\GameDevelopmentApplication1\\Develop\\Objects\\Enemy\\Ghost\\Akabe\\Akabe.h",
               "RelativeDocumentMoniker": "Develop\\Objects\\Enemy\\Ghost\\Akabe\\Akabe.h",
               "ToolTip": "C:\\PG\\GameDevelopmentApplication1\\Develop\\Objects\\Enemy\\Ghost\\Akabe\\Akabe.h",
               "RelativeToolTip": "Develop\\Objects\\Enemy\\Ghost\\Akabe\\Akabe.h",
-              "ViewState": "AQIAABUAAAAAAAAAAAAAAAQAAAAAAAAA",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAAAQAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2024-09-02T05:29:29.77Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "ResourceManager.h",
               "DocumentMoniker": "C:\\PG\\GameDevelopmentApplication1\\Develop\\Utility\\ResourceManager.h",
               "RelativeDocumentMoniker": "Develop\\Utility\\ResourceManager.h",
               "ToolTip": "C:\\PG\\GameDevelopmentApplication1\\Develop\\Utility\\ResourceManager.h",
               "RelativeToolTip": "Develop\\Utility\\ResourceManager.h",
-              "ViewState": "AQIAABsAAAAAAAAAAAAAAAQAAAALAAAA",
+              "ViewState": "AQIAABgAAAAAAAAAAAAAACcAAAAeAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-09-02T02:54:32.528Z"
+              "WhenOpened": "2024-09-02T02:54:32.528Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "ResourceManager.cpp",
               "DocumentMoniker": "C:\\PG\\GameDevelopmentApplication1\\Develop\\Utility\\ResourceManager.cpp",
               "RelativeDocumentMoniker": "Develop\\Utility\\ResourceManager.cpp",
               "ToolTip": "C:\\PG\\GameDevelopmentApplication1\\Develop\\Utility\\ResourceManager.cpp",
               "RelativeToolTip": "Develop\\Utility\\ResourceManager.cpp",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAABwAAAACAAAA",
+              "ViewState": "AQIAABUAAAAAAAAAAAAAACUAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-09-02T02:54:31.653Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "Player.cpp",
               "DocumentMoniker": "C:\\PG\\GameDevelopmentApplication1\\Develop\\Objects\\Player\\Player.cpp",
               "RelativeDocumentMoniker": "Develop\\Objects\\Player\\Player.cpp",
               "ToolTip": "C:\\PG\\GameDevelopmentApplication1\\Develop\\Objects\\Player\\Player.cpp",
               "RelativeToolTip": "Develop\\Objects\\Player\\Player.cpp",
-              "ViewState": "AQIAABIAAAAAAAAAAAAAAAkAAAAfAAAA",
+              "ViewState": "AQIAADYAAAAAAAAAAAAAAE0AAAAnAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-08-23T00:25:57.224Z"
+              "WhenOpened": "2024-08-23T00:25:57.224Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 1,
               "Title": "Player.h",
               "DocumentMoniker": "C:\\PG\\GameDevelopmentApplication1\\Develop\\Objects\\Player\\Player.h",
               "RelativeDocumentMoniker": "Develop\\Objects\\Player\\Player.h",
               "ToolTip": "C:\\PG\\GameDevelopmentApplication1\\Develop\\Objects\\Player\\Player.h",
               "RelativeToolTip": "Develop\\Objects\\Player\\Player.h",
-              "ViewState": "AQIAABgAAAAAAAAAAAAAACgAAAAYAAAA",
+              "ViewState": "AQIAABIAAAAAAAAAAAAAAF4AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-08-30T01:24:39.903Z"
+              "WhenOpened": "2024-08-30T01:24:39.903Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",

@@ -91,6 +91,9 @@ public:
 	/// <returns>プレイヤーの状態</returns>
 	bool GetDestroy() const;
 
+	static Player* GetInstance();
+
+	static void DeleteInstance();
 
 private:
 	/// <summary>

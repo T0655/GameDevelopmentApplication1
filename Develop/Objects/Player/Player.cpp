@@ -10,6 +10,25 @@
 Player* Player::player= nullptr;
 
 
+Player* Player::GetInstance()
+{
+	if (player == nullptr)
+	{
+		player = new Player();
+	}
+
+	return player;
+}
+
+void Player::DeleteInstance()
+{
+	if (player != nullptr)
+	{
+		delete player;
+		player = nullptr;
+	}
+}
+
 Player::Player() :
 	move_animation(),
 	dying_animation(),
